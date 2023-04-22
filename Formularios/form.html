@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulario Asignar Asesor a Proyecto</title>
+	<link rel="stylesheet" type="text/css" href="formstyle.css">
+</head>
+<body>
+
+	<section>
+		<div class="wave wave1"></div>
+		<div class="wave wave2"></div>
+		<div class="wave wave3"></div>
+		<div class="wave wave4"></div>
+
+	</section>
+
+	<form class="formulario" id="formulario">
+
+		<h2 class="tit">ASIGNAR ASESOR A PROYECTO</h2> 
+
+		<div class="formSuperior">
+
+		<div class="form-departamento">
+			<label for="departamento">Departamento:</label>
+			<select name="select" >
+				<option value="value1"selected>Dep.de Comunicación y Difusión</option>
+				<option value="value2" >Dep.Recursos Humanos</option>
+				<option value="value3">Dep.de Ing.en Sistemas</option>
+			</select>
+
+			<br>
+			<br>
+
+			<div class="form-group">
+				<label for="num-oficio">No. de Oficio:</label>
+				<select name="select" >
+					<option value="value1"selected>01</option>
+					<option value="value2" >02</option>
+					<option value="value3">03</option>
+					<option value="value3">04</option>
+					<option value="value3">05</option>
+					<option value="value3">06</option>
+				</select>
+			</div>
+
+			<label for="lugar">Ingrese la fecha y el lugar:</label>
+			<div class="form-group1">
+				<input type="date" id="fecha" style="border-radius: 25px;" name="fecha" value="2023-01-01" min="2023-01-01" max="2030-01-1">
+
+				<select name="select">
+					<option value="value1"selected>Quintana Roo</option>
+					<option value="value2" >Cancún</option>
+					<option value="value3">Playa del Carmen</option>
+				</select>
+
+
+			</div>
+		</div>
+		</div>
+		<h4>Importante:&nbsp;Es necesario llenar todos los campos solicitados</h4> 
+
+
+		<div class="segundoBloque">
+			<div class="form-asesor" style="text-align: center;">
+				<label for="nombre-asesor">Nombre completo del asesor:</label>
+				<input type="text" style="border:1px solid #1f53c5;" id="nombre-asesor" name="nombre-asesor" placeholder="(4)" class="textAsesor">
+			</div> 
+
+			<div class="row">
+				<div class="col-6">
+					<div class="form-carrera">
+						<label for="carrera">Carrera:</label>
+						<select name="select">
+							<option value="value1"selected>Ing.Sistemas Computacionales</option>
+							<option value="value2" >Licenciatura en Gestión Empresarial</option>
+							<option value="value3">Ing.Electromecánica</option>
+							<option value="value3">Ing.Eléctrica</option>
+							<option value="value3">Ing.Ingeniería Civil</option>
+							<option value="value3">Ing.en Administración</option>
+
+						</select>
+						<br>
+						<br>
+
+					</div>
+
+					<div class="form-group">
+						<label for="nombre-proyecto">Nombre del Proyecto:</label>
+						<input type="text" style="border:1px solid #1f53c5; border-radius: 25px;" id="nombre-proyecto" name="nombre-proyecto" placeholder="(7)">
+					</div>
+				</div>
+
+				<div class="col-6" align="center">
+					<div class="periodo">
+						<label for="periodo-realizacion">Periodo de Realización:</label>
+						<select name="select">
+							<option value="value1"selected>2023-2024</option>
+							<option value="value2" >2024-2025</option>
+							<option value="value3">2025-2026</option>
+						</select>
+
+						<br>
+						<br>
+
+					</div>
+
+					<div class="form-group">
+						<label for="empresa">Empresa:</label>
+						<input type="text" style="border:1px solid #1f53c5; border-radius: 25px;" id="empresa" name="empresa" placeholder="(9)">
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+
+		<input type="submit" value="Enviar">
+	</form>
+
+	<div class="info-btn" onclick="showInfo(); moveForm();">Info</div>
+	<div class="info-box" id="info-box" style="display: none;">
+		<img src="informacion.png">
+		<button class="close-btn" onclick="hideInfo(); regreForm();">Cerrar</button>
+	</div>
+
+
+
+</body>
+
+<script type="text/javascript">
+	
+	function showInfo() {
+		var infoBox = document.getElementById("info-box");
+		infoBox.style.display = "block";
+	}
+
+	function hideInfo() {
+		var infoBox = document.getElementById("info-box");
+		infoBox.style.display = "none";
+	}
+
+	function moveForm() {
+  		var formulario = document.getElementById("formulario");
+  		formulario.style.left = "800px";
+
+	}
+
+	function regreForm() {
+  		var formulario = document.getElementById("formulario");
+  		formulario.style.transition = "left 0.5s ease-in-out";
+  		formulario.style.left = "940px";
+	}
+
+
+
+
+
+</script>
+
+</html>
+
