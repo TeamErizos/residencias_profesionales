@@ -20,7 +20,7 @@ if(isset($_REQUEST['login'])){
     // Si la contraseña coincide, iniciar sesión y redireccionar al usuario
     if($pwd_check){
         $_SESSION['username'] = $result['username'];
-        header("Location: /");
+        header("Location: index.php");
         exit();
     } else {
         // Si la contraseña no coincide, mostrar mensaje de error
@@ -31,7 +31,7 @@ if(isset($_REQUEST['login'])){
 if(isset($_REQUEST['logout'])){
     // Destruir la sesión y redireccionar al usuario
     session_destroy();
-    header("Location: /");
+    header("Location: index.php");
     exit();
 }
 
