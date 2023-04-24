@@ -1,23 +1,19 @@
 <?php
-
-// Conexión a la base de datos
-$host = 'localhost';
-$dbname = 'test';
-$user = 'root';
-$password = '';
-$conn = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
+// Conectar a AmazonRDS
+include 'conectAWS.php';
 
 // Procesamiento del formulario
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
 
     // Hashear la contraseña
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Insertar los datos en la tabla de usuarios
-    $stmt = $conn->prepare('INSERT INTO user (username, password) VALUES (?, ?)');
-    $stmt->execute([$username, $hashed_password]);
+    // TO DO: Por mientras, está siendo probada en la tabla "cuenta"
+    $stmt = $conn->prepare('INSERT INTO cuenta (mail_cuenta, password_cuenta) VALUES (?, ?)');
+    $stmt->execute([$email, $hashed_password]);
 
     // Verificar si la inserción fue exitosa
     if ($stmt->rowCount() == 1) {
@@ -33,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!-- Formulario HTML -->
 <form method="POST">
     <label for="username">Nombre de usuario:</label>
-    <input type="text" id="username" name="username" required>
+    <input type="email" id="email" name="email" required>
     <br>
     <label for="password">Contraseña:</label>
     <input type="password" id="password" name="password" required>
