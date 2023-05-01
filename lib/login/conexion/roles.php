@@ -8,5 +8,9 @@ type 4: profesor y coordinador
 type 5: profesor, coordinador y asesor
 type 6: jefe de departamento academico 
 type 7: miembro del depto de gestión
-type 8: asesor externo (empresa)
+type 8: asesor externo (empresa) */
+
+
+
 ?>
+

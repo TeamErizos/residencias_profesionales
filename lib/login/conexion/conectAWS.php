@@ -4,6 +4,9 @@ $host = 'database-1.ce6k0ybbwxvv.us-east-2.rds.amazonaws.com';
 $dbname = 'residencia';
 $user = 'pech';
 $password = '654321';
+//$host = 'localhost';
+//$user = 'postgres';
+//$password = '123456';
 
 try {
     
