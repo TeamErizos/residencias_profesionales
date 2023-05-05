@@ -306,6 +306,13 @@ recuperarDatosEmpresa: Esta función recupera los datos de la empresa a partir d
         <input type="text" id="semester" name="semester">
       </div>
 
+      <!-- Espacios para cargar envios de archivos -->
+      <!-- Cargar Anteproyecto -->
+      <input type="file" name="anteproyecto">
+      <!-- Cargar Constancia de Residencia -->
+      <input type="file" name="constancia">
+
+
 </div>
       
       <!-- Submit button -->

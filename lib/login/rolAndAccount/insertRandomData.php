@@ -6,11 +6,11 @@ include '../conexion/conectAWS.php';
 
 
 // INSERTAR CARRERA
-    /*$carrera_nom = "ISIC";
+    $carrera_nom = "1";
     $query = "SELECT insertar_carrera(:carrera_nom)";
     $stmt = $conn->prepare($query);
     $stmt->bindParam(':carrera_nom', $carrera_nom);
-    $stmt->execute();*/
+    $stmt->execute();
 
 // INSERTAR ALUMNO 
 /*$a_nControl = "20390300";

@@ -219,7 +219,14 @@ class Alumno {
           return "AGO-" . "DIC-" . $anioActual;
         }
       }
-    
+
+
+    // TODO: Función para guardar la constancia de residencia y el anteproyecto dentro de la base de datos
+    function insertarArchivos($id_alumno){ // Va depender del no control del alumno
+
+        // La inserción es en la tabla Documentos_X_Alumno
+
+    } 
 }
 
 

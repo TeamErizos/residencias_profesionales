@@ -99,7 +99,7 @@
         $TBS->MergeField('soli.cp', $_SESSION['codigo_postal']);
         $TBS->MergeField('soli.fax', $_SESSION['fax_empresa']);
         $TBS->MergeField('soli.Ciudad', $_SESSION['ciudad_empresa']);
-        $TBS->MergeField('soli.telefono', $_SESSION['telefono_empresa']);
+        $TBS->MergeField('soli.telefono', $_SESSION['tel_empresa']);
         $TBS->MergeField('soli.titularEmpresa', $_SESSION['nombre_del_titular_de_empresa']);
         $TBS->MergeField('soli.puestoTitular', $_SESSION['puesto_titular']);
         $TBS->MergeField('soli.asesorExterno', $external_advisor);
@@ -115,7 +115,7 @@
         $TBS->MergeField('soli.domicilio', $_SESSION['domicilio_alumno']);
         $TBS->MergeField('soli.email', $_SESSION['correo_alumno']);
         getStudentInsurance($_SESSION['seguro_medico_alumno'], $TBS);
-        $TBS->MergeField('soli.ciudad', $_SESSION['num_seguridad_social_alumno']);
+        $TBS->MergeField('soli.nss', $_SESSION['num_seguridad_social_alumno']);
         $TBS->MergeField('soli.ciudad', $_SESSION['ciudad_alumno']);
         $TBS->MergeField('soli.telefonoAlumno', $_SESSION['telefono_alumno']);
 
@@ -126,14 +126,33 @@
         $TBS->PlugIn(OPENTBS_DELETE_COMMENTS);
 
         $save_as = (isset($_POST['save_as']) && (trim($_POST['save_as'])!=='') && ($_SERVER['SERVER_NAME']=='localhost')) ? trim($_POST['save_as']) : '';
-        $output_file_name = str_replace('.', '_'.date('Y-m-d').$save_as.'.', $template);
+        // Cada archivo tendrá el nombre y el no de control del alumno
+        $output_file_name = $_SESSION['no_control'] . '_'  . $template ;
         if ($save_as==='') {
+
+            // Se guardará de manera temporal, después se borrará
+            $ruta_guardado = 'temp/' . $output_file_name;
+            $TBS->Show(OPENTBS_FILE, $ruta_guardado);
+            exit("File [$output_file_name] has been created in the same directory as this script.");
+            
+        } else {
+
             $TBS->Show(OPENTBS_DOWNLOAD, $output_file_name); 
             exit();
-        } else {
-            $TBS->Show(OPENTBS_FILE, $output_file_name);
-            exit("File [$output_file_name] has been created.");
+            
         }
+
+
+        //------------------------------------------------------------------------------------------------------------
+        // Después de crear el archivo:
+        // 1. Convertirlo a pdf
+        // 2. Subirlo a la base de datos
+        // 3. Si la subida fue exitosa. borrar ambos archivos
+        // 4. Subir los datos prudentes a la tabla (ProyectosXAlumno)
+        // 5. con el id de ProyectosXAlumno, crear el registro de Documentos
+        // 6. En documentos, subir la constancia y el anteproyecto
+
+
     }
 
     // Función para marcar el tipo de solicitud 
