@@ -10,10 +10,13 @@ $_SESSION['correo_alumno']
 $_SESSION['telefono_alumno']
 $_SESSION['seguro_medico_alumno']
 $_SESSION['num_seguridad_social_alumno']
+
+$_SESSION['id_proyecto']
 $_SESSION['tipo_proyecto']
 $_SESSION['origen_proyecto']
 $_SESSION['periodo_proyecto']
 $_SESSION['num_residentes']
+
 $_SESSION['nombre_empresa']
 $_SESSION['ramo_empresa']
 $_SESSION['rfc_empresa']
@@ -27,6 +30,9 @@ $_SESSION['puesto_titular']
 $_SESSION['codigo_postal']
 $_SESSION['fax_empresa']
 $_SESSION['tel_empresa']
+
+$_SESSION['nombre_asesor_externo']
+$_SESSION['puesto_asesor_externo']
 
 ASÍ SE PONE EL DATO DENTRO DEL INPUT
 <input type="text" value="<?php echo $_SESSION['nombre_variable']; ?>">
@@ -62,7 +68,7 @@ recuperarDatosEmpresa: Esta función recupera los datos de la empresa a partir d
   $alumno = new Alumno($conn);
 
   $_SESSION['no_control'] = "20390300"; // Este esta ahora en la base de datos
-  $_SESSION['nombre_proyecto'] = "Proyecto X"; // Este será pasado mediante una lista
+  $_SESSION['nombre_proyecto'] = "Proyecto Z"; // Este será pasado mediante una lista
 
   // datos del alumno y regresar el id de carrera
   $id_carrera = $alumno->recuperarDatosAlumno($_SESSION['no_control']);
@@ -80,13 +86,13 @@ recuperarDatosEmpresa: Esta función recupera los datos de la empresa a partir d
   // este no regresa nada
   $alumno->recuperarDatosEmpresa($_SESSION['nombre_proyecto']);
 
-
-
+  // buscar al asesor externo
+  $alumno->recuperarAsesorExterno($_SESSION['id_proyecto']);
 
 
 ?>
 
-<form action="resources/guardar_solicitud.php" method="post">
+<form action="resources/guardar_solicitud.php" method="post" enctype="multipart/form-data">
     <!-- Datos del Proyecto -->
     <div>
         <h3>Datos del Proyecto</h3>
@@ -113,7 +119,7 @@ recuperarDatosEmpresa: Esta función recupera los datos de la empresa a partir d
         <!-- Periodo proyectado -->
         <div>
           <label for="projected_period">Periodo proyectado:</label>
-          <input type="text" value="<?php echo $_SESSION['periodo_proyecto']; ?>"id="projected_period" name="projected_period" disabled>
+          <input type="text" value="<?php echo ($alumno->getPeriodo()); ?>"id="projected_period" name="projected_period" disabled>
         </div>
       
         <!-- Nombre del asesor interno -->
@@ -218,13 +224,13 @@ recuperarDatosEmpresa: Esta función recupera los datos de la empresa a partir d
         <!-- Nombre del asesor externo -->
         <div>
           <label for="external_advisor">Nombre del asesor externo:</label>
-          <input type="text" id="external_advisor" name="external_advisor">
+          <input type="text" id="external_advisor" name="external_advisor" value="<?php echo $_SESSION['nombre_asesor_externo'];?>" disabled>
         </div>
     
             <!-- Puesto del asesor externo -->
             <div>
                 <label for="external_advisor_position">Puesto del asesor externo:</label>
-                <input type="text" id="external_advisor_position" name="external_advisor_position">
+                <input type="text" id="external_advisor_position" name="external_advisor_position" value="<?php echo $_SESSION['puesto_asesor_externo'];?>" disabled>
             </div>
             
             <!-- Nombre de la persona que firmará el acuerdo -->

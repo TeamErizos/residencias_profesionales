@@ -75,7 +75,7 @@ class Alumno {
     function recuperarDatosProyecto($nombre_proyecto) {
         
         // Preparar la consulta SQL para recuperar los datos del proyecto con el nombre dado
-        $sql = "SELECT tipo_proyecto, origen_proyecto, periodo_proyecto, num_residentes, fk_id_profesor FROM proyecto WHERE nombre_proyecto = :nombre_proyecto";
+        $sql = "SELECT id_proyecto, tipo_proyecto, origen_proyecto, periodo_proyecto, num_residentes, fk_id_profesor FROM proyecto WHERE nombre_proyecto = :nombre_proyecto";
         $stmt = $this->conn->prepare($sql);
         $stmt->bindParam(':nombre_proyecto', $nombre_proyecto);
         
@@ -88,9 +88,10 @@ class Alumno {
         // Verificar si se obtuvo algún resultado
         if ($result) {
             // Si se obtuvo resultado, crear variables de sesión con los valores obtenidos
+            $_SESSION['id_proyecto'] = $result['id_proyecto'];
             $_SESSION['tipo_proyecto'] = $result['tipo_proyecto'];
             $_SESSION['origen_proyecto'] = $result['origen_proyecto'];
-            $_SESSION['periodo_proyecto'] = $result['periodo_proyecto'];
+            //$_SESSION['periodo_proyecto'] = $result['periodo_proyecto'];
             $_SESSION['num_residentes'] = $result['num_residentes'];
             // Recuperar el nombre del profesor porque igual hay que buscarlo
             return $result['fk_id_profesor'];
@@ -175,30 +176,22 @@ class Alumno {
         }
     }
 
-    // LA FUNCION PARA INSERTAR LA INFO DENTRO DE LA TABLA [ASESORES POR PROYECTO]
-    // SOLO SE HARÁ CON LA [COMISIÓN DE ASESOR] quisiera quitarlo pero es ISO
 
     // Funcion para guardar y relacionar el proyecto con el alumno
     // TODO: Cuando haya funciones especificas para dicha tabla, actualizar esta función
-
-
-    
         
         // Función para insertar un registro en la tabla "ProyectoXAlumno"
         public function insertarProyectoXAlumno($id_proyecto, $id_alumno, $periodo_0_sem) {
             // Preparar la consulta SQL para insertar un registro en la tabla "ProyectoXAlumno"
-            $sql = "INSERT INTO ProyectoXAlumno (id_proyecto, id_alumno, periodo_0_sem, calif_parcial1_asesor_interno, calif_parcial1_asesor_externo, calif_parcial2_asesor_interno, calif_parcial2_asesor_externo, calif_reporte_asesor_interno, calif_reporte_asesor_externo) VALUES (:id_proyecto, :id_alumno, :periodo_0_sem, '', '', '', '', '', '')";
-            $stmt = $this->conn->prepare($sql);
-            $stmt->bindParam(':id_proyecto', $id_proyecto);
-            $stmt->bindParam(':id_alumno', $id_alumno);
-            $stmt->bindParam(':periodo_0_sem', $periodo_0_sem);
-            $stmt->bindParam(':calif_parcial1_asesor_interno', 0);
-            $stmt->bindParam(':calif_parcial1_asesor_externo', 0);
-            $stmt->bindParam(':calif_parcial2_asesor_interno', 0);
-            $stmt->bindParam(':calif_parcial2_asesor_externo', 0);
-            $stmt->bindParam(':calif_reporte_asesor_interno', 0);
-            $stmt->bindParam(':calif_reporte_asesor_externo', 0);
-      
+            // Preparar la consulta para ejecutar la función insertar_proyecto_x_alumno
+            $query = "SELECT insertar_proyecto_x_alumno(:proyecto_id, :alumno_id, :per_p_x_a)";
+            $stmt = $this->conn->prepare($query);
+
+            // Vincular los valores
+            $stmt->bindParam(":proyecto_id", $id_proyecto);
+            $stmt->bindParam(":alumno_id", $id_alumno);
+            $stmt->bindParam(":per_p_x_a", $periodo_0_sem);
+                
             // Ejecutar la consulta
             if ($stmt->execute()) {
                 return true;
@@ -206,6 +199,45 @@ class Alumno {
                 return false;
             }
         }
+
+        // Función para crear un registro en Documentos usando la clave de ProyectosXAlumno
+        // Primero debe buscar la clave id_p_x_a en Proyectos por Alumno y recuperarlo
+        function insertarDocumentosPorAlumno($id_alumno) {
+            // Preparar la consulta para buscar un registro en la tabla PROYECTO_X_ALUMNO
+            $query = "SELECT id_p_x_a FROM proyecto_x_alumno WHERE id_alumno = :alumno_id";
+            $stmt = $this->conn->prepare($query);
+          
+            // Vincular el valor del identificador del alumno
+            $stmt->bindParam(":alumno_id", $id_alumno);
+          
+            // Ejecutar la consulta
+            $stmt->execute();
+          
+            // Obtener el resultado
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+          
+            // Verificar si se obtuvo un resultado
+            if ($result) {
+              // Extraer el ID_P_X_A
+              $id_p_x_a = $result['id_p_x_a'];
+          
+              // Verificar si el ID_P_X_A se extrajo correctamente
+              if ($id_p_x_a) {
+                // Ejecutar la función insertar_documentos
+                $query = "SELECT insertar_documentos(:id_p_x_a)";
+                $stmt = $this->conn->prepare($query);
+                $stmt->bindParam(":id_p_x_a", $id_p_x_a);
+                $stmt->execute();
+          
+                echo "Se ejecutó la función insertar_documentos correctamente.";
+              } else {
+                echo "No se pudo extraer el ID_P_X_A.";
+              }
+            } else {
+              echo "No se encontró un registro en la tabla PROYECTO_X_ALUMNO que coincida con el ID_Alumno.";
+            }
+          }
+        
 
     // Funcion que calcula el periodo real del proyecto
     // el periodo proyectado es diferente != al periodo real del proyecto
@@ -220,13 +252,36 @@ class Alumno {
         }
       }
 
-
-    // TODO: Función para guardar la constancia de residencia y el anteproyecto dentro de la base de datos
-    function insertarArchivos($id_alumno){ // Va depender del no control del alumno
-
-        // La inserción es en la tabla Documentos_X_Alumno
-
-    } 
+    // Funcion para recuperar datos del asesor externo
+    function recuperarAsesorExterno($id_proyecto) {
+        // Preparar la consulta
+        $query = "SELECT nom_asesor_externo, ape1_asesor_externo, ape2_asesor_externo, puesto_asesor_externo FROM asesor_x_proyecto WHERE id_proyecto = :id_proyecto";
+        $stmt = $this->conn->prepare($query);
+    
+        // Vincular el valor del identificador del proyecto
+        $stmt->bindParam(":id_proyecto", $id_proyecto);
+    
+        // Ejecutar la consulta
+        $stmt->execute();
+    
+        // Obtener el resultado
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+        // Verificar si se obtuvo un resultado
+        if ($result) {
+            // Concatenar los nombres y apellidos
+            $nombre_completo = $result['nom_asesor_externo'] . " " . $result['ape1_asesor_externo'] . " " . $result['ape2_asesor_externo'];
+    
+            // Almacenar los datos en variables de sesión
+            $_SESSION['nombre_asesor_externo'] = $nombre_completo;
+            $_SESSION['puesto_asesor_externo'] = $result['puesto_asesor_externo'];
+    
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
 }
 
 
