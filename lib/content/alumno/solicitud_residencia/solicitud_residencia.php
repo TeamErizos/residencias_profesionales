@@ -67,8 +67,8 @@ recuperarDatosEmpresa: Esta función recupera los datos de la empresa a partir d
   // Crear instancia del alumno
   $alumno = new Alumno($conn);
 
-  $_SESSION['no_control'] = "20390300"; // Este esta ahora en la base de datos
-  $_SESSION['nombre_proyecto'] = "Proyecto Z"; // Este será pasado mediante una lista
+  $_SESSION['no_control'] = "20390292"; // Este esta ahora en la base de datos
+  $_SESSION['nombre_proyecto'] = "Proyecto X"; // Este será pasado mediante una lista
 
   // datos del alumno y regresar el id de carrera
   $id_carrera = $alumno->recuperarDatosAlumno($_SESSION['no_control']);

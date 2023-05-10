@@ -4,7 +4,7 @@
 session_start();
 
 // Si no hay sesión, entonces...
-if(!empty($_SESSION['username'])){?>
+if(!empty($_SESSION['no_control'])){?>
   <!DOCTYPE html>
   <html>
   <head>  

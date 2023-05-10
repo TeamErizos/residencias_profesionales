@@ -17,14 +17,14 @@ if (isset($_REQUEST['login'])) {
             // Buscar cuenta de empresa
             $result = $user->loginEmpresa($username, $password);
             // Guardar el username
-            $temporal_username = $result['rfc_empresa'];
+            $temporal_username = $result['id_empresa'];
             break;
 
         case 'profesor':
             // Buscar cuenta de profesor
             $result = $user->loginProfesor($username, $password);
             // Guardar el username
-            $temporal_username = $result['correo_profesor'];
+            $temporal_username = $result['id_profesor'];
             break;
 
         case 'alumno':
@@ -38,7 +38,10 @@ if (isset($_REQUEST['login'])) {
             // Buscar cuenta [normal] (cualquier otro menos los anteriores)
             $result = $user->login($username, $password);
             // Guardar el username
-            $temporal_username = $result['mail_cuenta'];
+            $temporal_username = $result['id_cuenta'];
+
+            // TODO: ¿Recibir el tipo de rol igual?
+
             break;
 
         case 'desconocido':
@@ -52,12 +55,46 @@ if (isset($_REQUEST['login'])) {
 
     // Si el resultado es un array asociativo, iniciar sesión y redireccionar al usuario
     if (is_array($result)) {
-        // TO DO: Qué datos necesitamos tener por cada registro
 
-        // Recuperar el valor dependiendo del tipo de login
-        $_SESSION['username'] = $temporal_username;
-        header("Location: lib/content/dashboard/PanelDeControl-Menu.php");
-        exit();
+        // TO DO: Ir a un dashboard diferente dependiendo el tipo de login
+        // Guardar como variable de sesión un dato distintivo del 
+        switch ($variable) {
+
+            // Si es alumno
+            case 'alumno':
+
+                $_SESSION['no_control'] = $temporal_username;
+                header("Location: lib/content/alumno/PanelDeControl-Menu.php");
+                exit();
+                break;
+            
+            // Si es profesor
+            case 'profesor':
+
+                $_SESSION['id_profesor'] = $temporal_username;
+                header("Location: lib/content/profesor/PanelDeControlProfesor-Menu.php");
+                exit();
+                break;
+            
+            // Si es profesor
+            case 'empresa':
+
+                $_SESSION['id_empresa'] = $temporal_username;
+                header("Location: lib/content/empresa/PanelDeControlAsesorExterno-Menu.php");
+                exit();    
+                break;
+           
+            // Si es administrativo
+            case 'normal':
+
+                // TODO: Depende del rol de la cuenta, el dashboard al que va acceder
+
+                $_SESSION['id_cuenta'] = $temporal_username;
+                header("Location: lib/content/jefe_dep/dashboard_dep.php");
+                exit();    
+                break;    
+        }
+
     } else {
         // Si el resultado es false, mostrar mensaje de error
         echo "Usuario o contraseña incorrectos.";

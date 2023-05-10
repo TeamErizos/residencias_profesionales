@@ -3,7 +3,7 @@
 // Iniciar la sesión
 session_start();
 // Si no hay sesión, entonces...
-if(!empty($_SESSION['username'])){?>
+if(!empty($_SESSION['id_empresa'])){?>
 
 <!DOCTYPE html>
 <html>
@@ -19,38 +19,21 @@ if(!empty($_SESSION['username'])){?>
         <li>
           <a href="#">
             <span class="icon"><ion-icon name="school-outline"></ion-icon></span>
-            <span class="info">Panel de Control</span>
+            <span class="infoTitle">Panel de Control
+              Asesor Externo<br></span>
+            
           </a>
         </li>
         
-        <li>
-          <a href="PanelDeControl-Menu.php">
+        <li class="hovered">
+          <a href="PanelDeControlAsesorExterno-Menu.html">
             <span class="icon"><ion-icon name="grid-outline"></ion-icon></span>
             <span class="title">Menu</span>
           </a>
         </li>
-
-        <li class="hovered">
-          <a href="#">
-            <span class="icon"><ion-icon name="document-text-outline"></ion-icon></span>
-            <span class="title">Seguimiento</span>
-          </a>
-        </li>
-
-        <li class="expand">
-          <a href="#">
-            <span class="icon"><ion-icon name="notifications-outline"></ion-icon></span>
-            <span class="title">Notificaciones</span>
-          </a>
-        </li>
-
-        <li>
-          <a href="#">
-            <span class="icon"><ion-icon name="help-outline"></ion-icon></span>
-            <span class="title">F.A.Q</span>
-          </a>
-        </li>
         
+
+
         <?php
 
             if(isset($_REQUEST['logout'])){
@@ -61,7 +44,7 @@ if(!empty($_SESSION['username'])){?>
               exit();
             }
             ?>
-
+<!-- BOTON PARA CERRAR SESIÓN --->
             <li class="logout-btn">
               <a href="<?php echo $_SERVER['PHP_SELF']; ?>?logout">
                 <span class="icon">
@@ -83,7 +66,7 @@ if(!empty($_SESSION['username'])){?>
         <!-- busqueda -->
         <div class="titulo">
           <label>
-            <span class="info">Seguimiento de Documentación</span>
+            <span class="info">Evaluacion y Seguimiento</span>
           </label>
         </div> 
         <!-- Imagen de usuario -->
@@ -95,15 +78,14 @@ if(!empty($_SESSION['username'])){?>
       <!-- tarjetas -->
       <!-- tarjetas -->
 <div class="cardBox">
-
   <a href="#">
     <div class="card">
       <div>
         <div class="numbers"></div>
-        <div class="cardName1">Solicitud de Residencia</div>
+        <div class="cardName">Evaluar 1er Parcial</div>
       </div>
       <div class="iconBx">
-        <ion-icon name="arrow-down-circle-outline"></ion-icon>
+        <ion-icon name="create-outline"></ion-icon>
       </div>
     </div>
   </a>
@@ -112,68 +94,15 @@ if(!empty($_SESSION['username'])){?>
     <div class="card">
       <div>
         <div class="numbers"></div>
-        <div class="cardName1">Carta de Presentación</div>
+        <div class="cardName">Evaluar 2ndo Parcial</div>
       </div>
       <div class="iconBx">
-        <ion-icon name="arrow-down-circle-outline"></ion-icon>
-      </div>
-    </div>
-  </a>
-
-  <a href="#">
-    <div class="card">
-      <div>
-        <div class="numbers"></div>
-        <div class="cardName1">Formato de Convenio</div>
-      </div>
-      <div class="iconBx">
-        <ion-icon name="arrow-down-circle-outline"></ion-icon>
-      </div>
-    </div>
-  </a>
-
-  <a href="#">
-    <div class="card">
-      <div>
-        <div class="numbers"></div>
-        <div class="cardName1">Evaluación y seguimiento</div>
-      </div>
-      <div class="iconBx">
-        <ion-icon name="arrow-down-circle-outline"></ion-icon>
-      </div>
-    </div>
-  </a>
-
-  <a href="#">
-    <div class="card">
-      <div>
-        <div class="numbers"></div>
-        <div class="cardName1">Evaluación Reporte Final</div>
-      </div>
-      <div class="iconBx">
-        <ion-icon name="arrow-down-circle-outline"></ion-icon>
-      </div>
-    </div>
-  </a>
-
-  <a href="#">
-    <div class="card">
-      <div>
-        <div class="numbers"></div>
-        <div class="cardName1">Seguimiento de Asesorias</div>
-      </div>
-      <div class="iconBx">
-        <ion-icon name="arrow-down-circle-outline"></ion-icon>
+        <ion-icon name="create-outline"></ion-icon>
       </div>
     </div>
   </a>
 
   
-</div>
-
-
-
-
     </div>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -202,5 +131,4 @@ if(!empty($_SESSION['username'])){?>
       </script>  
     </body>
     </html>
-    
 <?php }?>
