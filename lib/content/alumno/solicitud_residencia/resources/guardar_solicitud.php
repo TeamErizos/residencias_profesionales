@@ -194,6 +194,10 @@
                 // eliminar todos los archivos temporales segun la clave del alumno
                 $documentos->deleteFiles($_SESSION['no_control']);
 
+                // Si todo el proceso acabo correctamete, regresar al dashboard
+                header("Location: ../../PanelDeControl-Menu.php");
+                exit(); 
+
 
                 //------------------------------------------------------------------------------------------------------------
                 // Después de crear el archivo:

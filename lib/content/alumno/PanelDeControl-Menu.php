@@ -96,7 +96,7 @@ if(!empty($_SESSION['no_control'])){?>
         <!-- tarjetas -->
         <!-- tarjetas -->
   <div class="cardBox">
-    <a href="solicitar_residencia.html">
+    <a href="solicitud_residencia/banco_proyecto.php">
       <div class="card">
         <div>
           <div class="numbers"></div>
@@ -112,7 +112,7 @@ if(!empty($_SESSION['no_control'])){?>
       <div class="card">
         <div>
           <div class="numbers"></div>
-          <div class="cardName">Reportes Parciales</div>
+          <div class="cardName">Reportes Parciales (Unknown)</div>
         </div>
         <div class="iconBx">
           <ion-icon name="document-outline"></ion-icon>
@@ -136,7 +136,7 @@ if(!empty($_SESSION['no_control'])){?>
       <div class="card">
         <div>
           <div class="numbers"></div>
-          <div class="cardName">Solicitar Asesoria</div>
+          <div class="cardName">Solicitar Asesoria (Unknown) </div>
         </div>
         <div class="iconBx">
           <ion-icon name="calendar-outline"></ion-icon>

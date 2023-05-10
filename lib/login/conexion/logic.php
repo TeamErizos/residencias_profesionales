@@ -39,8 +39,7 @@ if (isset($_REQUEST['login'])) {
             $result = $user->login($username, $password);
             // Guardar el username
             $temporal_username = $result['id_cuenta'];
-
-            // TODO: ¿Recibir el tipo de rol igual?
+            $temporal_rol = $result['fk_id_rol'];
 
             break;
 
@@ -87,12 +86,34 @@ if (isset($_REQUEST['login'])) {
             // Si es administrativo
             case 'normal':
 
-                // TODO: Depende del rol de la cuenta, el dashboard al que va acceder
-
                 $_SESSION['id_cuenta'] = $temporal_username;
-                header("Location: lib/content/jefe_dep/dashboard_dep.php");
-                exit();    
-                break;    
+                
+                // El rol servirá para hacer operaciones dentro del sistema
+                // Y mostrar el dashboard del respectivo usuario
+
+                $_SESSION['user_rol'] = $temporal_rol;
+
+                // Rol 4 = Jefe de Departamento Academico
+                // Rol 5 = Dep Gestión Tecnológica y Vinculación
+                
+                // TODO: Ambos se dirigen al Dashboard de Departamento Academico, revisar por qué
+
+
+                if($_SESSION['user_rol'] = 4 ){
+
+                    header("Location: lib/content/jefe_dep/dep_academico/PanelDeControlJefeDepartamento-Menu.php");
+                    exit();    
+                    break;                      
+
+                }elseif ($_SESSION['user_rol'] = 5) {
+
+                    header("Location: lib/content/jefe_dep/dep_vinculacion/PanelDeControlGestionYVinculacion-Menu.php");
+                    exit();    
+                    break;                     
+
+                }
+
+                 
         }
 
     } else {

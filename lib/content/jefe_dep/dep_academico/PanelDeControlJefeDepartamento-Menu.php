@@ -3,7 +3,7 @@
 // Iniciar la sesión
 session_start();
 // Si no hay sesión, entonces...
-if(!empty($_SESSION['id_profesor'])){?>
+if(!empty($_SESSION['id_cuenta'])){?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +19,7 @@ if(!empty($_SESSION['id_profesor'])){?>
           <a href="#">
             <span class="icon"><ion-icon name="school-outline"></ion-icon></span>
             <span class="infoTitle">Panel de Control
-              Profesores y Coordinador<br></span>
+              Jefe de Departamento Academico<br></span>
             
           </a>
         </li>
@@ -40,23 +40,23 @@ if(!empty($_SESSION['id_profesor'])){?>
         
         <?php
 
-        if(isset($_REQUEST['logout'])){
-          // Destruir la sesión
-          session_destroy();
-          // Redireccionar al usuario
-          header("Location: ../../../index.php");
-          exit();
-        }
-        ?>
-        <!-- BOTON PARA CERRAR SESIÓN --->
-        <li class="logout-btn">
-          <a href="<?php echo $_SERVER['PHP_SELF']; ?>?logout">
-            <span class="icon">
-              <ion-icon name="log-out-outline"></ion-icon>
-            </span>
-            <span class="title">Cerrar Sesión</span>
-          </a>
-        </li>
+            if(isset($_REQUEST['logout'])){
+              // Destruir la sesión
+              session_destroy();
+              // Redireccionar al usuario
+              header("Location: ../../../../index.php");
+              exit();
+            }
+            ?>
+<!-- BOTON PARA CERRAR SESIÓN --->
+            <li class="logout-btn">
+              <a href="<?php echo $_SERVER['PHP_SELF']; ?>?logout">
+                <span class="icon">
+                  <ion-icon name="log-out-outline"></ion-icon>
+                </span>
+                <span class="title">Cerrar Sesión</span>
+              </a>
+            </li>
 
       </ul>
     </div>
@@ -78,31 +78,18 @@ if(!empty($_SESSION['id_profesor'])){?>
           <!-- <img src="user.jpg">                                                 POSIBLE IMPLEMENTACION-->
         </div>
       </div>
-      
 
       <!-- tarjetas -->
       <!-- tarjetas -->
 <div class="cardBox">
-  <a href="seguimiento/seguimiento_proyecto.php">
+  <a href="#">
     <div class="card">
       <div>
         <div class="numbers"></div>
-        <div class="cardName">Seguimiento de Proyectos</div>
+        <div class="cardName">Crear Comision de Asesor</div>
       </div>
       <div class="iconBx">
-        <ion-icon name="mail-outline"></ion-icon>
-      </div>
-    </div>
-  </a>
-
-  <a href="registro_proyecto/select_carreras.html">
-    <div class="card">
-      <div>
-        <div class="numbers"></div>
-        <div class="cardName">Registro de Proyectos</div>
-      </div>
-      <div class="iconBx">
-        <ion-icon name="document-outline"></ion-icon>
+        <ion-icon name="document-attach-outline"></ion-icon>
       </div>
     </div>
   </a>
@@ -111,79 +98,29 @@ if(!empty($_SESSION['id_profesor'])){?>
     <div class="card">
       <div>
         <div class="numbers"></div>
-        <div class="cardName">Revisión de Solicitudes</div>
+        <div class="cardName">Crear Comision de Revisión</div>
       </div>
       <div class="iconBx">
-        <ion-icon name="document-outline"></ion-icon>
+        <ion-icon name="document-attach-outline"></ion-icon>
+      </div>
+    </div>
+  </a>
+
+  <!-- Pruebe -->
+  <a href="#">
+    <div class="card">
+      <div>
+        <div class="numbers"></div>
+        <div class="cardName"><?php echo"Welcome " . $_SESSION['user_rol']; ?> </div>
+      </div>
+      <div class="iconBx">
+        <ion-icon name="document-attach-outline"></ion-icon>
       </div>
     </div>
   </a>
 
   
     </div>
-
-    <div class="topbar">
-      <div class="toggle2">
-      </div>
-      <!-- Titulo-->
-      <div class="titulo">
-        <label><span class="info">Tableros</span></label>
-      </div>
-      <div class="user"></div>
-    </div>
-
-    <!-- Tablero Asesor-->
-    
-
-
-    <div class="desplegableBox">
-      <div class="desplegable-body">
-        
-      <div class="desplegable">
-        <input type="text" class="textBoxDesplegable" 
-        placeholder="Tablero Asesor" readonly>
-        <div class="option">
-          <a href="#">
-            <div>Reportes Parciales</div>
-          </a>
-          <a href="#">
-          <div>Evaluación y Seguimiento</div>
-        </a>
-        <a href="#">
-          <div>Evaluación Reporte Final</div>
-        </a>
-          <a href="#">
-          <div>Programador de Asesorias</div>
-        </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="desplegable-body">
-        
-      <div class="desplegable2">
-        <input type="text" class="textBoxDesplegable" 
-        placeholder="Tablero Coordinador" readonly>
-
-        <div class="option">
-
-          <a href="#">
-            <div>Crear Dictamen</div>
-          </a>
-      
-        </div>
-      </div>
-    </div>
-
-  </div>
-      
-
-
-    
-
-
-
-
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -208,20 +145,7 @@ if(!empty($_SESSION['id_profesor'])){?>
       }
       list.forEach((item) =>
         item.addEventListener('mouseover',activeLink));
-
-        //Activar menus desplegables
-        let desplegable = document.querySelector('.desplegable');
-        desplegable.onclick = function(){
-        desplegable.classList.toggle('active');
-      }
-
-      let desplegable2 = document.querySelector('.desplegable2');
-        desplegable2.onclick = function(){
-        desplegable2.classList.toggle('active');
-      }
       </script>  
-
-      
     </body>
     </html>
 <?php }?>

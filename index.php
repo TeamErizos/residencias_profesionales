@@ -73,6 +73,23 @@ session_start();
     }
     elseif(!empty($_SESSION['id_cuenta'])){
     // Acción si la sesión 'id_cuenta' tiene un valor
+
+    // TODO: Ambos se dirigen al Dashboard de Departamento Academico, revisar por qué
+
+        if($_SESSION['user_rol'] = 4){
+
+            // SI es departamento academico
+
+            header("Location: lib/content/jefe_dep/dep_academico/PanelDeControlJefeDepartamento-Menu.php");
+            exit(); 
+            
+        }elseif ($_SESSION['user_rol'] = 5){
+
+            // SI es gestión y vinculación
+            header("Location: lib/content/jefe_dep/dep_vinculacion/PanelDeControlGestionYVinculacion-Menu.php");
+            exit(); 
+            
+        }
     }
 
     // Funcion para determinar el tipo de rol

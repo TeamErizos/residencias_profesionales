@@ -67,8 +67,8 @@ recuperarDatosEmpresa: Esta función recupera los datos de la empresa a partir d
   // Crear instancia del alumno
   $alumno = new Alumno($conn);
 
-  $_SESSION['no_control'] = "20390292"; // Este esta ahora en la base de datos
-  $_SESSION['nombre_proyecto'] = "Proyecto X"; // Este será pasado mediante una lista
+  // $_SESSION['no_control'] = "20390292"; // Este esta ahora en la base de datos
+  $_SESSION['nombre_proyecto'] = $_GET['pro']; // Este será pasado mediante una lista
 
   // datos del alumno y regresar el id de carrera
   $id_carrera = $alumno->recuperarDatosAlumno($_SESSION['no_control']);
@@ -91,6 +91,17 @@ recuperarDatosEmpresa: Esta función recupera los datos de la empresa a partir d
 
 
 ?>
+
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device=width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_banco_solicitud.css">
+    <title>Banco de Proyectos</title>
+</head>
 
 <form action="resources/guardar_solicitud.php" method="post" enctype="multipart/form-data">
     <!-- Datos del Proyecto -->
