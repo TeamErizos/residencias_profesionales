@@ -23,7 +23,7 @@ if (isset($_POST['nombre'])) {
     // Establecer el tiempo de vida de la cookie (en este caso, 30 días)
     $tiempo_de_vida = time() + (30 * 24 * 60 * 60);
   
-    // Guardar el valor del nombre seleccionado en una cookie
+    // Guardar el valor del id del profe en una cookie
     setcookie("clave_profesor", $id_profesor, $tiempo_de_vida);
 
     // Guardar el valor del nombre seleccionado en una cookie
@@ -108,7 +108,7 @@ if (isset($_POST['nombre'])) {
                 <!-- Mostrar el valor de la cookie si existe -->
                 <?php if (isset($_COOKIE['nombre_seleccionado'])) { ?>
                     <label for="nombreAsesorInterno">Nombre del Asesor Interno:</label>
-                    <input type="text" name="NombreAsesorInterno" value="<?php echo $nombre_seleccionado;?>"
+                    <input type="text" name="NombreAsesorInterno" value="<?php echo $_COOKIE['nombre_seleccionado'];?>"
                         disabled>    
                 <?php } ?>
 

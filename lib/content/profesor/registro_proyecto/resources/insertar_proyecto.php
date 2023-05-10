@@ -60,6 +60,14 @@ $proyecto = new Proyecto($conn);
         // Insertar asesores en AsesoresXProyecto
         $proyecto->insertarAsesoresEnProyecto($id_proyecto, $id_profesor, $nombreExterno, $ape1Externo, $ape2Externo, $puestoExterno);
 
+
+        // Finalizar todas las cookies abiertas
+        // Not necessary
+
+        // Si todo el proceso acabo correctamete, regresar al dashboard
+        header("Location: ../../PanelDeControlProfesor-Menu.php");
+        exit(); 
+
     }
 
 ?>
