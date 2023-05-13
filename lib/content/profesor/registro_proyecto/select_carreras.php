@@ -79,6 +79,17 @@
     <input type="checkbox" name="carrera[]" value="174429" id="ITIC">
     <label for="ITIC">Ingeniería en Tecnologías de la Información y Comunicaciones</label><br>
 
+    <?php
+
+        // Establecer una cookie con el mismo nombre y un tiempo de expiración pasado
+        setcookie('nombre_seleccionado', '', time() - 3600);
+        setcookie('clave_profesor', '', time() - 3600);
+        // La cookie se eliminará del navegador cuando se reciba la respuesta del servidor
+        // Esto con el objetivo de limpiar el nombre y el id del profesor
+
+
+    ?>
+
     <div class="button-container">
         <button type="submit" value="Enviar">Enviar</button>
     </div>

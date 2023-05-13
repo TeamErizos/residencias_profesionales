@@ -95,7 +95,7 @@ if(!empty($_SESSION['id_profesor'])){?>
     </div>
   </a>
 
-  <a href="registro_proyecto/select_carreras.html">
+  <a href="registro_proyecto/select_carreras.php">
     <div class="card">
       <div>
         <div class="numbers"></div>

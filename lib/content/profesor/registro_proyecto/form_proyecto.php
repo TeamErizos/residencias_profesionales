@@ -28,6 +28,10 @@ if (isset($_POST['nombre'])) {
 
     // Guardar el valor del nombre seleccionado en una cookie
     setcookie("nombre_seleccionado", $nombre_seleccionado, $tiempo_de_vida);
+
+    // Redireccionar a otra página
+    header('Location: form_proyecto.php');
+    exit();
   }
 
 
