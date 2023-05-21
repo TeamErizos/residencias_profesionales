@@ -51,8 +51,8 @@ $asesorias = $query_asesorias->fetchAll(PDO::FETCH_ASSOC);
                         <?php if ($row['estado_asesoria'] != "Realizada"): ?>
                             <td><a href='asesoria_maestros_modificacion.php?no_control=<?= $no_control ?>&ID_Asesorias=<?= $row['id_asesoria'] ?>'>Modificar</a></td>
                             <td><a href="asesoria_maestros_final.php?ID_Asesoria=<?= $row['id_asesoria'] ?>&no_control=<?= $no_control ?>" class="Asesorias--Update">Solucionar</a></td>
-                        <?php endif; ?>
-                        <td><a href="delete_asesoria.php?id_asesoria=<?= $row['id_asesoria'] ?>&no_control=<?= $no_control ?>" class="Tabla de Asesorias--Delete">Eliminar</a></td>
+                            <td><a href="delete_asesoria.php?id_asesoria=<?= $row['id_asesoria'] ?>&no_control=<?= $no_control ?>" class="Tabla de Asesorias--Delete">Eliminar</a></td>
+                        <?php endif; ?>   
                     </tr>
                 <?php endforeach; ?>
             </tbody>
