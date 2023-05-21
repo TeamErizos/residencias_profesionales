@@ -2,6 +2,7 @@
 include("../conectAWS.php");
 
 $ID_Asesoria = $_POST["ID_Asesorias"];
+$no_control = $_POST["no_control"];
 $Estado_Asesoria = $_POST['Estado_Asesorias'];
 $Tipo_Asesoria = $_POST['Tipo_Asesorias'];
 $Lugar_Asesoria = $_POST['Lugar_Asesorias'];
@@ -11,20 +12,19 @@ $Solucion_Asesoria = $_POST['Solucion_Asesorias'];
 $FK_ID_P_X_A = $_POST['FK_ID_P_X_A'];
 $Num_Asesoria = $_POST['Num_Asesoria'];
 
-$sql_update = "UPDATE asesoria SET estado_asesoria = :estado, tipo_asesoria = :tipo, lugar_asesoria = :lugar, temas_asesoria = :temas, fecha_asesoria = :fecha, solucion_asesoria = :solucion, fk_id_p_x_a = :fk_id_p_x_a, num_asesoria = :num_asesoria WHERE id_asesoria = :id";
+$sql_update = "UPDATE asesoria SET estado_asesoria = :Estado_Asesoria, tipo_asesoria = :Tipo_Asesoria, lugar_asesoria = :Lugar_Asesoria, temas_asesoria = :Temas_Asesoria, fecha_asesoria = :Fecha_Asesoria, solucion_asesoria = :Solucion_Asesoria, fk_id_p_x_a = :FK_ID_P_X_A, num_asesoria = :Num_Asesoria WHERE id_asesoria = :ID_Asesoria";
 $query_update = $conn->prepare($sql_update);
-$query_update->bindParam(':estado', $Estado_Asesoria);
-$query_update->bindParam(':tipo', $Tipo_Asesoria);
-$query_update->bindParam(':lugar', $Lugar_Asesoria);
-$query_update->bindParam(':temas', $Temas_Asesoria);
-$query_update->bindParam(':fecha', $Fecha_Asesoria);
-$query_update->bindParam(':solucion', $Solucion_Asesoria);
-$query_update->bindParam(':fk_id_p_x_a', $FK_ID_P_X_A);
-$query_update->bindParam(':num_asesoria', $Num_Asesoria);
-$query_update->bindParam(':id', $ID_Asesoria);
+$query_update->bindParam(':Estado_Asesoria', $Estado_Asesoria);
+$query_update->bindParam(':Tipo_Asesoria', $Tipo_Asesoria);
+$query_update->bindParam(':Lugar_Asesoria', $Lugar_Asesoria);
+$query_update->bindParam(':Temas_Asesoria', $Temas_Asesoria);
+$query_update->bindParam(':Fecha_Asesoria', $Fecha_Asesoria);
+$query_update->bindParam(':Solucion_Asesoria', $Solucion_Asesoria, PDO::PARAM_STR); // Especificar el tipo de dato como cadena
+$query_update->bindParam(':FK_ID_P_X_A', $FK_ID_P_X_A);
+$query_update->bindParam(':Num_Asesoria', $Num_Asesoria);
+$query_update->bindParam(':ID_Asesoria', $ID_Asesoria);
 
 if ($query_update->execute()) {
-    $no_control = $_POST['no_control'] ?? '';
     $redirectUrl = "asesorias_mastros_selecion.php?no_control=$no_control";
     redirectTo($redirectUrl);
 } else {
