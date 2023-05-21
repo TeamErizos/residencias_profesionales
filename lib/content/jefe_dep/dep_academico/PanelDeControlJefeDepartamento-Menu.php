@@ -82,7 +82,7 @@ if(!empty($_SESSION['id_cuenta'])){?>
       <!-- tarjetas -->
       <!-- tarjetas -->
 <div class="cardBox">
-  <a href="#">
+  <a href="comision_asesor/lista_proyecto_asesor.php">
     <div class="card">
       <div>
         <div class="numbers"></div>

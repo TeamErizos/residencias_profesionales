@@ -126,7 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $asesor->deleteFiles($id_proyecto);
 
     // Redirigir a la pagina de inicio
-    $asesor->descargarAnteproyecto($id_proyecto);
+    $asesor->descargarComisionAsesor($id_proyecto);
 
     // Si todo el proceso acabo correctamete, regresar al dashboard
     header("Location: ../../PanelDeControlJefeDepartamento-Menu.php");

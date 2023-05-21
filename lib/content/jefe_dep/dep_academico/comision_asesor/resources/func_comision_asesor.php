@@ -499,7 +499,7 @@ class Asesor {
     }
 
       // Descargar la comision en el asesor (en el servidor)
-      function descargarAnteproyecto($id_proyecto) {
+      function descargarComisionAsesor($id_proyecto) {
       
         // Preparar la consulta para extraer el anteproyecto
         $query = "SELECT file_asesor FROM asesor_x_proyecto WHERE id_proyecto = :proyecto_id";

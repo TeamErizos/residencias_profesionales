@@ -107,7 +107,7 @@ if(!empty($_SESSION['id_profesor'])){?>
     </div>
   </a>
 
-  <a href="#">
+  <a href="revision_solicitud/lista_solicitudes_pendientes.php">
     <div class="card">
       <div>
         <div class="numbers"></div>
