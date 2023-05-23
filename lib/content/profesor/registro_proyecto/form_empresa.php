@@ -1,16 +1,6 @@
 <!--Incluir conexion a la Base de Datos y Query para mostrar los datos de la tabla-->
 
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device=width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_general_forms.css">
-    <title>Formulario - Empresas</title>
-</head>
-
-<body>
+<?php include("../view/header.php"); ?>
     <!--Apertura de Clase - Formulario de Empresa-->
     <div class="containerForm">
         <form action="resources/insertar_empresa.php" method="post">
@@ -122,7 +112,4 @@
 
     </div>
 
-
-</body>
-
-</html>
+<?php include("../view/footer.php"); ?>

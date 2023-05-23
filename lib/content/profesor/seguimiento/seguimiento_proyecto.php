@@ -1,4 +1,5 @@
 <?php
+ include ("../view/header.php");
  require "../../../login/conexion/conectAWS.php";
 
 // Obtener todas las carreras disponibles en la base de datos
@@ -7,18 +8,6 @@ $query_carreras = $conn->query($sql_carreras);
 $carreras = $query_carreras->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device=width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_list_projects.css">
-    <title>Banco de Proyectos</title>
-</head>
-
-
-<body>
     <h1>Tabla de Seguimiento de Proyectos</h1>
 
     <!-- Tabla de Proyectos -->
@@ -76,6 +65,5 @@ $query = $conn->query($sql);
             </tbody>
         </table>
     </div>
-</body>
-
-</html>
+    
+<?php include ("../view/footer.php"); ?>

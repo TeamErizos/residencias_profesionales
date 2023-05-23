@@ -57,8 +57,9 @@ recuperarDatosEmpresa: Esta función recupera los datos de la empresa a partir d
 
 */
 
-  // Iniciar la sesion
-  session_start();
+  // Insertar el dashboard
+  include("../view/header.php");
+  //session_start();
 
   // llamar la conexión
   require "../../../login/conexion/conectAWS.php";
@@ -337,4 +338,7 @@ recuperarDatosEmpresa: Esta función recupera los datos de la empresa a partir d
         <input type="submit" value="Submit">
       </div>
 </form>      
+
+
+<?php   include("../view/footer.php"); ?>
     

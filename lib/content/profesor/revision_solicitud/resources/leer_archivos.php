@@ -1,5 +1,7 @@
 <?php
 
+include("../../view/header.php");
+
 // Dependiendo el alumno a revisar
 // Se podrán ver sus 3 archivos subidos en su registro de tabla [Documentos]
 // se almacenarán de manera temporal en carpetas, y cuando se acabe la revisión
@@ -47,13 +49,6 @@ if (isset($_GET['id'])) {
 // 3 botones para mostrar los archivos en pantalla
 // ->>>
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Abrir archivo PDF en pestaña emergente</title>
-</head>
-<body>
     <button onclick="abrirPDF('<?php echo $rutaConstancia; ?>')">Constancia de Residencia Profesional </button>
     <button onclick="abrirPDF('<?php echo $rutaAnteproyecto; ?>')">Anteproyecto de Residencia Profesional </button>
     <button onclick="abrirPDF('<?php echo $rutaSolicitud; ?>')">Solicitud de Participación del Alumno </button>
@@ -90,6 +85,5 @@ if (isset($_GET['id'])) {
             window.location.href = 'solicitud_aceptada.php?id=' + id;
         }
     </script>
-</body>
-</html>
 
+<?php include("../../view/footer.php"); ?>

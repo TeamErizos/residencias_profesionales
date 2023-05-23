@@ -1,0 +1,188 @@
+/* Colapsable */
+
+/* Contenedor del desplegable */
+.desplegableBox {
+	display: flex;
+    grid-gap: 30px;
+	padding-left: 20px;
+}
+
+/* Cuerpo del desplegable */
+.desplegable-body {
+	display: flex;
+	justify-content: space-around;
+	/*min-height: 100vh;*/
+	background-color: var(--white);
+}
+
+/* Estilo del desplegable */
+.desplegable {
+	position: relative;
+	margin-top: 100px;
+	width: 300px;
+	height: 55px;
+}
+
+.desplegable2 {
+	position: relative;
+	margin-top: 100px;
+	width: 300px;
+	height: 55px;
+}
+
+/* Pseudo-elemento antes del desplegable */
+.desplegable::before {
+	content: '';
+	position: absolute;
+	right: 20px;
+	top: 15px;
+	/* Aquí se está repitiendo 'right' y 'top', eliminar una de las dos líneas */
+	right: 20px;
+	top: 15px;
+	z-index: 10000;
+	width: 8px;
+	height: 8px;
+	border: 2px solid #333;
+	border-top: 2px solid #ffff;
+	border-right: 2px solid #ffff;
+	transform: rotate(-45deg);
+	transition: 0.5s;
+	pointer-events: none;
+}
+
+.desplegable2::before {
+	content: '';
+	position: absolute;
+	right: 20px;
+	top: 15px;
+	/* Aquí se está repitiendo 'right' y 'top', eliminar una de las dos líneas */
+	right: 20px;
+	top: 15px;
+	z-index: 10000;
+	width: 8px;
+	height: 8px;
+	border: 2px solid #333;
+	border-top: 2px solid #ffff;
+	border-right: 2px solid #ffff;
+	transform: rotate(-45deg);
+	transition: 0.5s;
+	pointer-events: none;
+}
+
+/* Estado activo del desplegable */
+.desplegable.active::before {
+	top: 22px;
+	transform: rotate(-225deg);
+}
+
+.desplegable2.active::before {
+	top: 22px;
+	transform: rotate(-225deg);
+}
+
+input {
+	color: var(--black1);
+}
+
+/* Estilo del input dentro del desplegable */
+.desplegable input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	background: var(--white);
+	border: none;
+	outline: none;
+	box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+	padding: 12px 20px;
+	border-radius: 10px;
+	/* Estilo del texto */
+	color: var(--black1);
+}
+
+.desplegable2 input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	background: var(--white);
+	border: none;
+	outline: none;
+	box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+	padding: 12px 20px;
+	border-radius: 10px;
+	/* Estilo del texto */
+}
+
+/* Estilo del placeholder del input */
+.textBoxDesplegable::placeholder {
+	color: black;
+	font-size: 1.5em;
+}
+
+/* Opciones del desplegable */
+.desplegable .option {
+	position: absolute;
+	top: 70px;
+	width: 100%;
+	background: #fff;
+	box-shadow: 0 30px 30px rgba(0, 0, 0, 0.05);
+	border-radius: 10px;
+	overflow: hidden;
+	display: none; /* Para hacer visible las opciones */
+	color: #222;
+}
+
+.desplegable2 .option {
+	position: absolute;
+	top: 70px;
+	width: 100%;
+	background: #fff;
+	box-shadow: 0 30px 30px rgba(0, 0, 0, 0.05);
+	border-radius: 10px;
+	overflow: hidden;
+	display: none; /* Para hacer visible las opciones */
+	color: #222;
+}
+
+/* Estado activo de las opciones */
+.desplegable.active .option {
+	display: block;
+}
+
+.desplegable2.active .option {
+	display: block;
+}
+
+/* Estilo de las opciones */
+.desplegable .option div {
+	padding: 12px 20px;
+	cursor: pointer;
+    color: inherit;
+}
+
+.desplegable2 .option div {
+	padding: 12px 20px;
+	cursor: pointer;
+    color: inherit;
+}
+
+/* Estilo de las opciones al pasar el cursor */
+.desplegable .option div:hover {
+	background: var(--blue);
+	color: var(--white);
+}
+
+.desplegable2 .option div:hover {
+	background: var(--blue);
+	color: var(--white);
+}
+
+/* Estilo de los enlaces */
+a {
+	text-decoration: none;
+}

@@ -95,7 +95,7 @@
                 // Recuperar los datos de la solicitud y generar el Formato de Solicitud
 
                 //Cargando template
-                $template = 'solicitud_residencia.docx';
+                $template = '../../../../../pdf/templates/solicitud_residencia.docx';
                 $TBS->LoadTemplate($template, OPENTBS_ALREADY_UTF8);
                 
                 //Escribir Nuevos campos

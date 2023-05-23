@@ -1,5 +1,5 @@
-
 <?php 
+include("../view/header.php");
 
 // Incluir el archivo que contiene la clase Proyecto & conexión
 require 'resources/funciones_proyecto.php';
@@ -34,45 +34,30 @@ if (isset($_POST['nombre'])) {
     exit();
   }
 
-
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device=width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_general_forms.css">
-    <title>Formulario - Proyectos</title>
-</head>
-
-<body>
-
-    <div class="containerForm">
+      <div class="containerForm">
         <form action="resources/insertar_proyecto.php" method="post">
             <h2>Proyectos</h2>
             <div class="content">
                 
                 <div class="input-box">
                     <label for="proyecto">Nombre del Proyecto:</label>
-                    <input type="text" maxlength="255" placeholder="¿Cómo se llama el proyecto?" name="NombreProyecto" required>
+                    <input type="text" placeholder="¿Cómo se llama el proyecto?" name="NombreProyecto" required>
                 </div>
 
                 <div class="input-box">
                     <label for="objetivo">Objetivo General:</label>
-                    <input type="text" maxlength="255" placeholder="¿Cuál es la iniciativa?" name="ObjetivoGeneral" required>
+                    <input type="text" placeholder="¿Cuál es la iniciativa?" name="ObjetivoGeneral" required>
                 </div>
 
                 <div class="input-box">
                     <label for="descProyecto">Descripción del Proyecto:</label>
-                    <input type="text" maxlength="255" placeholder="¿De qué trata el proyecto?" name="DescripcionProyecto" required>
+                    <input type="text" placeholder="¿De qué trata el proyecto?" name="DescripcionProyecto" required>
                 </div>
 
                 <div class="input-box">
                     <label for="impProyecto">Impacto del Proyecto:</label>
-                    <input type="text" placeholder="¿Cuál es el resultado esperado?" name="ImpactoProyecto" maxlength="255" required>
+                    <input type="text" placeholder="¿Cuál es el resultado esperado?" name="ImpactoProyecto" required>
                 </div>
                 
                 <div class="input-box">
@@ -128,22 +113,22 @@ if (isset($_POST['nombre'])) {
                     <h3>Datos del Asesor Externo</h3>
                     <div class="input-box">
                     <label for="nombreExterno">Nombre del Asesor Externo</label>
-                    <input type="text" placeholder="requerido" name="nombreExterno" maxlength="20" required>
+                    <input type="text" placeholder="requerido" name="nombreExterno" required>
                 </div>
 
                 <div class="input-box">
                     <label for="ape1Externo">1er Apellido del Asesor Externo</label>
-                    <input type="text" placeholder="requerido" name="ape1Externo" maxlength="20" required>
+                    <input type="text" placeholder="requerido" name="ape1Externo" required>
                 </div>
 
                 <div class="input-box">
                     <label for="ape2Externo">2ndo Apellido del Asesor Externo</label>
-                    <input type="text" placeholder="requerido" name="ape2Externo" maxlength="20" required>
+                    <input type="text" placeholder="requerido" name="ape2Externo" required>
                 </div>
 
                 <div class="input-box">
                     <label for="puestoExterno">Puesto del Asesor Externo</label>
-                    <input type="text" placeholder="requerido" name="puestoExterno" maxlength="20" required>
+                    <input type="text" placeholder="requerido" name="puestoExterno" required>
                 </div>
 
                     <!-- Adicion de busqueda y agregado de Empresa -->
@@ -169,7 +154,7 @@ if (isset($_POST['nombre'])) {
                         <script>
                         function redireccionEmpresa() {
                             // Esta línea redirige a otra página en su sitio
-                            window.location.href = 'form_empresa.html';
+                            window.location.href = 'form_empresa.php';
                         }
                         </script>
 
@@ -191,6 +176,5 @@ if (isset($_POST['nombre'])) {
 
 
     </div>
-</body>
 
-</html>
+<?php include("../view/footer.php"); ?>

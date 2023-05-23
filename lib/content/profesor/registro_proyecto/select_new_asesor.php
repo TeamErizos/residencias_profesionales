@@ -7,6 +7,8 @@
 
 <?php
 
+include("../view/header.php");
+
 // Archivos requeridos
 require "../../../login/conexion/conectAWS.php";
 require "resources/funciones_proyecto.php";
@@ -70,3 +72,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <input type="submit" value="Enviar">
     </form>
+
+<?php include("../view/footer.php"); ?>

@@ -1,20 +1,13 @@
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device=width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_selection.css">
-    <title>Formulario - Carreras</title>
-</head>
+<?php include("../view/header.php");?>
+
 <!-- Condición 
     El usuario que registra debe de seleccionar las 
     carreras de interes para el proyecto
 -->
-<body>
     
-
 <div class="containerForm">
-<form method="post" action="select_asesor.php">
+<form method="post" action="select_new_asesor.php">
 
 <div class="input-checkbox">
 
@@ -82,8 +75,8 @@
     <?php
 
         // Establecer una cookie con el mismo nombre y un tiempo de expiración pasado
-        setcookie('nombre_seleccionado', '', time() - 3600);
-        setcookie('clave_profesor', '', time() - 3600);
+        //setcookie('nombre_seleccionado', '', time() - 3600);
+        //setcookie('clave_profesor', '', time() - 3600);
         // La cookie se eliminará del navegador cuando se reciba la respuesta del servidor
         // Esto con el objetivo de limpiar el nombre y el id del profesor
 
@@ -102,4 +95,5 @@
 
 </form>
 </div>
-</body>
+
+<?php include("../view/footer.php");?>
