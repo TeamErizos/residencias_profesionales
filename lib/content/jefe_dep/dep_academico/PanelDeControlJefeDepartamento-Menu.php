@@ -1,8 +1,5 @@
 <?php include("view/header.php"); ?>
 
-<!-- Corroborar SI existe el rol -->
-<?php echo $_SESSION['user_rol']; ?>
-
       <!-- tarjetas -->
       <!-- tarjetas -->
 <div class="cardBox">

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+/*Todos los estilos del Dashboard*/
 *
 {
 	margin: 0;
@@ -24,6 +25,7 @@ body
 	position: relative;
 	width: 100%;
 }
+/*Es la parte de la navegacion izquierda*/
 .navigation
 {
 	position: fixed;
@@ -34,10 +36,12 @@ body
 	transition: 0.5s;
 	overflow: hidden;
 }
+/*El estado "active" es cuando el menu es contraido*/
 .navigation.active
 {
 	width: 80px;
 }
+/*Ul indica un orden listado*/
 .navigation ul
 {
 	position: absolute;
@@ -45,6 +49,7 @@ body
 	left: 0;
 	width: 100%;
 }
+/*li indica los elementos de la lista*/
 .navigation ul li
 {
 	position: relative;
@@ -53,14 +58,17 @@ body
 	border-top-left-radius:30px;
 	border-bottom-left-radius: 30px;
 }
+/*Aqui se establecen los estilos cuando son seleccionadas las opciones*/
 .navigation ul li:hover,
 .navigation ul li.hovered
 {
 	background: var(--white);
 }
+/*Esta funcion crea la separacion entre "PANEL DE CONTROL" y el boton "Menu"*/
+/*El numero "1" indica sobre que elemento de la lista activara el estilo*/
 .navigation ul li:nth-child(1)
 {
-	margin-bottom: 90px;
+	margin-bottom: 90px;/*Esta vez usamos 90px en lugar de 40px, debido a que el titulo es mas largo*/
 	pointer-events: none;
 }
 .navigation ul li a
@@ -77,6 +85,7 @@ body
 {
 	color:var(--blue);
 }
+/*Estilos para los iconos del menu izquierdo*/
 .navigation ul li a .icon
 {
 	position: relative;
@@ -86,6 +95,7 @@ body
 	line-height: 70px;
 	text-align: center;
 }
+/*Estilo para los iconos de la libreria icon-icons*/
 .navigation ul li a .icon ion-icon
 {
 	font-size: 1.75em;
@@ -101,7 +111,22 @@ body
 	white-space: nowrap;
 
 }
-.info {
+/*Info es la parte del titulo que aparece dentro del dashboard*/
+.info
+{
+	position: relative;
+	display: block;
+	padding: 0 10px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	white-space: nowrap;
+	font-size: 1.3em;
+}
+/*infoTitle se usa cuando el nombre de la izquierda es demasiado largo
+Este estilo hace que se vea de manera correcta*/
+/*Aun puede ser optimizado*/
+.infoTitle {
     position: relative;
     display: block;
     padding: 10px;
@@ -111,9 +136,10 @@ body
     white-space: pre-line;
     font-size: 1.3em;
 	padding-right: 2em;
+	padding-bottom: 4em;
 }
-
-.infoTitle {
+/*InfoTitle2 se usa cuando el texto es aun mas largo*/
+.infoTitle2 {
     position: relative;
     display: block;
     padding: 10px;
@@ -158,6 +184,9 @@ body
 }
 
 /* main */
+/*El main es donde va todo el contenido de la pagina*/
+/*Puede ser ajustado para adaptar el como se ajustaran los contenidos*/
+/*Es preferible crear contenedores dentro del main para ordenar nuevos elementos*/
 .main
 {
 	position: absolute;
@@ -167,11 +196,14 @@ body
 	background: var(--white);
 	transition: 0.5s;
 }
+/*MainActive representa cuando el menu desplegable de la izquierda es activado*/
+/*Se adapta a la pantalla*/
 .main.active
 {
 	width: calc(100% - 80px);
 	left: 80px;
 }
+/*Topbar es la parte superior del main, en donde se encuentra info*/
 .topbar
 {
 	width: 100%;
@@ -181,6 +213,7 @@ body
 	align-items: center;
 	padding: 0 10px;
 }
+/*Son las tres rayas que hacen que se contraiga el menu izquierdo*/
 .toggle
 {
 	position: relative;
@@ -193,6 +226,7 @@ body
 	font-size: 2.5em;
 	cursor: pointer;
 }
+/*Es el div que almacena .info*/
 .titulo
 {
 	position: relative;
@@ -216,6 +250,8 @@ body
 	outline: none;
 	border: 1px solid var(--black2);
 }
+/*Estas son posibles implementaciones*/
+/*Actualmente no estan siento utilizadas*/
 .titulo label ion-icon
 {
 	position: absolute;
@@ -241,13 +277,15 @@ body
 	height: 100%;
 	object-fit: cover;
 }
+/*Cardbox: Es el contenedor de los "card" que son basicamente los botones
+que iran dentro del main*/
 .cardBox
 {
 	position: relative;
 	width: 100%;
 	padding: 20px;
 	display: grid;
-	grid-template-columns: repeat(4,1fr);
+	grid-template-columns: repeat(2,1fr);/* Cambiado a 2 columnas en lugar de 4 */
 	grid-gap: 30px;
 
 }
@@ -265,7 +303,6 @@ body
 	justify-content: space-between;
 	cursor: pointer;
 	box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-	width: 18em;
     align-items: center;
 }
 .cardBox .card .numbers
@@ -275,32 +312,41 @@ body
 	font-size: 2.5em;
 	color: var(--blue);
 }
-.logout-btn { /* Cerrar Sesion */
+
+/*Boton Cerrar Sesion */
+ /*Se necesita encontrar una alternativa para que 
+ se ajuste automaticamente al borde de la pantalla*/
+  /* */
+.logout-btn {
   position: fixed;
-  bottom:-30em;
+  /*bottom: -550px; Indica cuantos pixeles estara por debajo*/
   width: 100%;
   text-align: center;
 }
-
+/*Estilo para el texto de los botones (Cards)*/
 .cardBox .card .cardName
 {
 	color: var(--black2-);
 	font-size: 1.5em;
-	margin-top: 15%;
+	margin-top: 50px;
 }
+/*Lo mismo que el de arriba, pero este hace que los botones con
+nombre .cardName1 tengan un margen diferente
+Este solo aplica estilo a: "PanelDeControlSeguimiento.html*/
 .cardBox .card .cardName1
 {
 	color: var(--black2-);
 	font-size: 1.5em;
 	margin-top: 30px;
 }
+/*Estilo para los contenedores de lo iconos de los botones*/
 .cardBox .card .iconBx
 {
 	font-size: 3.5em;
 	color: var(--black2);
 	margin-top: 30px;
 }
-
+/*Estilo para el estilo al pasar el puntero por encima*/
 .cardBox .card:hover
 {
 	background: var(--blue);
@@ -311,176 +357,10 @@ body
 {
 	color: var(--white);
 }
-.details
-{
-	position: relative;
-	width: 100%;
-	padding: 20px;
-	display: grid;
-	grid-template-columns: 2fr 1fr;
-	grid-gap: 30px;
-	margin-top: 10px;
-}
-.details .recentOrders
-{
-	position: relative;
-	display: grid;
-	min-height: 500px;
-	background: var(--white);
-	padding: 20px;
-	box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-	border-radius: 20px;
-}
-.cardHeader
-{
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-}
-.cardHeader h2
-{
-	font-weight: 600;
-	color: var(--blue);
-}
-.btn
-{
-	position: relative;
-	padding: 5px 10px;
-	background: var(--blue);
-	text-decoration: none;
-	color: var(--white);
-	border-radius: 6px;
-}
-.details table
-{
-	width: 100%;
-	border-collapse: collapse;
-	margin-top: 10px;
-}
-.details table thead td
-{
-	font-weight: 600;
-}
-.details .recentOrders table tr
-{
-	color: var(--black1);
-	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-.details .recentOrders table tr:last-child
-{
-	border-bottom: none;
-}
-.details .recentOrders table tbody tr:hover
-{
-	background: var(--blue);
-	color: var(--white);
-}
-.details .recentOrders table tr td
-{
-	padding: 10px;
-}
-.details .recentOrders table tr td:last-child
-{
-	text-align: end;
-}
-.details .recentOrders table tr td:nth-child(2)
-{
-	text-align: end;
-}
-.details .recentOrders table tr td:nth-child(2)
-{
-	text-align: center;
-}
-.estado.enviado
-{
-	padding: 2px 4px;
-	background: #8de02c;
-	color: var(--white);
-	border-radius: 4px;
-	font-size: 14px;
-	font-weight: 500;
-}
-.estado.pendiente
-{
-	padding: 2px 4px;
-	background: #f9ca3f;
-	color: var(--white);
-	border-radius: 4px;
-	font-size: 14px;
-	font-weight: 500;
-}
-.estado.devolucion
-{
-	padding: 2px 4px;
-	background: #f00;
-	color: var(--white);
-	border-radius: 4px;
-	font-size: 14px;
-	font-weight: 500;
-}
-.estado.procesando
-{
-	padding: 2px 4px;
-	background: #1795ce;
-	color: var(--white);
-	border-radius: 4px;
-	font-size: 14px;
-	font-weight: 500;
-}
-.recentCustomers
-{
-	position: relative;
-	display: grid;
-	min-height: 500px;
-	padding: 20px;
-	background: var(--white);
-	box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-	border-radius: 20px;
-}
-.recentCustomers .imgBx
-{
-	position: relative;
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-	overflow: hidden;
-}
-.recentCustomers .imgBx img
-{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
-.recentCustomers table tr td
-{
-	padding: 12px 10px;
-}
-.recentCustomers table tr td h4
-{
-	font-size: 16px;
-	font-weight: 500;
-	line-height: 1.2em;
-}
-.recentCustomers table tr td h4 span
-{
-	font-size: 14px;
-	color: var(--black2);
-}
-.recentCustomers table tr:hover
-{
-	background: var(--blue);
-	color: var(--white);
-}
-.recentCustomers table tr:hover td h4 span
-{
-	color: var(--white);
-}
 
-
-/* diseño responsivo*/
+/*******************************************************************************************************************************/
+/* Diseño responsivo*/
+/*Solo modificar si se saben las medidas de todos los dispositivos*/
 @media (max-width: 991px)
 {
 	.navigation

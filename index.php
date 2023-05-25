@@ -8,6 +8,9 @@ session_start();
     include "lib/login/conexion/conectAWS.php";
     include "lib/login/conexion/functions.php";
     include "lib/login/conexion/logic.php";
+
+    // Crear instancia de funciones
+    $user = new User($conn);
 ?>
 
 </html>
@@ -26,7 +29,7 @@ session_start();
             <div class="imgBox">
                 <img src="lib/login/logo2.png" alt="Avatar">
             </div>
-            <form action="#" method="POST">
+            <form action="#" method="POST" autocomplete="off">
                 <div class="inputBox">
                     <input type="text" name="username" required>
                     <label for="username">Usuario</label>
@@ -76,14 +79,14 @@ session_start();
 
     // TODO: Ambos se dirigen al Dashboard de Departamento Academico, revisar por qué
 
-        if($_SESSION['user_rol'] = 4){
+        if($user->searchAccount($_SESSION['id_cuenta']) == 4 ){
 
             // SI es departamento academico
 
             header("Location: lib/content/jefe_dep/dep_academico/PanelDeControlJefeDepartamento-Menu.php");
             exit(); 
             
-        }elseif ($_SESSION['user_rol'] = 5){
+        }elseif ($user->searchAccount($_SESSION['id_cuenta']) == 5){
 
             // SI es gestión y vinculación
             header("Location: lib/content/jefe_dep/dep_vinculacion/PanelDeControlGestionYVinculacion-Menu.php");
@@ -91,12 +94,7 @@ session_start();
             
         }
     }
-
-    // Funcion para determinar el tipo de rol
-    // Si de Departamento de Gestión y Vinculación o Departamento Academico
-        
-       
-    ?>
+?>
 
 
 

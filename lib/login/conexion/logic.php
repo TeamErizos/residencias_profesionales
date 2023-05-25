@@ -97,7 +97,7 @@ if (isset($_REQUEST['login'])) {
                 // TODO: Ambos se dirigen al Dashboard de Departamento Academico, revisar por qué
 
 
-                if($temporal_rol = 4 ){
+                if($user->searchAccount($_SESSION['id_cuenta']) == 4 ){
                     $_SESSION['user_rol'] = $temporal_rol;
                     header("Location: lib/content/jefe_dep/dep_academico/PanelDeControlJefeDepartamento-Menu.php");
                     exit();    
@@ -107,7 +107,7 @@ if (isset($_REQUEST['login'])) {
                     exit();    
                     break;*/    
 
-                } else {
+                } elseif ($user->searchAccount($_SESSION['id_cuenta']) == 5 ) {
                     $_SESSION['user_rol'] = $temporal_rol;
                     header("Location: lib/content/jefe_dep/dep_vinculacion/PanelDeControlGestionYVinculacion-Menu.php");
                     exit();    
