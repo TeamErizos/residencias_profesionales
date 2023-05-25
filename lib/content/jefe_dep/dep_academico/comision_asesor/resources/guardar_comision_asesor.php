@@ -1,5 +1,7 @@
 <?php
 
+include("../../view/header.php");
+
 // Recibir la clave del proyecto que necesita una comisión
 // El resto de campos es autocalculado segun el proyecto
 
@@ -117,3 +119,4 @@ TODO: Este form ya recupera todos los valores requeridos, falta crear el guardad
 
 </form>
 
+<?php include("../../view/footer.php");

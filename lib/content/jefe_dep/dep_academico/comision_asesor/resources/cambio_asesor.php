@@ -1,5 +1,7 @@
 <?php
 
+include("../../view/header.php");
+
 // Recibir la clave del proyecto a actualizar el asesor
 // Cambiar el id_asesor_interno
 
@@ -34,3 +36,4 @@ require "func_mostrar_proy_x_alum.php";
     <input type="submit" value="Enviar">
 </form>
 
+<?php include("../../view/footer.php"); ?>

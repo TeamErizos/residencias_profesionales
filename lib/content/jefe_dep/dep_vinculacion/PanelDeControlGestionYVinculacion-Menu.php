@@ -3,7 +3,9 @@
 // Iniciar la sesión
 session_start();
 // Si no hay sesión, entonces...
-if(!empty($_SESSION['id_cuenta'])){?>
+if(!empty($_SESSION['id_cuenta'])){
+echo $_SESSION['user_rol'];  
+  ?>
 <!DOCTYPE html>
 <html>
 <head>

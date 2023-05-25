@@ -1,4 +1,5 @@
 <?php
+include("../view/header.php");
 
 // Una lista que permita mostrar a los proyectos que tienen asesor (profesor)
 // segun el campo [comisionado] de la tabla asesores_proyecto, este campo booleano
@@ -56,3 +57,5 @@ foreach ($proyectos as $key => $proyecto) {
     window.location.href = "resources/cambio_asesor.php?id_proyecto=" + idProyecto;
     }
 </script>
+
+<?php include("../view/footer.php"); ?>

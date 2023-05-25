@@ -91,22 +91,24 @@ if (isset($_REQUEST['login'])) {
                 // El rol servirá para hacer operaciones dentro del sistema
                 // Y mostrar el dashboard del respectivo usuario
 
-                $_SESSION['user_rol'] = $temporal_rol;
-
                 // Rol 4 = Jefe de Departamento Academico
                 // Rol 5 = Dep Gestión Tecnológica y Vinculación
                 
                 // TODO: Ambos se dirigen al Dashboard de Departamento Academico, revisar por qué
 
 
-                if($_SESSION['user_rol'] = 4 ){
-
+                if($temporal_rol = 4 ){
+                    $_SESSION['user_rol'] = $temporal_rol;
                     header("Location: lib/content/jefe_dep/dep_academico/PanelDeControlJefeDepartamento-Menu.php");
                     exit();    
-                    break;                      
+                    break;
+                    
+                    /*header("Location: lib/content/jefe_dep/dep_vinculacion/PanelDeControlGestionYVinculacion-Menu.php");
+                    exit();    
+                    break;*/    
 
-                }elseif ($_SESSION['user_rol'] = 5) {
-
+                } else {
+                    $_SESSION['user_rol'] = $temporal_rol;
                     header("Location: lib/content/jefe_dep/dep_vinculacion/PanelDeControlGestionYVinculacion-Menu.php");
                     exit();    
                     break;                     
