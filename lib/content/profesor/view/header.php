@@ -81,7 +81,7 @@ if (!isset($_SESSION['id_profesor'])) {
         <!-- busqueda -->
         <div class="titulo">
           <label>
-            <span class="info">Menu</span>
+            <span class="info"></span>
           </label>
         </div> 
         <!-- Imagen de usuario -->

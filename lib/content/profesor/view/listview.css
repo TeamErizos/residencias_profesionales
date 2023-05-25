@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
-
+/*Estilo para tablas*/
 * {
   margin: 0;
   padding: 0;
@@ -26,6 +26,13 @@ table{
   background: #fafafa;
   text-align: center;
 }
+.tableContainer{
+  max-height: 89vh;
+  max-width: max-content;
+  padding: 28px;
+  margin: 40px;
+  z-index: 1;
+}
 th,td{
   padding: 10px 15px;
 }
@@ -48,23 +55,13 @@ tr:nth-child(odd){
 body{
   display:block
 }
-.containerForm {
-  
-  max-height: 863px;
-  padding: 28px;
-  margin:  40px;
-  box-shadow: 0 15px 20px #ABB2B9;
-  z-index: 1;
-}
 
-
-h2 {
+h4.tableTitle {
+  display: block;
   font-size: 26px;
   font-weight: 600;
-  text-align: left;
+  text-align: center;
   color: #287bff;
-  padding-bottom: 8px;
-  border-bottom: 1px solid silver;
 }
 
 .content {
