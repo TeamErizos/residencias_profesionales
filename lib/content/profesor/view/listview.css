@@ -20,22 +20,33 @@ table{
   z-index: 2;
   border-collapse: collapse;
   border-spacing: 0;
-  border-radius: 12px 12px 0 0;
+  border-radius: 12px 12px 12px 12px;
   overflow: hidden;
   box-shadow: 0 2px 12px rgba(32,32,32,.3);
   background: #fafafa;
   text-align: center;
 }
+/*CONTENERDOR PARA TODAS LAS TABLAS*/
 .tableContainer{
-  max-height: 89vh;
+  /*max-height: 89vh;
   max-width: max-content;
   padding: 28px;
   margin: 40px;
-  z-index: 1;
+  z-index: 1;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 28px;
 }
+
 th,td{
   padding: 10px 15px;
+  border-bottom-style: groove;
 }
+ul {
+  list-style-type: disc;
+}
+
 
 th{
   background: #287bff;
@@ -140,7 +151,17 @@ input-box input:is(:focus, :valid) {
   margin-top: 20px; 
   display: contents;
 }
-
+/*Estilo para inputs*/
+.button-containerForm input{
+  padding: 5px;
+  font-size: 15px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  background-image: linear-gradient(to right, #287bff, #287bff);
+  grid-gap: 30px;
+}
+/*Estilo para buttons*/
 .button-containerForm button {
   
   padding: 5px;

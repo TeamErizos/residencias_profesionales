@@ -5,8 +5,8 @@
     El usuario que registra debe de seleccionar las 
     carreras de interes para el proyecto
 -->
-    
-<div class="containerForm">
+<h4 class="tableTitle">Registro de Proyectos</h4>
+<div class="containerFormCentered">
 <form method="post" action="select_new_asesor.php">
 
 <div class="input-checkbox">

@@ -61,8 +61,10 @@ $revision = new Revision($conn);
         
     }
 ?>
-    
+    <h4 class="tableTitle">Tabla de Seguimiento de Proyectos</h3>
+    <div class="tableContainer">
     <?php
+    
 
     if (empty($registros)) {
         // El arreglo $registros está vacío, mostrar mensaje de "No hay solicitudes pendientes"
@@ -80,7 +82,7 @@ $revision = new Revision($conn);
             echo '<td>' . $string1 . '</td>';
             echo '<td>' . $string2 . '</td>';
             echo '<td>';
-            echo '<button type="button" onclick="revisar(' . $id . ')">Revisar</button>';
+            echo '<div class="button-containerForm"><button type="button" onclick="revisar(' . $id . ')">Revisar</button></div>';
             echo '</td>';
             echo '</tr>';
         }
@@ -88,7 +90,7 @@ $revision = new Revision($conn);
     }
 
     ?>
-
+</div>
 
     <script>
         function revisar(idSeleccionado) {

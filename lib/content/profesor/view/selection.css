@@ -18,6 +18,26 @@
   box-shadow: 0 15px 20px #ABB2B9;
   z-index: 1;
 }
+/*Para el contenedor centrado*/
+.containerFormCentered {
+  /*max-height: 863px;*/
+  /*max-width: 600px;*/
+  margin:  40px;
+  /*box-shadow: 0 15px 20px #ABB2B9;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 28px;
+}
+.centered-div{
+  height: 40px;
+  padding: 20px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  outline: 10;
+  box-shadow: 8px 8px 6px 5px #ABB2B9;/*Agregado, fue eliminado de containerFormCheckbox*/
+  border-radius: 12px 12px 12px 12px;/*Agregada la sugerencia de redondear los bordes*/
+}
 div{
   display: table;
 }
@@ -106,6 +126,8 @@ input-box input:is(:focus, :valid) {
   border-radius: 5px;
   border: 2px solid #ccc;
   outline: 10;
+  box-shadow: 8px 8px 6px 5px #ABB2B9;/*Agregado, fue eliminado de containerFormCheckbox*/
+  border-radius: 12px 12px 12px 12px;/*Agregada la sugerencia de redondear los bordes*/
 }
 .input-checkbox label{
   padding-left: 5px;

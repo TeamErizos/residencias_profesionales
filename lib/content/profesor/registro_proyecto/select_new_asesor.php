@@ -45,8 +45,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         setcookie("id_carreras", $nombres_carreras_serializados, $tiempo_de_vida);
 
 ?>
-    
+    <h4 class="tableTitle">Seleccione el nuevo Asesor</h4>
+    <div class="containerFormCentered">
+    <div class="centered-div">
     <form action="form_proyecto.php" method="post">
+        <h3>Asesores:</h3>
 
 
 <?php   // Recibo un array con nombres, de ese array debo generar
@@ -69,8 +72,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 ?>
-
-    <input type="submit" value="Enviar">
+    <div class="button-containerForm">
+        <input type="submit" value="Enviar">
+    </div>
     </form>
+    </div>
+    </div>
 
 <?php include("../view/footer.php"); ?>

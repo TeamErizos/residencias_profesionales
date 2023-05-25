@@ -11,7 +11,7 @@ $carreras = $query_carreras->fetchAll(PDO::FETCH_ASSOC);
     <h4 class="tableTitle">Tabla de Seguimiento de Proyectos</h3>
 
     <!-- Tabla de Proyectos -->
-    <div class="Tabla de Proyectos">
+    <div class="tableContainer">
     <?php
 $sql = "SELECT proyecto_x_alumno.id_proyecto, proyecto.nombre_proyecto,
         string_agg(DISTINCT carrera.nom_carrera, '<br> <br>') AS carreras,
@@ -38,7 +38,7 @@ $query = $conn->query($sql);
 
 
         <!-- Display the filtered results in a table -->
-        <div class="tableContainer">
+        
         <table>
             <thead>
                 <tr>
@@ -56,7 +56,11 @@ $query = $conn->query($sql);
                     <tr align="center">
                         <td><?= $row['id_proyecto'] ?></td>
                         <td><?= $row['nombre_proyecto'] ?></td>
-                        <td><?= $row['carreras'] ?></td>
+                        <td>
+                            <li>
+                                <?= $row['carreras'] ?>
+                            </li>
+                        </td>
                         <td><?= $row['nombre_alumno'] ?></td>
                         <td><?= $row['nombre_profesor'] ?></td>
                         <td><?= $row['nombre_asesor_externo'] ?></td>
