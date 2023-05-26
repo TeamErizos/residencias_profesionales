@@ -56,11 +56,7 @@ $query = $conn->query($sql);
                     <tr align="center">
                         <td><?= $row['id_proyecto'] ?></td>
                         <td><?= $row['nombre_proyecto'] ?></td>
-                        <td>
-                            <li>
-                                <?= $row['carreras'] ?>
-                            </li>
-                        </td>
+                        <td><?= $row['carreras'] ?></td>
                         <td><?= $row['nombre_alumno'] ?></td>
                         <td><?= $row['nombre_profesor'] ?></td>
                         <td><?= $row['nombre_asesor_externo'] ?></td>

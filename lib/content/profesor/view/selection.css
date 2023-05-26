@@ -12,32 +12,13 @@
 .containerForm {
   
   max-height: 863px;
-  max-width: 600px;
+  max-width: 600px; 
   padding: 28px;
   margin:  40px;
   box-shadow: 0 15px 20px #ABB2B9;
   z-index: 1;
 }
-/*Para el contenedor centrado*/
-.containerFormCentered {
-  /*max-height: 863px;*/
-  /*max-width: 600px;*/
-  margin:  40px;
-  /*box-shadow: 0 15px 20px #ABB2B9;*/
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 28px;
-}
-.centered-div{
-  height: 40px;
-  padding: 20px;
-  border-radius: 5px;
-  border: 2px solid #ccc;
-  outline: 10;
-  box-shadow: 8px 8px 6px 5px #ABB2B9;/*Agregado, fue eliminado de containerFormCheckbox*/
-  border-radius: 12px 12px 12px 12px;/*Agregada la sugerencia de redondear los bordes*/
-}
+
 div{
   display: table;
 }
@@ -176,7 +157,7 @@ input:checked[type="checkbox"]:before{
   display: contents;
 }
 
-.button-container button {
+.button-containerDenied button {
   
   margin-top: 1.02em;
   padding: 20px;
@@ -185,7 +166,7 @@ input:checked[type="checkbox"]:before{
   color: #fff;
   border: none;
   border-radius: 5px;
-  background-image: linear-gradient(to right, #287bff, #287bff);
+  background-image: linear-gradient(to right, #E06364, #E06364);
   grid-gap: 30px;
   width: 10em;
   margin-bottom: 10px;

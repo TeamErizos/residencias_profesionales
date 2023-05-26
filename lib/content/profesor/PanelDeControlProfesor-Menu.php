@@ -59,20 +59,20 @@
       <div class="desplegable-body">
         
       <div class="desplegable">
-        <input type="text" class="textBoxDesplegable" 
+        <input type="text" class="textBoxDesplegable"     
         placeholder="Tablero Asesor" readonly>
         <div class="option">
           <a href="#">
-            <div>Reportes Parciales</div>
+            <div class="opcionDesplegable">Reportes Parciales</div>
           </a>
           <a href="#">
-          <div>Evaluación y Seguimiento</div>
+          <div class="opcionDesplegable">Evaluación y Seguimiento</div>
         </a>
         <a href="#">
-          <div>Evaluación Reporte Final</div>
+          <div class="opcionDesplegable">Evaluación Reporte Final</div>
         </a>
           <a href="#">
-          <div>Programador de Asesorias</div>
+          <div class="opcionDesplegable">Programador de Asesorias</div>
         </a>
         </div>
       </div>
@@ -87,7 +87,7 @@
         <div class="option">
 
           <a href="#">
-            <div>Crear Dictamen</div>
+            <div class="opcionDesplegable">Crear Dictamen</div>
           </a>
       
         </div>

@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         setcookie("id_carreras", $nombres_carreras_serializados, $tiempo_de_vida);
 
 ?>
-    <h4 class="tableTitle">Seleccione el nuevo Asesor</h4>
+    <h4 class="centeredTitle">Seleccione el nuevo Asesor</h4>
     <div class="containerFormCentered">
     <div class="centered-div">
     <form action="form_proyecto.php" method="post">

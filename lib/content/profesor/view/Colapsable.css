@@ -170,7 +170,7 @@ input {
 	cursor: pointer;
     color: inherit;
 }
-
+	
 /* Estilo de las opciones al pasar el cursor */
 .desplegable .option div:hover {
 	background: var(--blue);
@@ -185,4 +185,9 @@ input {
 /* Estilo de los enlaces */
 a {
 	text-decoration: none;
+}
+
+
+div.opcionDesplegable{
+	display: block;
 }

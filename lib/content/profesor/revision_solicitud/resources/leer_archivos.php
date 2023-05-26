@@ -49,14 +49,57 @@ if (isset($_GET['id'])) {
 // 3 botones para mostrar los archivos en pantalla
 // ->>>
 ?>
-    <button onclick="abrirPDF('<?php echo $rutaConstancia; ?>')">Constancia de Residencia Profesional </button>
-    <button onclick="abrirPDF('<?php echo $rutaAnteproyecto; ?>')">Anteproyecto de Residencia Profesional </button>
-    <button onclick="abrirPDF('<?php echo $rutaSolicitud; ?>')">Solicitud de Participación del Alumno </button>
+
+    <div class="cardBox">
+
+    <a onclick="abrirPDF('<?php echo $rutaConstancia; ?>')">
+    <div class="card">
+      <div>
+        <div class="numbers"></div>
+        <div class="cardName">Constancia de Residencia Profesional</div>
+      </div>
+      <div class="iconBx">
+        <ion-icon name="document-outline"></ion-icon>
+      </div>
+    </div>
+  </a>
+
+  <a onclick="abrirPDF('<?php echo $rutaAnteproyecto; ?>')">
+    <div class="card">
+      <div>
+        <div class="numbers"></div>
+        <div class="cardName">Anteproyecto de Residencia Profesional</div>
+      </div>
+      <div class="iconBx">
+        <ion-icon name="document-outline"></ion-icon>
+      </div>
+    </div>
+  </a>
+
+  <a onclick="abrirPDF('<?php echo $rutaSolicitud; ?>')">
+    <div class="card">
+      <div>
+        <div class="numbers"></div>
+        <div class="cardName">Solicitud de Participación del Alumno</div>
+      </div>
+      <div class="iconBx">
+        <ion-icon name="document-outline"></ion-icon>
+      </div>
+    </div>
+  </a>
+  </div>
+    
 
     <!-- TODO: DOS BOTONES, UNO PARA ACEPTAR Y UNO PARA RECHAZAR -->
+    <div class="cardBox2fr">
+            <div class="button-containerDenied">
+                <button onclick="denegar('<?php echo $idSeleccionado; ?>')">RECHAZAR SOLICITUD</button>
+            </div>
+            <div class="button-containerApprove">
+                <button onclick="aceptar('<?php echo $idSeleccionado; ?>')">ACEPTAR SOLICITUD</button>
+            </div>
 
-    <button onclick="denegar('<?php echo $idSeleccionado; ?>')">RECHAZAR SOLICITUD</button>
-    <button onclick="aceptar('<?php echo $idSeleccionado; ?>')">ACEPTAR SOLICITUD</button>
+    </div>
 
 
     <script>

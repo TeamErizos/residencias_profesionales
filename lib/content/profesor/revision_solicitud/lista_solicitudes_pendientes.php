@@ -61,7 +61,7 @@ $revision = new Revision($conn);
         
     }
 ?>
-    <h4 class="tableTitle">Tabla de Seguimiento de Proyectos</h3>
+    <h4 class="tableTitle">Solicitudes Pendientes</h3>
     <div class="tableContainer">
     <?php
     
