@@ -88,7 +88,7 @@ if (!isset($_SESSION['no_control'])) {
         <!-- busqueda -->
         <div class="titulo">
           <label>
-            <span class="info">Menu</span>
+            <span class="info"></span><!-- Fué elminado el texto que decia "Menu" -->
           </label>
         </div> 
         <!-- Imagen de usuario -->

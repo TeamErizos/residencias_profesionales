@@ -17,14 +17,14 @@ $carreras = $query_carreras->fetchAll(PDO::FETCH_ASSOC);
 
 </br>
 
-    <h3>Filtros</h3>
+    <h3>Filtro</h3>
 
 </br>
 
     <div class="Filtro_Proyectos">
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
             <b> Carrera: </b>
-            <select name="Carrera">
+            <select class="styled-select" name="Carrera">
                 <option value="">Todos</option>
                 <?php foreach ($carreras as $carrera) { ?>
                     <option value="<?= $carrera['id_carrera'] ?>"><?= $carrera['nom_carrera'] ?></option>

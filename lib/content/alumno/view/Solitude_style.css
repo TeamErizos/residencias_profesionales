@@ -50,10 +50,10 @@ body{
 }
 .containerForm {
   
-  max-height: 863px;
-  padding: 28px;
+  /*max-height: 863px;*/
+  /*padding: 28px;*/
   margin:  40px;
-  box-shadow: 0 15px 20px #ABB2B9;
+  /*box-shadow: 0 15px 20px #ABB2B9;*/
   z-index: 1;
 }
 
@@ -64,7 +64,7 @@ h2 {
   text-align: left;
   color: #287bff;
   padding-bottom: 8px;
-  border-bottom: 1px solid silver;
+  /*border-bottom: 1px solid silver;*/
 }
 
 .content {
@@ -212,4 +212,36 @@ input-box input:is(:focus, :valid) {
   .input-box:nth-child(2n) {
     justify-content: space-between;
   }
+}
+
+/*Estilo para el select box*/
+.styled-select {
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+.styled-select, .styled-select select {
+  width: 30vh;
+  height: 2.8vh;
+  }
+select:focus { outline: none; }
+.styled-select select {
+  height: 34px;
+  padding: 5px 0 5px 5px;
+  background: transparent;
+  border: none;
+  /*hide default down arrow in webkit */
+  -webkit-appearance: none; 
+}
+.styled-select option{
+  font-weight: bold;
+}
+
+.fa-sort-desc {
+  position: absolute;
+  top: 0;
+  right: 12px;
+  font-size: 24px;
 }
