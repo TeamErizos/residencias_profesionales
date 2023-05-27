@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <h4 class="centeredTitle">Seleccione el nuevo Asesor</h4>
         <div class="containerFormCentered">
             <div class="centered-div">
-                <form action="form_proyecto.php" method="post">
+                <form class="formContainerCheckbox" action="form_proyecto.php" method="post">
                     <h3>Asesores:</h3>
 
 

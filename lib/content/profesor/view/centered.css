@@ -11,6 +11,11 @@
     align-items: center;
     padding: 28px;
   }
+
+  .formContainerCheckbox {
+    grid-template: repeat(3, 1fr);
+  }
+
   .centered-div{
     height: 40px;
     padding: 20px;
@@ -19,6 +24,8 @@
     outline: 10;
     box-shadow: 8px 8px 6px 5px #ABB2B9;/*Agregado, fue eliminado de containerFormCheckbox*/
     border-radius: 12px 12px 12px 12px;/*Agregada la sugerencia de redondear los bordes*/
+    display: grid;
+    height: auto;
   }
   h4.centeredTitle {
     display: block;
