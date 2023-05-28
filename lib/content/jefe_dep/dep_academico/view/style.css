@@ -329,6 +329,7 @@ que iran dentro del main*/
 	color: var(--black2-);
 	font-size: 1.5em;
 	margin-top: 50px;
+	text-align: center;
 }
 /*Lo mismo que el de arriba, pero este hace que los botones con
 nombre .cardName1 tengan un margen diferente
@@ -353,10 +354,55 @@ Este solo aplica estilo a: "PanelDeControlSeguimiento.html*/
 }
 .cardBox .card:hover .numbers ,
 .cardBox .card:hover .cardName ,
-.cardBox .card:hover .iconBx
+.cardBox .card:hover .iconBx,
+.cardBox .card:hover .contenido
 {
 	color: var(--white);
 }
+
+.cardBox .card:hover .contenido-btn button
+{
+	background-color: #1abc9c;
+}
+
+/*estilos de los botones dentro del recuadro*/
+.contenido-btn {
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+  }
+  
+  .contenido-btn button {
+	margin-right: 10px;
+	padding: 8px 16px;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #fff;
+	background-color: #007bff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+  }
+  
+  .contenido-btn button:hover {
+	background-color: #0056b3;
+  }
+  
+  .contenido-btn button:last-child {
+	margin-right: 0;
+  }
+
+
+/* estilos de los textos dentro del recuadro*/
+
+.contenido {
+	margin-bottom: 10px;
+	padding: 10px;
+	border-radius: 4px;
+  }
+  
+  
 
 /*******************************************************************************************************************************/
 /* Diseño responsivo*/

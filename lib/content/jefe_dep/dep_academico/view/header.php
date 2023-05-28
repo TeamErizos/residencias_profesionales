@@ -14,6 +14,10 @@ if (!isset($_SESSION['id_cuenta'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard </title>
   <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/jefe_dep/dep_academico/view/style.css">
+  <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/jefe_dep/dep_academico/view/centered.css">
+  <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/jefe_dep/dep_academico/view/listview.css">
+  <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/jefe_dep/dep_academico/view/selection.css">
+  <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/jefe_dep/dep_academico/view/forms.css">
 </head>
 <body>
   <div class="container">

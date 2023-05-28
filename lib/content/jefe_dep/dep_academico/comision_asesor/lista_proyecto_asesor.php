@@ -29,33 +29,46 @@ $nombre_proyectos = $proyecto->obtenerNombreProyectos($proyectos);
 $nombre_asesores = $proyecto->obtenerNombreCompletoAsesores($proyectos);
 
 // Imprimir los nombres de los proyectos, los nombres de los asesores y los botones de acción
+
+
+
+echo '<div class="cardBox">';  // box
 foreach ($proyectos as $key => $proyecto) {
   $id_proyecto = $proyecto['id_proyecto'];
   $nombre_proyecto = $nombre_proyectos[$key];
   $nombre_asesor = $nombre_asesores[$key];
 
+  echo '<div class="card">'; // cont
+  echo '<div>';  // 1
+  echo '<div class="cardName">' . $nombre_proyecto . '</div>'; // 3
+  echo '</div>'; // 1
+
+  echo '<div class="contenido">';
   echo "Proyecto: " . $nombre_proyecto . "<br>";
   echo "Asesor: " . $nombre_asesor . "<br>";
-  
-  // Agregar los botones con eventos onclick
+  echo '</div>';
+
+  echo '<div class="contenido-btn">';
   echo "<button onclick='accion1($id_proyecto)'>Crear comisión</button>";
   echo "<button onclick='accion2($id_proyecto)'>Cambiar asesor</button>";
-  
-  echo "<br><br>";
+  echo '</div>';
+  echo '</div>';  // cont
 }
+echo '</div>';  // box
+
 
 ?>
 
 <script>
-    function accion1(idProyecto) {
+  function accion1(idProyecto) {
     // Redirigir a la página para crear la comision del asesor con el ID del proyecto
     window.location.href = "resources/guardar_comision_asesor.php?id_proyecto=" + idProyecto;
-    }
+  }
 
-    function accion2(idProyecto) {
+  function accion2(idProyecto) {
     // Redirigir a la página de para cambiar al asesor con el ID del proyecto
     window.location.href = "resources/cambio_asesor.php?id_proyecto=" + idProyecto;
-    }
+  }
 </script>
 
 <?php include("../view/footer.php"); ?>
