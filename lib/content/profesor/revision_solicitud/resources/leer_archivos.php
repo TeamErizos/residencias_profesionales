@@ -49,7 +49,7 @@ if (isset($_GET['id'])) {
 // 3 botones para mostrar los archivos en pantalla
 // ->>>
 ?>
-
+    <h4 class="tableTitle">Revisión de Solicitud</h4>
     <div class="cardBox">
 
     <a onclick="abrirPDF('<?php echo $rutaConstancia; ?>')">
