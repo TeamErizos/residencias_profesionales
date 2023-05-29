@@ -12,7 +12,7 @@
 .containerForm {
   
   max-height: 863px;
-  max-width: 600px; 
+  /*max-width: 600px; *//*Comentado para evitar que sea muy pequeño el contenedor*/
   padding: 28px;
   margin:  40px;
   box-shadow: 0 15px 20px #ABB2B9;
