@@ -113,27 +113,28 @@ if (isset($_POST['nombre'])) {
                     <h3>Datos del Asesor Externo</h3>
                     <div class="input-box">
                     <label for="nombreExterno">Nombre del Asesor Externo</label>
-                    <input type="text" placeholder="requerido" name="nombreExterno" required>
+                    <input type="text" placeholder="Ingrese el nombre del Asesor Externo" name="nombreExterno" required>
                 </div>
 
                 <div class="input-box">
                     <label for="ape1Externo">1er Apellido del Asesor Externo</label>
-                    <input type="text" placeholder="requerido" name="ape1Externo" required>
+                    <input type="text" placeholder="Ingrese el primer apellido del Asesor Externo" name="ape1Externo" required>
                 </div>
 
                 <div class="input-box">
                     <label for="ape2Externo">2ndo Apellido del Asesor Externo</label>
-                    <input type="text" placeholder="requerido" name="ape2Externo" required>
+                    <input type="text" placeholder="Ingrese el segundo apellido del Asesor Externo" name="ape2Externo" required>
                 </div>
 
                 <div class="input-box">
                     <label for="puestoExterno">Puesto del Asesor Externo</label>
-                    <input type="text" placeholder="requerido" name="puestoExterno" required>
+                    <input type="text" placeholder="Ingrese el puesto del Asesor Externo" name="puestoExterno" required>
                 </div>
 
                     <!-- Adicion de busqueda y agregado de Empresa -->
                     <!-- Crear un dropdown con las opciones de las empresas -->
                     <div class="input-box">
+                    <label for="empresa_seleccionada">Empresa Seleccionada</label>
                     <select name="empresa_seleccionada">
                     <!-- Obtener todas las empresas -->
                     <?php

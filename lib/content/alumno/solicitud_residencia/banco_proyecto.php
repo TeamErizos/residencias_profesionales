@@ -37,9 +37,10 @@ $carreras = $query_carreras->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
 </br>
+</div>
 
     <!-- Tabla de Proyectos -->
-    <div class="Tabla de Proyectos">
+    <div class="tableContainer">
         
         <?php
         // Obtener los valores de los filtros seleccionados
@@ -137,7 +138,7 @@ $carreras = $query_carreras->fetchAll(PDO::FETCH_ASSOC);
         </script>
 
     </div>
-</div>
+
 
 
 <?php include "../view/footer.php"; ?>
