@@ -10,31 +10,45 @@ $query_asesorias = $conn->query($sql_asesorias);
 $asesorias = $query_asesorias->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
+<h4 class="tableTitle">Seleccionar Alumno para dar Asesoria</h2>
+    <div class="tableContainer">
 
-        <div class="Seleccionar_Alumno">
-            <h2>Seleccionar Alumno para dar Asesoria</h2>
-            
-            <table border="1">
-                <thead>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Numero de Control del Alumno</th>
+                    <th>Nombre Completo del Alumno</th>
+                    <th>Nombre del Proyecto</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($asesorias as $row): ?>
                     <tr>
-                        <th>Numero de Control del Alumno</th>
-                        <th>Nombre Completo del Alumno</th>
-                        <th>Nombre del Proyecto</th>
+                        <td>
+                            <?= $row['no_control'] ?>
+                        </td>
+                        <td>
+                            <?= $row['nombre_completo'] ?>
+                        </td>
+                        <td>
+                            <?= $row['nombre_proyecto'] ?>
+                        </td>
+                        <td>
+                            <div class="button-containerForm">
+                                <button class="Evaluar" type="submit">
+                                    <a class="seleccionar" href="asesorias_mastros_selecion.php?no_control=<?= $row['no_control'] ?>"
+                                        class="Asesorias">Selecionar</a>
+                                </button>
+                            </div>
+                        </td>
+
+
                     </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($asesorias as $row): ?>
-                        <tr>
-                            <td><?= $row['no_control'] ?></td>
-                            <td><?= $row['nombre_completo'] ?></td>
-                            <td><?= $row['nombre_proyecto'] ?></td>
-                            <td><a href="asesorias_mastros_selecion.php?no_control=<?= $row['no_control'] ?>" class="Asesorias">Selecionar</a></td>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
 
-                            
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
-
-<?php include("../../view/footer.php"); ?>
+    <?php include("../../view/footer.php"); ?>

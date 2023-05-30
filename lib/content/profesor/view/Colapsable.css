@@ -175,6 +175,7 @@ input {
 .desplegable .option div:hover {
 	background: var(--blue);
 	color: var(--white);
+	width: 100%;
 }
 
 .desplegable2 .option div:hover {

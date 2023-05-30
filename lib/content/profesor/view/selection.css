@@ -98,6 +98,50 @@ input:checked[type="checkbox"]:before{
   width: 10em;
   margin-bottom: 10px;
 }
+.selector-container{
+  height: 40px;
+  padding: 15px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  outline: 10;
+  box-shadow: 8px 8px 6px 5px #ABB2B9;/*Agregado, fue eliminado de containerFormCheckbox*/
+  border-radius: 12px 12px 12px 12px;/*Agregada la sugerencia de redondear los bordes*/
+}
+.containerSelector {
+  /*max-height: 863px;*/
+  /*max-width: 600px;*/
+  margin:  40px;
+  /*box-shadow: 0 15px 20px #ABB2B9;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 28px;
+}
+.inputSelector {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 15px;
+}
+.inputSelector label {
+  width: 95%;
+  color: #287bff;
+  font-weight: bold;
+  margin: 5px 0;
+  text-align: left; /* Agregado para alinear las opciones a la izquierda */
+  height: 3.5vh;/*Fue agregado para que los labels tengan un espacio predeterminado*/
+  text-align: center ;
+  font-size: 1.7vh;
+}
+
+.inputSelector select {
+  height: 40px;
+  width: 95%;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  text-align: left; /* Agregado */
+}
 
 
 

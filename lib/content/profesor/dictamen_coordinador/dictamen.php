@@ -1,5 +1,5 @@
 <?php
-include ("../view/header.php");
+include("../view/header.php");
 // Establish a connection to the PostgreSQL database
 require "../../../login/conexion/conectAWS.php";
 
@@ -25,15 +25,23 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 $conn = null;
 
 ?>
-    <!-- Display the select menu and send the selected value to the second PHP code -->
-    <form action="dictamen_2.php" method="post">
-        <label for="id_carrera">Selecciona una carrera:</label>
-        <select id="id_carrera" name="id_carrera">
-            <?php foreach ($carreras as $carrera): ?>
-                <option value="<?php echo $carrera['id_carrera']; ?>"><?php echo $carrera['nom_carrera']; ?></option>
-            <?php endforeach; ?>
-        </select>
-        <input type="submit" value="Enviar">
-    </form>
-
-<?php include ("../view/footer.php"); ?>
+<h4 class="tableTitle">Seleccione una Carrera para Dictamen</h4>
+<div class="containerSelector">
+    <div class="selector-container">
+        <!-- Display the select menu and send the selected value to the second PHP code -->
+        <form class ="formSelector"action="dictamen_2.php" method="post">
+            <div class="inputSelector">
+            <label for="id_carrera">Selecciona una carrera:</label>
+            <select id="id_carrera" name="id_carrera">
+                <?php foreach ($carreras as $carrera): ?>
+                    <option value="<?php echo $carrera['id_carrera']; ?>"><?php echo $carrera['nom_carrera']; ?></option>
+                <?php endforeach; ?>
+            </select>
+            </div>
+            <div class="button-containerForm">
+            <input type="submit" value="Enviar">
+            </div>
+        </form>
+    </div>
+</div>
+<?php include("../view/footer.php"); ?>
