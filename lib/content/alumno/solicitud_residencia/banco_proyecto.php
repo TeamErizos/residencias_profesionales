@@ -4,6 +4,7 @@
  include "../view/header.php";
  require "../../../login/conexion/conectAWS.php";
 
+
 // Obtener todas las carreras disponibles en la base de datos
 $sql_carreras = "SELECT * FROM carrera";
 $query_carreras = $conn->query($sql_carreras);

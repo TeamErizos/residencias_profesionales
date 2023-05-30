@@ -10,17 +10,18 @@ if (!isset($_SESSION['no_control'])) {
 
 <!DOCTYPE html>
 <html>
-<head>
+<head>  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard </title>
   <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/alumno/view/Panel_style.css">
   <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/alumno/view/FAQstyle.css">
   <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/alumno/view/Solitude_style.css">
-  <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/alumno/view/table.css">
+  <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/alumno/view/formatosSolicitud2.css">
+
 </head>
 <body>
   <div class="container">
-    <div class="navigation">
+    <div class="navigation"> 
       <ul>
         <li>
           <a href="#">
