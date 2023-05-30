@@ -15,7 +15,7 @@
     </div>
   </a>
 
-  <a href="#">
+  <a href="Ev.R.Final/Lista.php">
     <div class="card">
       <div>
         <div class="numbers"></div>

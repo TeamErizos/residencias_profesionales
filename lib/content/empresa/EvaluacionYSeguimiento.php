@@ -3,7 +3,7 @@
       <!-- tarjetas -->
       <!-- tarjetas -->
 <div class="cardBox">
-  <a href="#">
+  <a href="Formato Evaluaciones/ListaP1Ext.php">
     <div class="card">
       <div>
         <div class="numbers"></div>
@@ -15,7 +15,7 @@
     </div>
   </a>
 
-  <a href="#">
+  <a href="Formato Evaluaciones/ListaP2Ext.php">
     <div class="card">
       <div>
         <div class="numbers"></div>

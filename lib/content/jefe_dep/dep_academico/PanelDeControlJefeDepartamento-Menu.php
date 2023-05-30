@@ -15,7 +15,7 @@
     </div>
   </a>
 
-  <a href="#">
+  <a href="comision_revisor/comision_revisor_1.php">
     <div class="card">
       <div>
         <div class="numbers"></div>

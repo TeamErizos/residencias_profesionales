@@ -62,17 +62,14 @@
         <input type="text" class="textBoxDesplegable"     
         placeholder="Tablero Asesor" readonly>
         <div class="option">
-          <a href="#">
-            <div class="opcionDesplegable">Reportes Parciales</div>
-          </a>
-          <a href="#">
-          <div class="opcionDesplegable">Evaluación y Seguimiento</div>
+          <a href="tab_asesor/EvaluacionYSeguimiento.php">
+          <div>Evaluación y Seguimiento</div>
         </a>
-        <a href="#">
-          <div class="opcionDesplegable">Evaluación Reporte Final</div>
+        <a href="tab_asesor/Ev.R.Final/Lista.php">
+          <div>Evaluación Reporte Final</div>
         </a>
-          <a href="#">
-          <div class="opcionDesplegable">Programador de Asesorias</div>
+          <a href="tab_asesor/Asesorias/asesorias_main.php">
+          <div>Programador de Asesorias</div>
         </a>
         </div>
       </div>
@@ -86,7 +83,7 @@
 
         <div class="option">
 
-          <a href="#">
+          <a href="dictamen_coordinador/dictamen.php">
             <div class="opcionDesplegable">Crear Dictamen</div>
           </a>
       

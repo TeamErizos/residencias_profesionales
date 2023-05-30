@@ -29,7 +29,7 @@ if (!isset($_SESSION['id_cuenta'])) {
         </li>
         
         <li class="hovered">
-          <a href="#">
+          <a href="/residencias_profesionales/lib/content/jefe_dep/dep_vinculacion/PanelDeControlGestionYVinculacion-Menu.php">
             <span class="icon"><ion-icon name="grid-outline"></ion-icon></span>
             <span class="title">Menu</span>
           </a>
@@ -47,7 +47,7 @@ if (!isset($_SESSION['id_cuenta'])) {
               // Destruir la sesión
               session_destroy();
               // Redireccionar al usuario
-              header("Location: ../../../../index.php");
+              header("Location: http://localhost/residencias_profesionales/");
               exit();
             }
           ?>
