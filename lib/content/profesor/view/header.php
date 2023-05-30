@@ -18,6 +18,10 @@ if (!isset($_SESSION['id_profesor'])) {
   <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/profesor/view/listview.css">
   <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/profesor/view/forms.css">
   <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/profesor/view/selection.css">
+  
+  <!-- Los estilos de brian están chocando -->
+  <!--<link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/profesor/view/EstiloEvaluacionesDashboard.css">
+  <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/profesor/view/EstiloFormato.css">-->
 
 </head>
 <body>

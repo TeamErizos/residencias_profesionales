@@ -21,7 +21,7 @@
       <!-- tarjetas -->
       <!-- tarjetas -->
 <div class="cardBox">
-  <a href="#">
+  <a href="carta_presentacion/carta_presentacion.php">
     <div class="card">
       <div>
         <div class="numbers"></div>
@@ -33,7 +33,7 @@
     </div>
   </a>
 
-  <a href="#">
+  <a href="convenios/Convenios.php">
     <div class="card">
       <div>
         <div class="numbers"></div>

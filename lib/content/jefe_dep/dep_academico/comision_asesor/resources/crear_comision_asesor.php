@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      $asesor = new Asesor($conn);
 
      //Cargando template
-     $template = 'asignacion_asesor.docx';
+     $template = '../../../../../../pdf/templates/asignacion_asesor.docx';
      $TBS->LoadTemplate($template, OPENTBS_ALREADY_UTF8);
 
      // Insertar datos en el archivo
