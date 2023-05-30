@@ -44,7 +44,7 @@ foreach ($proyectos as $key => $proyecto) {
   echo '</div>'; // 1
 
   echo '<div class="contenido">';
-  echo "Proyecto: " . $nombre_proyecto . "<br>";
+  //echo "Proyecto: " . $nombre_proyecto . "<br>";
   echo "Asesor: " . $nombre_asesor . "<br>";
   echo '</div>';
 
