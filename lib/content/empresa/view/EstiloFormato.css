@@ -329,7 +329,19 @@ tbody tr.hide td img {
     background-color: #F5B041  ;
 }
 
-
+.Evaluar {
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background-color: #287bff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
 thead th:hover {
     color: #6c00bd;
@@ -344,7 +356,7 @@ thead th:hover {
     display: inline-block;
     width: 2rem;
     height: 2rem;
-    background: #fff6 url(images/atras.png) center / 80% no-repeat;
+    background: #fff6 url(/residencias_profesionales/lib/content/profesor/tab_asesor/Ev.R.Final/images/atras.png) center / 80% no-repeat;
     border-radius: 50%;
     transition: .2s ease-in-out;
 }
@@ -353,7 +365,7 @@ thead th:hover {
     display: inline-block;
     width: 2rem;
     height: 2rem;
-    background: #fff6 url(images/adelante.png) center / 80% no-repeat;
+    background: #fff6 url(/residencias_profesionales/lib/content/profesor/tab_asesor/Ev.R.Final/images/adelante.png) center / 80% no-repeat;
     border-radius: 50%;
     transition: .2s ease-in-out;
 }
