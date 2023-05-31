@@ -245,7 +245,35 @@ thead th {
     background-color: #d5d1defe;
     cursor: pointer;
     text-transform: capitalize;
+    background: #287bff;
+    color: #fafafa;
 }
+
+/*
+
+th,td{
+  padding: 10px 15px;
+  border-bottom-style: groove;
+}
+ul {
+  list-style-type: disc;
+}
+
+th{
+  background: #287bff;
+  color: #fafafa;
+  text-transform: uppercase;
+  font-family: 'Ubuntu', sans-serif;
+}
+th:nth-child(odd){
+  background-color: #3683ff;
+}
+tr:nth-child(odd){
+  background-color: #eeeeee;
+}
+
+
+*/
 
 tbody tr:nth-child(even) {
     background-color: #0000000b;
