@@ -31,6 +31,9 @@
 
                 // Iniciar la sesión
                 session_start();
+                
+                // Crear carpetas para temporales
+                createFoldersIfNotExist();
 
                 // PARAMETROS
 
@@ -417,6 +420,17 @@
                             break;
                     }
 
+                }
+
+                // Crear las carpetas si no existen
+                function createFoldersIfNotExist() {
+                    $folders = ['project', 'pdf', 'doc'];
+                
+                    foreach ($folders as $folder) {
+                        if (!is_dir($folder)) {
+                            mkdir($folder);
+                        }
+                    }
                 }
 
     

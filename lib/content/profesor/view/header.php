@@ -19,9 +19,13 @@ if (!isset($_SESSION['id_profesor'])) {
   <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/profesor/view/forms.css">
   <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/profesor/view/selection.css">
   
+  
   <!-- Los estilos de brian están chocando -->
-  <!--<link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/profesor/view/EstiloEvaluacionesDashboard.css">
-  <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/profesor/view/EstiloFormato.css">-->
+  <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/profesor/view/EstiloEvaluacionesDashboard.css">
+  <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/profesor/view/EstiloFormato.css">
+  <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/profesor/view/centered.css">
+
+  <!--  -->
 
 </head>
 <body>
@@ -85,7 +89,7 @@ if (!isset($_SESSION['id_profesor'])) {
         <!-- busqueda -->
         <div class="titulo">
           <label>
-            <span class="info">Menu</span>
+            <span class="info"></span>
           </label>
         </div> 
         <!-- Imagen de usuario -->

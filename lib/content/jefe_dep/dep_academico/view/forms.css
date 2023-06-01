@@ -11,8 +11,9 @@
 
 /* Estilos generales del cuerpo de la página */
 
-body{
-  display:block; /* Agregado */
+body {
+  display: block;
+  /* Agregado */
 }
 
 /* Contenedor del formulario */
@@ -36,7 +37,7 @@ h2 {
   border-bottom: 1px solid silver;
 }
 
-h3{
+h3 {
   font-size: 26px;
   font-weight: 600;
   color: #0061fe;
@@ -53,10 +54,10 @@ h3{
   padding: 20px 0;
 }
 
-.content2{
-    position: fixed;
-    bottom: 0;
-    left: 0;
+.content2 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
 
 /* Estilos de las cajas de entrada */
@@ -77,8 +78,8 @@ h3{
   color: #287bff;
   font-weight: bold;
   margin: 5px 0;
-  text-align: left; /* Agregado para alinear las opciones a la izquierda */
-  height: 3.5vh;/*Fue agregado para que los labels tengan un espacio predeterminado*/
+  text-align: left;
+  /* Agregado para alinear las opciones a la izquierda */
 }
 
 .input-box select {
@@ -88,7 +89,8 @@ h3{
   border-radius: 5px;
   border: 1px solid #ccc;
   outline: none;
-  text-align: left; /* Agregado */
+  text-align: left;
+  /* Agregado */
 }
 
 /* Título del género */
@@ -97,21 +99,33 @@ h3{
   font-size: 16px;
 }
 
-
+.input-box input {
+  height: 40px;
+  width: 95%;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+}
 
 input-box input:is(:focus, :valid) {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
+/* Estilos para los checkboxes (agregado) */
+
+.input-checkbox {
+  height: 40px;
+  width: 95%;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: 10;
+}
 
 /* Contenedor de botones */
 
 .button-container {
-  margin: 0.02em 0;
-  margin-top: 20px;
-  display: contents;
-}
-.button-containerForm {
   margin: 0.02em 0;
   margin-top: 20px;
   display: contents;
@@ -129,80 +143,6 @@ input-box input:is(:focus, :valid) {
   grid-gap: 30px;
   width: 10em;
 }
-.button-containerForm input {
-  margin-top: 1.02em;
-  padding: 20px;
-  display: block;
-  font-size: 20px;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  background-image: linear-gradient(to right, #287bff, #287bff);
-  grid-gap: 30px;
-  width: 10em;
-}
-.button-containerForm button {
-    padding: 10px;
-    font-size: 20px;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    background-image: linear-gradient(to right, #287bff, #287bff);
-    width: 5.7em;
-    cursor: pointer;
-}
-.button-containerForm .buttonLarge {
-  padding: 10px;
-  font-size: 20px;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  background-image: linear-gradient(to right, #287bff, #287bff);
-  width: 5.7em;
-  cursor: pointer;
-  width: 235px;
-}
-.button-container-disabled button {
-  padding: 10px;
-  font-size: 20px;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  background-image: linear-gradient(to right, #808080, #808080);
-  width: 5em;
-}
-.button-container-green button {
-  padding: 10px;
-  font-size: 20px;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  background-image: linear-gradient(to right, #64E687, #64E687);
-  width: 5.7em;
-}
-.button-container-red button {
-  padding: 10px;
-  font-size: 20px;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  background-image: linear-gradient(to right, #E15A46, #E15A46);
-  width: 5em;
-}
-.button-containerLeft{
-  /*max-height: 89vh;
-  max-width: max-content;
-  padding: 28px;
-  margin: 40px;
-  z-index: 1;*/
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  padding: 0px 0px 0px 28px;
-}
-
-
-
 
 .bottom-line {
   display: flex;
@@ -237,13 +177,55 @@ input-box input:is(:focus, :valid) {
   transform: translateY(-1px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
-a.seleccionar {
-	text-decoration: none;
-  color: white;
+
+/*  Form guardar comision académico */
+
+.container-a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
 }
-a.seleccionarBlack {
-	text-decoration: none;
-  color: black;
+
+.formContainer {
+  z-index: 1000;
+  box-shadow: 1px 1px 27px rgba(0,0,0,0.5);
+  max-width: 600px;
+  background-color: #fff;
+  padding: 3em;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.input-box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 32%;
+  padding-bottom: 15px;
+  place-content: space-around;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-box label {
+  width: 95%;
+  font-weight: bold;
+  margin: 5px 0;
+  text-align: left;
+}
+
+.formulario input[type="submit"] {
+  margin-top: 1em;
 }
 
 /* Estilo responsivo */
@@ -252,10 +234,17 @@ a.seleccionarBlack {
   .container {
     min-width: 280px;
   }
+
+  .content {
+    max-height: 380px;
+    overflow: auto;
+  }
+
   .input-box {
     margin-bottom: 12px;
-    width: 100%;  
+    width: 100%;
   }
+
   .input-box:nth-child(2n) {
     justify-content: space-between;
   }

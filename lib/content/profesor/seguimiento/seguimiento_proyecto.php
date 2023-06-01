@@ -8,10 +8,10 @@ $query_carreras = $conn->query($sql_carreras);
 $carreras = $query_carreras->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-    <h1>Tabla de Seguimiento de Proyectos</h1>
+    <h4 class="tableTitle">Tabla de Seguimiento de Proyectos</h3>
 
     <!-- Tabla de Proyectos -->
-    <div class="Tabla de Proyectos">
+    <div class="tableContainer">
     <?php
 $sql = "SELECT proyecto_x_alumno.id_proyecto, proyecto.nombre_proyecto,
         string_agg(DISTINCT carrera.nom_carrera, '<br> <br>') AS carreras,
@@ -38,7 +38,8 @@ $query = $conn->query($sql);
 
 
         <!-- Display the filtered results in a table -->
-        <table border="1">
+        
+        <table>
             <thead>
                 <tr>
                     <th>ID Proyecto</th>

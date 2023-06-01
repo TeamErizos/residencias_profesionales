@@ -39,6 +39,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      $TBS = new clsTinyButStrong; 
      $TBS->Plugin(TBS_INSTALL, OPENTBS_PLUGIN); 
 
+
+     // Crear carpetas si no existen
+     createFoldersIfNotExist();
+
      // Instanciar clase Asesor
      $asesor = new Asesor($conn);
 
@@ -126,7 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $asesor->deleteFiles($id_proyecto);
 
     // Redirigir a la pagina de inicio
-    $asesor->descargarComisionAsesor($id_proyecto);
+    //$asesor->descargarComisionAsesor($id_proyecto);
 
     // Si todo el proceso acabo correctamete, regresar al dashboard
     header("Location: ../../PanelDeControlJefeDepartamento-Menu.php");
@@ -137,6 +141,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 } else {
     echo "No se recibieron datos por POST";
 }
+
+
+    // Crear las carpetas si no existen
+    function createFoldersIfNotExist() {
+        $folders = ['pdf', 'doc'];
+
+        foreach ($folders as $folder) {
+            if (!is_dir($folder)) {
+                mkdir($folder);
+            }
+        }
+    }
 
 
 ?>

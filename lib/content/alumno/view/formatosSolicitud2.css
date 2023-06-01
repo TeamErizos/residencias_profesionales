@@ -97,7 +97,7 @@ section .wave.wave4{
 }
 
 main.table {
-    width: 82vw;
+    width: 167vh;
     height: 85vh;
     background-color: #287bff;
     margin: 1em;
@@ -329,19 +329,7 @@ tbody tr.hide td img {
     background-color: #F5B041  ;
 }
 
-.Evaluar {
-  height: 40px;
-  padding: 0 10px;
-  border-radius: 25px;
-  border: none;
-  outline: none;
-  background-color: #287bff;
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+
 
 thead th:hover {
     color: #6c00bd;
@@ -356,7 +344,7 @@ thead th:hover {
     display: inline-block;
     width: 2rem;
     height: 2rem;
-    background: #fff6 url(/residencias_profesionales/lib/content/profesor/tab_asesor/Ev.R.Final/images/atras.png) center / 80% no-repeat;
+    background: #fff6 url(images/atras.png) center / 80% no-repeat;
     border-radius: 50%;
     transition: .2s ease-in-out;
 }
@@ -365,7 +353,7 @@ thead th:hover {
     display: inline-block;
     width: 2rem;
     height: 2rem;
-    background: #fff6 url(/residencias_profesionales/lib/content/profesor/tab_asesor/Ev.R.Final/images/adelante.png) center / 80% no-repeat;
+    background: #fff6 url(images/adelante.png) center / 80% no-repeat;
     border-radius: 50%;
     transition: .2s ease-in-out;
 }
@@ -412,6 +400,7 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 10px;
     box-sizing: border-box;
     height: inherit;
+    
 
 
 }
@@ -437,7 +426,8 @@ input[type=number]::-webkit-outer-spin-button {
 .input-box {
   display: flex;
   flex-wrap: wrap;
-  width: 50%;
+  
+  width: 100%;
   padding-bottom: 15px;
       place-content: space-around;
 }
@@ -448,7 +438,21 @@ input[type=number]::-webkit-outer-spin-button {
   align-items: center;
 }
 
-
+.enviar {
+  height: 40px;
+  width: 95%;
+  padding: 0 10px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background-color: #287bff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+ 
+}
 
 .input-box label {
   width: 95%;
@@ -475,6 +479,7 @@ input[type=number]::-webkit-outer-spin-button {
   border-radius: 25px;
   border: 1px solid #287bff;
   outline: none;
+  
 }
 
 input-box input:is(:focus, :valid) {
@@ -531,3 +536,6 @@ input-box input:is(:focus, :valid) {
     opacity: 1;
   }
 }
+
+
+

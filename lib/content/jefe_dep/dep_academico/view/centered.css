@@ -1,0 +1,163 @@
+/*Utilizar estos estilos para centrar culquier contenido*/
+/*Actualmente esta siendo usado en: select_new_asesor.php*/
+/*Para el contenedor centrado*/
+.containerFormCentered {
+    /*max-height: 863px;*/
+    /*max-width: 600px;*/
+    margin:  40px;
+    /*box-shadow: 0 15px 20px #ABB2B9;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 28px;
+  }
+
+  .centered-div{
+    height: 40px;
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    outline: 10;
+    box-shadow: 8px 8px 6px 5px #ABB2B9;/*Agregado, fue eliminado de containerFormCheckbox*/
+    border-radius: 12px 12px 12px 12px;/*Agregada la sugerencia de redondear los bordes*/
+    display: grid;
+    height: auto;
+  }
+
+  
+  h4.centeredTitle {
+    display: block;
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+    color: #287bff;
+  }
+  /*--------------------------------------------------------------------------------------*/
+  /*Estilos para los botones dentro de: leer_archivos*/
+   /*Para Aceptar y Denegar*/
+   .cardBox2fr
+{
+	position: relative;
+	width: 100%;
+	padding: 20px;
+	display: grid;
+	grid-template-columns: repeat(2,1fr);/*Cambiado a 3 columnas en lugar de 4*/
+	grid-gap: 30px;
+
+}
+
+  .button-containerDenied{
+    margin: 0.02em 0;
+    margin-top: 20px; 
+    display: contents;
+  }
+  
+  .button-containerDenied button {
+    
+    margin-top: 1.02em;
+    padding: 20px;
+    display: block;
+    font-size: 20px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, #d93636fa, #d93636fa);
+    grid-gap: 30px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .button-containerDenied button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  .button-containerDenied button:hover {
+    background-image: linear-gradient(to right, #ff0000, #ff0000);
+  }
+
+  .button-containerApprove{
+    margin: 0.02em 0;
+    margin-top: 20px; 
+    display: contents;
+  }
+  
+  .button-containerApprove button {
+    
+    margin-top: 1.02em;
+    padding: 20px;
+    display: block;
+    font-size: 20px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, #03b24f, #03b24f);
+    grid-gap: 30px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .button-containerApprove button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  .button-containerApprove button:hover {
+    background-image: linear-gradient(to right, #2fe538, #2fe538);
+  }
+  /*--------------------------------------------------------------------------------------*/
+  /*Aqui mismo estan los estilos del radio button*/
+
+  .container_btn {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  label.custom-label {
+    display: flex;
+    cursor: pointer;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0.375em;
+    
+  }
+  
+  label.custom-label input {
+    position: absolute;
+    left: -9999px;
+  }
+  
+  label.custom-label input:checked + span {
+    background-color: #d6d6e5;
+  }
+  
+  label.custom-label input:checked + span:before {
+    box-shadow: inset 0 0 0 0.4375em #287bff;
+  }
+  
+  label.custom-label span {
+    display: flex;
+    align-items: center;
+    padding: 0.375em 0.75em 0.375em 0.375em;
+    border-radius: 99em;
+    transition: 0.25s ease;
+  }
+  
+  label.custom-label span:hover {
+    background-color: #d6d6e5;
+  }
+  
+  label.custom-label span:before {
+    display: flex;
+    flex-shrink: 0;
+    content: "";
+    background-color: #fff;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    margin-right: 0.375em;
+    transition: 0.25s ease;
+    box-shadow: inset 0 0 0 0.125em #287bff;
+  }
+  
+  .formContainerCheckbox {
+    grid-template-columns: repeat(2,1fr);
+    display: grid;
+  }

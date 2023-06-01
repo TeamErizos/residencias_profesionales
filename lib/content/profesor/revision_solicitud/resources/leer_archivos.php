@@ -32,9 +32,14 @@ if (isset($_GET['id'])) {
     require "funciones_archivos.php";
     require "funciones_revision.php";
 
+
+
 // Instanciar clase y pasar el id del proyecto_x_alumno
     $file = new Files($idSeleccionado, $conn);
     $revision = new Revision($conn);
+
+// Crear carpetas si no existen
+    createFoldersIfNotExist();
 
 // Recuperar los 3 archivos a mostrar  
     // Constancia
@@ -49,14 +54,57 @@ if (isset($_GET['id'])) {
 // 3 botones para mostrar los archivos en pantalla
 // ->>>
 ?>
-    <button onclick="abrirPDF('<?php echo $rutaConstancia; ?>')">Constancia de Residencia Profesional </button>
-    <button onclick="abrirPDF('<?php echo $rutaAnteproyecto; ?>')">Anteproyecto de Residencia Profesional </button>
-    <button onclick="abrirPDF('<?php echo $rutaSolicitud; ?>')">Solicitud de Participación del Alumno </button>
+    <h4 class="tableTitle">Revisión de Solicitud</h4>
+    <div class="cardBox">
+
+    <a onclick="abrirPDF('<?php echo $rutaConstancia; ?>')">
+    <div class="card">
+      <div>
+        <div class="numbers"></div>
+        <div class="cardName">Constancia de Residencia Profesional</div>
+      </div>
+      <div class="iconBx">
+        <ion-icon name="document-outline"></ion-icon>
+      </div>
+    </div>
+  </a>
+
+  <a onclick="abrirPDF('<?php echo $rutaAnteproyecto; ?>')">
+    <div class="card">
+      <div>
+        <div class="numbers"></div>
+        <div class="cardName">Anteproyecto de Residencia Profesional</div>
+      </div>
+      <div class="iconBx">
+        <ion-icon name="document-outline"></ion-icon>
+      </div>
+    </div>
+  </a>
+
+  <a onclick="abrirPDF('<?php echo $rutaSolicitud; ?>')">
+    <div class="card">
+      <div>
+        <div class="numbers"></div>
+        <div class="cardName">Solicitud de Participación del Alumno</div>
+      </div>
+      <div class="iconBx">
+        <ion-icon name="document-outline"></ion-icon>
+      </div>
+    </div>
+  </a>
+  </div>
+    
 
     <!-- TODO: DOS BOTONES, UNO PARA ACEPTAR Y UNO PARA RECHAZAR -->
+    <div class="cardBox2fr">
+            <div class="button-containerDenied">
+                <button onclick="denegar('<?php echo $idSeleccionado; ?>')">RECHAZAR SOLICITUD</button>
+            </div>
+            <div class="button-containerApprove">
+                <button onclick="aceptar('<?php echo $idSeleccionado; ?>')">ACEPTAR SOLICITUD</button>
+            </div>
 
-    <button onclick="denegar('<?php echo $idSeleccionado; ?>')">RECHAZAR SOLICITUD</button>
-    <button onclick="aceptar('<?php echo $idSeleccionado; ?>')">ACEPTAR SOLICITUD</button>
+    </div>
 
 
     <script>
@@ -85,5 +133,17 @@ if (isset($_GET['id'])) {
             window.location.href = 'solicitud_aceptada.php?id=' + id;
         }
     </script>
+
+    <?php // Crear las carpetas si no existen
+                function createFoldersIfNotExist() {
+                    $folders = ['constancia', 'anteproyecto', 'solicitud'];
+                
+                    foreach ($folders as $folder) {
+                        if (!is_dir($folder)) {
+                            mkdir($folder);
+                        }
+                    }
+                }
+      ?>
 
 <?php include("../../view/footer.php"); ?>

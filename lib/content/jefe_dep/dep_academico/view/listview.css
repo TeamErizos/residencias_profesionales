@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
-
+/*Estilo para tablas*/
 * {
   margin: 0;
   padding: 0;
@@ -20,15 +20,33 @@ table{
   z-index: 2;
   border-collapse: collapse;
   border-spacing: 0;
-  border-radius: 12px 12px 0 0;
+  border-radius: 12px 12px 12px 12px;
   overflow: hidden;
   box-shadow: 0 2px 12px rgba(32,32,32,.3);
   background: #fafafa;
   text-align: center;
 }
+/*CONTENERDOR PARA TODAS LAS TABLAS*/
+.tableContainer{
+  /*max-height: 89vh;
+  max-width: max-content;
+  padding: 28px;
+  margin: 40px;
+  z-index: 1;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 28px;
+}
+
 th,td{
   padding: 10px 15px;
+  border-bottom-style: groove;
 }
+ul {
+  list-style-type: disc;
+}
+
 
 th{
   background: #287bff;
@@ -48,24 +66,13 @@ tr:nth-child(odd){
 body{
   display:block
 }
-.containerForm {
-  
-  /*max-height: 863px;*/
-  /*padding: 28px;*/
-  margin:  40px;
-  margin: 40px 40px 0px 40px;
-  /*box-shadow: 0 15px 20px #ABB2B9;*/
-  z-index: 1;
-}
 
-
-h2 {
+h4.tableTitle {
+  display: block;
   font-size: 26px;
   font-weight: 600;
-  text-align: left;
+  text-align: center;
   color: #287bff;
-  padding-bottom: 8px;
-  /*border-bottom: 1px solid silver;*/
 }
 
 .content {
@@ -144,7 +151,17 @@ input-box input:is(:focus, :valid) {
   margin-top: 20px; 
   display: contents;
 }
-
+/*Estilo para inputs*/
+.button-containerForm input{
+  padding: 5px;
+  font-size: 15px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  background-image: linear-gradient(to right, #287bff, #287bff);
+  grid-gap: 30px;
+}
+/*Estilo para buttons*/
 .button-containerForm button {
   
   padding: 5px;
@@ -213,36 +230,4 @@ input-box input:is(:focus, :valid) {
   .input-box:nth-child(2n) {
     justify-content: space-between;
   }
-}
-
-/*Estilo para el select box*/
-.styled-select {
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  border-radius: 3px;
-  overflow: hidden;
-  position: relative;
-}
-.styled-select, .styled-select select {
-  width: 30vh;
-  height: 2.8vh;
-  }
-select:focus { outline: none; }
-.styled-select select {
-  height: 34px;
-  padding: 5px 0 5px 5px;
-  background: transparent;
-  border: none;
-  /*hide default down arrow in webkit */
-  -webkit-appearance: none; 
-}
-.styled-select option{
-  font-weight: bold;
-}
-
-.fa-sort-desc {
-  position: absolute;
-  top: 0;
-  right: 12px;
-  font-size: 24px;
 }

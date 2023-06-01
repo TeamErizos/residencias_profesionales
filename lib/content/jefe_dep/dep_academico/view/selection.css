@@ -8,6 +8,17 @@
 }
 
 
+
+.containerForm {
+  
+  max-height: 863px;
+  max-width: 600px; 
+  padding: 28px;
+  margin:  40px;
+  box-shadow: 0 15px 20px #ABB2B9;
+  z-index: 1;
+}
+
 div{
   display: table;
 }
@@ -17,15 +28,78 @@ h3{
 }
 
 
-/*.input-box:nth-child(2n) {   F
+
+h2 {
+  font-size: 26px;
+  font-weight: 600;
+  text-align: left;
+  color: #287bff;
+  padding-bottom: 8px;
+  border-bottom: 1px solid silver;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px 0;
+  
+  
+}
+.content2{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.input-box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  padding-bottom: 15px;
+}
+
+.input-box:nth-child(2n) {
   justify-content: end;
-}*/  /*Fué comentado para mejorar el ajuste de los formularios*/
+}
 
+.input-box label {
+  width: 95%;
+  color: #287bff;
+  font-weight: bold;
+  margin: 5px 0;
+  text-align: left; /* Agregado para alinear las opciones a la izquierda */
+}
+.input-box select {
+    height: 40px;
+    width: 95%;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    text-align: left; /* Agregado */
+  }
+  
 
-                   /* CHECKBOXES*/
+.gender-title {
+  font-size: 16px;
+}
+
+.input-box input {
+  height: 40px;
+  width: 95%;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+input-box input:is(:focus, :valid) {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
 /* Agregué esto para que este mas pequeño */
 /* necesito un estilo para los checkbox */
-
 .input-checkbox{
   height: 40px;
   width: 100%;
@@ -35,14 +109,6 @@ h3{
   outline: 10;
   box-shadow: 8px 8px 6px 5px #ABB2B9;/*Agregado, fue eliminado de containerFormCheckbox*/
   border-radius: 12px 12px 12px 12px;/*Agregada la sugerencia de redondear los bordes*/
-}
-.input-box input {
-  height: 40px;
-  width: 95%;
-  padding: 0 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  outline: none;
 }
 .input-checkbox label{
   padding-left: 5px;
@@ -84,6 +150,13 @@ input:checked[type="checkbox"]:before{
 
 
 
+
+.button-container {
+  margin: 0.02em 0;
+  margin-top: 20px; 
+  display: contents;
+}
+
 .button-containerDenied button {
   
   margin-top: 1.02em;
@@ -98,54 +171,31 @@ input:checked[type="checkbox"]:before{
   width: 10em;
   margin-bottom: 10px;
 }
-.selector-container{
-  height: 40px;
-  padding: 15px;
-  border-radius: 5px;
-  border: 2px solid #ccc;
-  outline: 10;
-  box-shadow: 8px 8px 6px 5px #ABB2B9;/*Agregado, fue eliminado de containerFormCheckbox*/
-  border-radius: 12px 12px 12px 12px;/*Agregada la sugerencia de redondear los bordes*/
-}
-.containerSelector {
-  /*max-height: 863px;*/
-  /*max-width: 600px;*/
-  margin:  40px;
-  /*box-shadow: 0 15px 20px #ABB2B9;*/
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 28px;
-}
-.inputSelector {
+.bottom-line{
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 15px;
-}
-.inputSelector label {
-  width: 95%;
-  color: #287bff;
-  font-weight: bold;
-  margin: 5px 0;
-  text-align: left; /* Agregado para alinear las opciones a la izquierda */
-  height: 3.5vh;/*Fue agregado para que los labels tengan un espacio predeterminado*/
-  text-align: center ;
-  font-size: 1.7vh;
+  justify-content: space-between;
+  padding: 10px 0;
+  width: -webkit-fill-available;
+  border-top: 1px solid silver;
 }
 
-.inputSelector select {
-  height: 40px;
-  width: 95%;
-  padding: 0 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  outline: none;
-  text-align: left; /* Agregado */
+.button-container button:hover {
+  background-image: linear-gradient(to right, #287bff, #287bff);
 }
 
-
-
-
+.button-agregar button{
+    margin-top: 1.02em;
+    padding: 20px;
+    display: block;
+    font-size: 20px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, #287bff, #287bff);
+    grid-gap: 30px;
+    width: 8em;
+}
 
 .button-container button:hover {
   transform: translateY(-1px);
@@ -158,9 +208,8 @@ input:checked[type="checkbox"]:before{
     min-width: 280px;
   }
   .content {
-    max-height: 689px;
+    max-height: 380px;
     overflow: auto;
-    height: 129vh;
   }
   .input-box {
     margin-bottom: 12px;

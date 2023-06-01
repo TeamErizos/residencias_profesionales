@@ -59,7 +59,7 @@
       <div class="desplegable-body">
         
       <div class="desplegable">
-        <input type="text" class="textBoxDesplegable" 
+        <input type="text" class="textBoxDesplegable"     
         placeholder="Tablero Asesor" readonly>
         <div class="option">
           <a href="tab_asesor/EvaluacionYSeguimiento.php">
@@ -84,7 +84,7 @@
         <div class="option">
 
           <a href="dictamen_coordinador/dictamen.php">
-            <div>Crear Dictamen</div>
+            <div class="opcionDesplegable">Crear Dictamen</div>
           </a>
       
         </div>

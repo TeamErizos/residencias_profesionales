@@ -245,7 +245,35 @@ thead th {
     background-color: #d5d1defe;
     cursor: pointer;
     text-transform: capitalize;
+    background: #287bff;
+    color: #fafafa;
 }
+
+/*
+
+th,td{
+  padding: 10px 15px;
+  border-bottom-style: groove;
+}
+ul {
+  list-style-type: disc;
+}
+
+th{
+  background: #287bff;
+  color: #fafafa;
+  text-transform: uppercase;
+  font-family: 'Ubuntu', sans-serif;
+}
+th:nth-child(odd){
+  background-color: #3683ff;
+}
+tr:nth-child(odd){
+  background-color: #eeeeee;
+}
+
+
+*/
 
 tbody tr:nth-child(even) {
     background-color: #0000000b;
@@ -344,7 +372,7 @@ thead th:hover {
     display: inline-block;
     width: 2rem;
     height: 2rem;
-    background: #fff6 url(images/atras.png) center / 80% no-repeat;
+    background: #fff6 url(/residencias_profesionales/lib/content/profesor/tab_asesor/Ev.R.Final/images/atras.png) center / 80% no-repeat;
     border-radius: 50%;
     transition: .2s ease-in-out;
 }
@@ -353,7 +381,7 @@ thead th:hover {
     display: inline-block;
     width: 2rem;
     height: 2rem;
-    background: #fff6 url(images/adelante.png) center / 80% no-repeat;
+    background: #fff6 url(/residencias_profesionales/lib/content/profesor/tab_asesor/Ev.R.Final/images/adelante.png) center / 80% no-repeat;
     border-radius: 50%;
     transition: .2s ease-in-out;
 }
