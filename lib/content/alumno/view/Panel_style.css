@@ -338,7 +338,7 @@ Este solo aplica estilo a: "PanelDeControlSeguimiento.html*/
 	font-size: 1.5em;
 	margin-top: 30px;
 }
-/*Estilo para los contenedores de lo iconos de los botones*/
+/*Estilo para los contenedores de lo iconos de los botones sin docs*/
 .cardBox .card .iconBx
 {
 	font-size: 3.5em;
@@ -439,4 +439,7 @@ Este solo aplica estilo a: "PanelDeControlSeguimiento.html*/
 		left: initial;
 		color: #fff;
 	}
+}
+.iconBx.download {
+	color:green;
 }

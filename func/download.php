@@ -6,6 +6,11 @@
 
     // TODO: CAMBIAR RUTAS DEL HEADER ->
 
+    // Ruta y nombre del archivo
+    if (!file_exists('doc/')) {
+        mkdir('doc/', 0777, true);
+      } 
+
     //Cookie para direccion del Word
     $template_path = $_COOKIE['path'];
     //Cookie para data generica

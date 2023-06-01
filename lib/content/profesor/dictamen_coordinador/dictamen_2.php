@@ -53,11 +53,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     $counter_array[] = array("num" => $count);
     $display_num[] = $count;
     $count++;
-
-    // Update the data in the database
-    $stmt2 = $conn->prepare("SELECT update_dictamen(:id_p_x_a)");
-    $stmt2->bindParam(':id_p_x_a', $row['id_p_x_a']);
-    $stmt2->execute();
 }
 
 setcookie('path', '../pdf/templates/dictamen_anteproyecto.docx', time() + 60, '/');

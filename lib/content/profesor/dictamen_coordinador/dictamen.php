@@ -9,7 +9,7 @@ $query = "
     FROM carrera ca
     JOIN alumno al ON al.fk_id_carrera = ca.id_carrera
     JOIN proyecto_x_alumno pa ON pa.id_alumno = al.no_control
-    WHERE pa.dictamen = FALSE
+    WHERE pa.dictamen = TRUE
 ";
 
 $stmt = $conn->prepare($query);

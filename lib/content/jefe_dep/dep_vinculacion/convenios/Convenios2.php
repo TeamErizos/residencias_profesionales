@@ -41,12 +41,7 @@ $data = array();
 $count = 1;
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     $data[] = $row;
-/*
-    // Update the data in the database
-    $stmt2 = $conn->prepare("SELECT update_dictamen(:id_p_x_a)");
-    $stmt2->bindParam(':id_p_x_a', $row['id_p_x_a']);
-    $stmt2->execute();
-*/
+
 }
 
 setcookie('path', '../pdf/templates/Carta_Convenio.docx', time() + 60, '/');
