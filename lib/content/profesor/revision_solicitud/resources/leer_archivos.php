@@ -32,9 +32,14 @@ if (isset($_GET['id'])) {
     require "funciones_archivos.php";
     require "funciones_revision.php";
 
+
+
 // Instanciar clase y pasar el id del proyecto_x_alumno
     $file = new Files($idSeleccionado, $conn);
     $revision = new Revision($conn);
+
+// Crear carpetas si no existen
+    createFoldersIfNotExist();
 
 // Recuperar los 3 archivos a mostrar  
     // Constancia
@@ -128,5 +133,17 @@ if (isset($_GET['id'])) {
             window.location.href = 'solicitud_aceptada.php?id=' + id;
         }
     </script>
+
+    <?php // Crear las carpetas si no existen
+                function createFoldersIfNotExist() {
+                    $folders = ['constancia', 'anteproyecto', 'solicitud'];
+                
+                    foreach ($folders as $folder) {
+                        if (!is_dir($folder)) {
+                            mkdir($folder);
+                        }
+                    }
+                }
+      ?>
 
 <?php include("../../view/footer.php"); ?>
