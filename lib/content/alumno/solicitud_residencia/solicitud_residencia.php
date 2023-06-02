@@ -350,6 +350,11 @@ $alumno->recuperarAsesorExterno($_SESSION['id_proyecto']);
     <!-- Cargar Constancia de Residencia -->
     <input type="file" name="constancia">
 
+    <!-- RFC -->
+    <div class="input-box">
+      <label for="rfc">RFC:</label>
+      <input type="text" value="<?php echo $_SESSION['rfc_empresa']; ?>" id="rfc" name="rfc" disabled>
+    </div>
 
   </div>
 

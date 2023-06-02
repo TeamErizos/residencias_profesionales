@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
-/*Todos los estilos del Dashboard*/
 *
 {
 	margin: 0;
@@ -25,7 +24,6 @@ body
 	position: relative;
 	width: 100%;
 }
-/*Es la parte de la navegacion izquierda*/
 .navigation
 {
 	position: fixed;
@@ -36,12 +34,10 @@ body
 	transition: 0.5s;
 	overflow: hidden;
 }
-/*El estado "active" es cuando el menu es contraido*/
 .navigation.active
 {
 	width: 80px;
 }
-/*Ul indica un orden listado*/
 .navigation ul
 {
 	position: absolute;
@@ -49,7 +45,6 @@ body
 	left: 0;
 	width: 100%;
 }
-/*li indica los elementos de la lista*/
 .navigation ul li
 {
 	position: relative;
@@ -58,14 +53,11 @@ body
 	border-top-left-radius:30px;
 	border-bottom-left-radius: 30px;
 }
-/*Aqui se establecen los estilos cuando son seleccionadas las opciones*/
 .navigation ul li:hover,
 .navigation ul li.hovered
 {
 	background: var(--white);
 }
-/*Esta funcion crea la separacion entre "PANEL DE CONTROL" y el boton "Menu"*/
-/*El numero "1" indica sobre que elemento de la lista activara el estilo*/
 .navigation ul li:nth-child(1)
 {
 	margin-bottom: 40px;
@@ -85,7 +77,6 @@ body
 {
 	color:var(--blue);
 }
-/*Estilos para los iconos del menu izquierdo*/
 .navigation ul li a .icon
 {
 	position: relative;
@@ -95,7 +86,6 @@ body
 	line-height: 70px;
 	text-align: center;
 }
-/*Estilo para los iconos de la libreria icon-icons*/
 .navigation ul li a .icon ion-icon
 {
 	font-size: 1.75em;
@@ -111,7 +101,6 @@ body
 	white-space: nowrap;
 
 }
-/*Info es la parte del titulo que aparece dentro del dashboard*/
 .info
 {
 	position: relative;
@@ -123,34 +112,7 @@ body
 	white-space: nowrap;
 	font-size: 1.3em;
 }
-/*infoTitle se usa cuando el nombre de la izquierda es demasiado largo
-Este estilo hace que se vea de manera correcta*/
-/*Aun puede ser optimizado*/
-.infoTitle {
-    position: relative;
-    display: block;
-    padding: 10px;
-    height: 70px;
-    line-height: 35px;
-    text-align: center;
-    white-space: pre-line;
-    font-size: 1.3em;
-	padding-right: 2em;
-	padding-bottom: 4em;
-}
-/*InfoTitle2 se usa cuando el texto es aun mas largo*/
-.infoTitle2 {
-    position: relative;
-    display: block;
-    padding: 10px;
-    height: 70px;
-    line-height: 35px;
-    text-align: center;
-    white-space: pre-line;
-    font-size: 1.3em;
-	padding-right: 2em;
-	padding-bottom: 4em;
-}
+
 
 /* curve outside */
 .navigation ul li:hover a::before,
@@ -183,10 +145,7 @@ Este estilo hace que se vea de manera correcta*/
 }
 
 /* main */
-/*El main es donde va todo el contenido de la pagina*/
-/*Puede ser ajustado para adaptar el como se ajustaran los contenidos*/
-/*Es preferible crear contenedores dentro del main para ordenar nuevos elementos*/
-.main
+.menu
 {
 	position: absolute;
 	width: calc(100% - 300px);
@@ -195,14 +154,11 @@ Este estilo hace que se vea de manera correcta*/
 	background: var(--white);
 	transition: 0.5s;
 }
-/*MainActive representa cuando el menu desplegable de la izquierda es activado*/
-/*Se adapta a la pantalla*/
-.main.active
+.menu.active
 {
 	width: calc(100% - 80px);
 	left: 80px;
 }
-/*Topbar es la parte superior del main, en donde se encuentra info*/
 .topbar
 {
 	width: 100%;
@@ -212,7 +168,6 @@ Este estilo hace que se vea de manera correcta*/
 	align-items: center;
 	padding: 0 10px;
 }
-/*Son las tres rayas que hacen que se contraiga el menu izquierdo*/
 .toggle
 {
 	position: relative;
@@ -225,7 +180,6 @@ Este estilo hace que se vea de manera correcta*/
 	font-size: 2.5em;
 	cursor: pointer;
 }
-/*Es el div que almacena .info*/
 .titulo
 {
 	position: relative;
@@ -249,8 +203,6 @@ Este estilo hace que se vea de manera correcta*/
 	outline: none;
 	border: 1px solid var(--black2);
 }
-/*Estas son posibles implementaciones*/
-/*Actualmente no estan siento utilizadas*/
 .titulo label ion-icon
 {
 	position: absolute;
@@ -276,90 +228,21 @@ Este estilo hace que se vea de manera correcta*/
 	height: 100%;
 	object-fit: cover;
 }
-/*Cardbox: Es el contenedor de los "card" que son basicamente los botones
-que iran dentro del main*/
-.cardBox
-{
-	position: relative;
-	width: 100%;
-	padding: 20px;
-	display: grid;
-	grid-template-columns: repeat(4,1fr);
-	grid-gap: 30px;
 
-}
-.cardBox a { /*Elimina los colores y subrayado del HREF */
-	text-decoration: none;
-	color: inherit;
-  }
-.cardBox .card
-{
-	position: relative;
-	background: var(--white);
-	padding: 30px;
-	border-radius: 20px;
-	display: flex;
-	justify-content: space-between;
-	cursor: pointer;
-	box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-    align-items: center;
-}
-.cardBox .card .numbers
-{
-	position: relative;
-	font-weight: 500;
-	font-size: 2.5em;
-	color: var(--blue);
-}
 
-/*Boton Cerrar Sesion */
- /*Se necesita encontrar una alternativa para que 
- se ajuste automaticamente al borde de la pantalla*/
-  /* */
 .logout-btn {
-  position: fixed;
-  /*bottom: -550px; Indica cuantos pixeles estara por debajo*/
-  width: 100%;
-  text-align: center;
-}
-/*Estilo para el texto de los botones (Cards)*/
-.cardBox .card .cardName
-{
-	color: var(--black2-);
-	font-size: 1.5em;
-	margin-top: 50px;
-}
-/*Lo mismo que el de arriba, pero este hace que los botones con
-nombre .cardName1 tengan un margen diferente
-Este solo aplica estilo a: "PanelDeControlSeguimiento.html*/
-.cardBox .card .cardName1
-{
-	color: var(--black2-);
-	font-size: 1.5em;
-	margin-top: 30px;
-}
-/*Estilo para los contenedores de lo iconos de los botones sin docs*/
-.cardBox .card .iconBx
-{
-	font-size: 3.5em;
-	color: var(--black2);
-	margin-top: 30px;
-}
-/*Estilo para el estilo al pasar el puntero por encima*/
-.cardBox .card:hover
-{
-	background: var(--blue);
-}
-.cardBox .card:hover .numbers ,
-.cardBox .card:hover .cardName ,
-.cardBox .card:hover .iconBx
-{
-	color: var(--white);
-}
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	z-index: 1;
+  }
 
-/*******************************************************************************************************************************/
-/* Diseño responsivo*/
-/*Solo modificar si se saben las medidas de todos los dispositivos*/
+
+
+
+
+/* diseño responsivo*/
 @media (max-width: 991px)
 {
 	.navigation
@@ -371,7 +254,7 @@ Este solo aplica estilo a: "PanelDeControlSeguimiento.html*/
 		width: 300px;
 		left: 0;
 	}
-	.main
+	.menu
 	{
 		width: 100%;
 		left: 0;
@@ -440,6 +323,5 @@ Este solo aplica estilo a: "PanelDeControlSeguimiento.html*/
 		color: #fff;
 	}
 }
-.iconBx.download {
-	color:green;
-}
+
+

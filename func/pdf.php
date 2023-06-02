@@ -3,36 +3,46 @@
     //Crear los PDFs
     function createPDF($variabledef)
     {
-        // Verificar si existe el archivo .docx
-        $docx_file = "doc/" . $variabledef . ".docx";
-        if (!file_exists($docx_file)) 
-        {
-            echo "El archivo .docx no existe.";
-            return;
-        }
+      // Definir el folder doc
+      $folderPath = 'doc/';
 
-        // Cada archivo (doc, pdf, bat, tendrá el No Control)
-        $batchFile = $variabledef . ".bat";
+      // Ruta y nombre del archivo
+      if (!file_exists('pdf/')) {
+        mkdir('pdf/', 0777, true);
+      } 
+      // Definir el folder pdf
+      $folderPathPDF = 'pdf/';
 
-        // El contenido del script creará un pdf único a partir de un word único
-        $command = "soffice --headless --convert-to pdf doc/" . $variabledef . ".docx --outdir pdf/"; // cada archivo tendrá el No Control del alumno
+      // Verificar si existe el archivo .docx
+      $docx_file = $folderPath . $variabledef . ".docx";
+      if (!file_exists($docx_file)) 
+      {
+          echo "El archivo .docx no existe.";
+          return;
+      }
 
-        // Guardar el archivo 
-        file_put_contents($batchFile, $command);
-        
-        // Ejecutar el código y crear el pdf
-        exec($batchFile, $output, $return);
-        
-        if ($return == 0) 
-        {
-        echo "Command ran successfully";
-        } 
-        else 
-        {
-        echo "Command failed";
-        }
+      // Cada archivo (doc, pdf, bat, tendrá el No Control)
+      $batchFile = $variabledef . ".bat";
 
-        return "pdf/" . $variabledef . ".pdf";
+      // El contenido del script creará un pdf único a partir de un word único
+      $command = "soffice --headless --convert-to pdf doc/" . $variabledef . ".docx --outdir pdf/"; // cada archivo tendrá el No Control del alumno
+
+      // Guardar el archivo 
+      file_put_contents($batchFile, $command);
+      
+      // Ejecutar el código y crear el pdf
+      exec($batchFile, $output, $return);
+      
+      if ($return == 0) 
+      {
+      echo "Command ran successfully";
+      } 
+      else 
+      {
+      echo "Command failed";
+      }
+
+      return $folderPathPDF . $variabledef . ".pdf";
     }
 
 
@@ -48,8 +58,26 @@
         
         function createPDFDict($variabledef)
         {
+            // Definir el folder doc
+            $folderPath = 'doc/';
+
+            // Check if the folder doc exists
+            if (!is_dir($folderPath)) {
+                // Folder doesn't exist, create it
+                mkdir($folderPath, 0777, true);
+                echo 'Folder created.';
+            }
+
+            // Ruta y nombre del archivo
+            if (!file_exists('docs/')) {
+                mkdir('docs/', 0777, true);
+            }
+            $folder = 'docs/';
+            $fileName = 'dictamen_anteproyecto.pdf';
+            $filePath = $folder . $fileName;
+
             // Verificar si existe el archivo .docx
-            $docx_file = "doc/" . $variabledef . ".docx";
+            $docx_file = $folderPath . $variabledef . ".docx";
             if (!file_exists($docx_file)) 
             {
                 echo "El archivo .docx no existe.";
@@ -60,7 +88,7 @@
             $batchFile = $variabledef . ".bat";
 
             // El contenido del script creará un pdf único a partir de un word único
-            $command = "soffice --headless --convert-to pdf doc/" . $variabledef . ".docx --outdir documents/"; // cada archivo tendrá el No Control del alumno
+            $command = "soffice --headless --convert-to pdf doc/" . $variabledef . ".docx --outdir docs/"; // cada archivo tendrá el No Control del alumno
 
             // Guardar el archivo 
             file_put_contents($batchFile, $command);
@@ -68,16 +96,21 @@
             // Ejecutar el código y crear el pdf
             exec($batchFile, $output, $return);
             
-            if ($return == 0) 
+            // Verificar si el archivo se guardó correctamente
+            if (file_exists($filePath)) 
             {
-            echo "Command ran successfully";
+                // Establecer las cabeceras para descargar el archivo
+                header('Content-Type: application/octet-stream');
+                header('Content-Disposition: attachment; filename="' . $fileName . '"');
+                header('Content-Length: ' . filesize($filePath));
+
+                // Salida del contenido del archivo
+                readfile($filePath);
             } 
             else 
             {
-            echo "Command failed";
+                echo "No se pudo guardar el archivo.";
             }
-
-            return "dictamen.pdf";
         }
     }
 
@@ -124,30 +157,43 @@
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
           
             // Verificar si se obtuvo un resultado
-            if ($result) {
-              // Extraer la carta
-              $cartapres = $result['carta_de_presentacion'];
-          
-              // Verificar si la carta se extrajo correctamente
-              if ($cartapres) {
-          
-                // Ruta del pdf
-                $file = "documents/carta_de_presentacion.pdf";
-          
-                // Guardar la carta en un archivo
-                file_put_contents($file, $cartapres);
-          
-                // Verificar si el archivo se guardó correctamente
-                if (file_exists("carta_de_presentacion.pdf")) {
-                  echo "El archivo se extrajo y guardó correctamente.";
+            if ($result) 
+            {
+                // Extraer los datos
+                $data = $result['carta_de_presentacion'];
+
+                // Verificar si los datos existen y son válidos
+                if ($data) {
+                    // Ruta y nombre del archivo
+                    if (!file_exists('docs/')) {
+                        mkdir('docs/', 0777, true);
+                    }
+                    $folder = 'docs/';
+                    $fileName = 'carta_de_presentacion.pdf';
+                    $filePath = $folder . $fileName;
+
+                    // Guardar los datos en un archivo PDF
+                    file_put_contents($filePath, $data);
+
+                    // Verificar si el archivo se guardó correctamente
+                    if (file_exists($filePath)) {
+                    // Establecer las cabeceras para descargar el archivo
+                    header('Content-Type: application/octet-stream');
+                    header('Content-Disposition: attachment; filename="' . $fileName . '"');
+                    header('Content-Length: ' . filesize($filePath));
+
+                    // Salida del contenido del archivo
+                    readfile($filePath);
+                    } else {
+                    echo "No se pudo guardar el archivo.";
+                    }
                 } else {
-                  echo "No se pudo guardar el archivo.";
+                    echo "Los datos no son válidos.";
                 }
-              } else {
-                echo "No se pudo extraer el anteproyecto.";
-              }
-            } else {
-              echo "No se encontró el anteproyecto.";
+            } 
+            else 
+            {
+                echo "No se encontraron datos.";
             }
         }
     }
@@ -196,30 +242,43 @@
           $result = $stmt->fetch(PDO::FETCH_ASSOC);
         
           // Verificar si se obtuvo un resultado
-          if ($result) {
-            // Extraer la carta
-            $comRev = $result['comision_revisor'];
-        
-            // Verificar si la carta se extrajo correctamente
-            if ($comRev) {
-        
-              // Ruta del pdf
-              $file = "documents/comision_revisor.pdf";
-        
-              // Guardar la carta en un archivo
-              file_put_contents($file, $comRev);
-        
-              // Verificar si el archivo se guardó correctamente
-              if (file_exists("comision_revisor.pdf")) {
-                echo "El archivo se extrajo y guardó correctamente.";
+          if ($result) 
+          {
+              // Extraer los datos
+              $data = $result['comision_revisor'];
+
+              // Verificar si los datos existen y son válidos
+              if ($data) {
+                  // Ruta y nombre del archivo
+                  if (!file_exists('docs/')) {
+                      mkdir('docs/', 0777, true);
+                  }
+                  $folder = 'docs/';
+                  $fileName = 'comision_revisor.pdf';
+                  $filePath = $folder . $fileName;
+
+                  // Guardar los datos en un archivo PDF
+                  file_put_contents($filePath, $data);
+
+                  // Verificar si el archivo se guardó correctamente
+                  if (file_exists($filePath)) {
+                  // Establecer las cabeceras para descargar el archivo
+                  header('Content-Type: application/octet-stream');
+                  header('Content-Disposition: attachment; filename="' . $fileName . '"');
+                  header('Content-Length: ' . filesize($filePath));
+
+                  // Salida del contenido del archivo
+                  readfile($filePath);
+                  } else {
+                  echo "No se pudo guardar el archivo.";
+                  }
               } else {
-                echo "No se pudo guardar el archivo.";
+                  echo "Los datos no son válidos.";
               }
-            } else {
-              echo "No se pudo extraer el anteproyecto.";
-            }
-          } else {
-            echo "No se encontró el anteproyecto.";
+          } 
+          else 
+          {
+              echo "No se encontraron datos.";
           }
         }
     }
@@ -268,30 +327,43 @@
           $result = $stmt->fetch(PDO::FETCH_ASSOC);
         
           // Verificar si se obtuvo un resultado
-          if ($result) {
-            // Extraer la carta
-            $convenio = $result['formato_de_convenio'];
-        
-            // Verificar si la carta se extrajo correctamente
-            if ($convenio) {
-        
-              // Ruta del pdf
-              $file = "documents/formato_de_convenio.pdf";
-        
-              // Guardar la carta en un archivo
-              file_put_contents($file, $convenio);
-        
-              // Verificar si el archivo se guardó correctamente
-              if (file_exists("formato_de_convenio.pdf")) {
-                echo "El archivo se extrajo y guardó correctamente.";
+          if ($result) 
+          {
+              // Extraer los datos
+              $data = $result['formato_de_convenio'];
+
+              // Verificar si los datos existen y son válidos
+              if ($data) {
+                  // Ruta y nombre del archivo
+                  if (!file_exists('docs/')) {
+                      mkdir('docs/', 0777, true);
+                  }
+                  $folder = 'docs/';
+                  $fileName = 'formato_de_convenio.pdf';
+                  $filePath = $folder . $fileName;
+
+                  // Guardar los datos en un archivo PDF
+                  file_put_contents($filePath, $data);
+
+                  // Verificar si el archivo se guardó correctamente
+                  if (file_exists($filePath)) {
+                  // Establecer las cabeceras para descargar el archivo
+                  header('Content-Type: application/octet-stream');
+                  header('Content-Disposition: attachment; filename="' . $fileName . '"');
+                  header('Content-Length: ' . filesize($filePath));
+
+                  // Salida del contenido del archivo
+                  readfile($filePath);
+                  } else {
+                  echo "No se pudo guardar el archivo.";
+                  }
               } else {
-                echo "No se pudo guardar el archivo.";
+                  echo "Los datos no son válidos.";
               }
-            } else {
-              echo "No se pudo extraer el anteproyecto.";
-            }
-          } else {
-            echo "No se encontró el anteproyecto.";
+          } 
+          else 
+          {
+              echo "No se encontraron datos.";
           }
         }
     }
@@ -307,6 +379,12 @@
         
         // Construye la ruta del archivo .pdf correspondiente al número de control
         $pdfFile = "pdf/" . $variabledef . ".pdf";
+
+        // Construye la ruta del archivo .pdf correspondiente al número de control
+        $pdfFile2 = "docs/" . $variabledef . ".pdf";
+
+        // Construye la ruta del archivo .docx correspondiente al número de control
+        $docFile2 = "documents/" . $variabledef . ".docx";
         
         // Si el archivo .bat existe, lo borra utilizando la función unlink()
         if (file_exists($batchFile)) 
@@ -319,11 +397,23 @@
         {
           unlink($docFile);
         }
+
+        // Si el archivo .docx existe, lo borra utilizando la función unlink()
+        if (file_exists($docFile2)) 
+        {
+          unlink($docFile2);
+        }
         
         // Si el archivo .pdf existe, lo borra utilizando la función unlink()
         if (file_exists($pdfFile)) 
         {
           unlink($pdfFile);
+        }
+
+        // Si el archivo .pdf existe, lo borra utilizando la función unlink()
+        if (file_exists($pdfFile2)) 
+        {
+          unlink($pdfFile2);
         }  
     }
 ?>
