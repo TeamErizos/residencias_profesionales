@@ -152,3 +152,6 @@ body{
 .bottomBox a:hover{
     color: #03a9f4;
 }
+label{
+    color: #fff;
+}

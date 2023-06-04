@@ -187,8 +187,20 @@ input {
 a {
 	text-decoration: none;
 }
+a.white{
+	text-decoration: none;
+	color: #fff;
+}
 
 
 div.opcionDesplegable{
 	display: block;
+}
+
+input[type="date"]{
+	resize: none;
+    overflow: hidden;
+    min-height: 50px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
 }
