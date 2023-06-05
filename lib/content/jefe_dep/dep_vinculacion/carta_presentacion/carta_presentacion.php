@@ -37,9 +37,20 @@ include("../view/header.php");
 ?>
 
 <!-- Add a button to save the document -->
+x
+<!-- Inicio ContainerForm -->
+<div class="tableContainer">
 
+<!-- Inicio Body -->
+<body>
+    <!-- Añadir estilo individual -->
+    <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/jefe_dep/dep_vinculacion/view/cssCartaPresentacion.css">
+
+<h2 >Información carta de presentación</h2>
+<br>
     <table>
-        <tr>
+    <thead>
+                <tr>
             <th>Nombre Estudiante</th>
             <th>No. Control</th>
             <th>Seguro Médico</th>
@@ -49,7 +60,10 @@ include("../view/header.php");
             <th>Empresa</th>
             <th>Titular Empresa</th>
             <th>Puesto</th>
-        </tr>
+            <th>Descargar Carta</th>
+            </tr>
+            </thead>
+            
         <?php foreach ($data as $row): ?>
         <tr>
             <td><?php echo $row['nombreestudiante']; ?></td>
@@ -65,11 +79,18 @@ include("../view/header.php");
                 <form action="carta_presentacion2.php" method="post">
                     <input type="hidden" name="id_p_x_a" value="<?php echo $row['id_p_x_a']; ?>">
                     <input type="text" id="numOficio" name="numOficio" placeholder="Ingrese Numero de Oficio" required>
-                    <button type="submit">Download</button>
+                    <button class="enviar" type="submit">Descargar</button>
                 </form>
             </td>
         </tr>
         <?php endforeach; ?>
     </table>
 
+
+
+    <!-- FinBody -->
+</body>
+    <!-- Fin ContainerForm -->
+        </div >
+        
 <?php include("../view/footer.php"); ?>

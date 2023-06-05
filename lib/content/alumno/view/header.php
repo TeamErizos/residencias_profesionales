@@ -16,7 +16,6 @@ if (!isset($_SESSION['no_control'])) {
   <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/alumno/view/Panel_style.css">
   <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/alumno/view/FAQstyle.css">
   <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/alumno/view/Solitude_style.css">
-  <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/alumno/view/formatosSolicitud2.css">
   <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/alumno/view/table.css">
 </head>
 <body>
