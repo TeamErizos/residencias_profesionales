@@ -6,6 +6,40 @@ if (!isset($_SESSION['no_control'])) {
   // Redirigir al usuario a la página de inicio de sesión
   header("Location: http://localhost/residencias_profesionales/");
 }
+
+// Establish a PDO connection
+try {
+  $dsn = "pgsql:host=database-1.ce6k0ybbwxvv.us-east-2.rds.amazonaws.com;port=5432;dbname=residencia;user=postgres;password=ballena21";
+  $conn = new PDO($dsn);
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+  echo "Failed to connect to the database: " . $e->getMessage();
+  exit;
+}
+
+$no_control = $_SESSION['no_control'];
+
+$query = "
+        SELECT id_p_x_a
+        FROM proyecto_x_alumno
+        WHERE id_alumno = :no_control
+    ";
+
+$stmt = $conn->prepare($query);
+$stmt->bindParam(':no_control', $no_control);
+$stmt->execute();
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+// Access the value of the 'id_p_x_a' column in the fetched row
+$valueToCheck = $row['id_p_x_a'];
+
+// Searches if alumno is in the table documentos
+$query2 = "SELECT EXISTS(SELECT 1 FROM documentos WHERE id_proyecto_activo = :valueToCheck)";
+$stmt2 = $conn->prepare($query2);
+$stmt2->bindParam(':valueToCheck', $valueToCheck);
+$stmt2->execute();
+$rowExists = $stmt2->fetchColumn();
+
 ?>
 
 <!DOCTYPE html>
@@ -43,12 +77,30 @@ if (!isset($_SESSION['no_control'])) {
           </a>
         </li>
 
-        <li class="expand">
-          <a href="/residencias_profesionales/lib/content/alumno/PanelDeControl-Seguimiento.php">
-            <span class="icon"><ion-icon name="document-text-outline"></ion-icon></span>
-            <span class="title">Seguimiento</span>
-          </a>
-        </li>
+        <!-- Condicional para habilitar o no el boton "Seguimiento dependiendo si el alumno existe en documentos o no"-->
+        <?php
+          if ($rowExists === 't' || $rowExists === true) {
+            ?>
+            <li class="expand">
+              <a href="/residencias_profesionales/lib/content/alumno/PanelDeControl-Seguimiento.php">
+                <span class="icon"><ion-icon name="document-text-outline"></ion-icon></span>
+                <span class="title">Seguimiento</span>
+              </a>
+            </li>
+            <?php
+          } 
+          else 
+          {
+            ?>
+            <li class="expand">
+              <a href="#">
+                <span class="icon"><ion-icon name="document-text-outline"></ion-icon></span>
+                <span class="title">Seguimiento</span>
+              </a>
+            </li>
+            <?php
+          }
+        ?>
 
         <li class="expand">
           <a href="#">
