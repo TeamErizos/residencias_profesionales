@@ -408,7 +408,67 @@ $alumno->recuperarAsesorExterno($_SESSION['id_proyecto']);
     </div>
 <!-- Fin column-container -->
     </div>
-    <!-- Fin content -->
+
+    <!-- Domicilio -->
+    <div>
+      <label for="student_address">Domicilio:</label>
+      <input type="text" value="<?php echo $_SESSION['domicilio_alumno']; ?>" id="student_address" name="student_address"
+        disabled>
+    </div>
+
+    <!-- Email -->
+    <div>
+      <label for="student_email">Email:</label>
+      <input type="email" value="<?php echo $_SESSION['correo_alumno']; ?>" id="student_email" name="student_email"
+        disabled>
+    </div>
+
+    <!-- Ciudad -->
+    <div>
+      <label for="student_city">Ciudad:</label>
+      <input type="text" value="<?php echo $_SESSION['ciudad_alumno']; ?>" id="student_city" name="student_city"
+        disabled>
+    </div>
+
+    <!-- Telefono -->
+    <div>
+      <label for="student_phone">Telefono:</label>
+      <input type="text" value="<?php echo $_SESSION['telefono_alumno']; ?>" id="student_phone" name="student_phone"
+        disabled>
+    </div>
+
+    <!-- Tipo de seguro -->
+    <div>
+      <label for="insurance_type">Tipo de seguro:</label>
+      <input type="text" value="<?php echo $_SESSION['seguro_medico_alumno']; ?>" id="insurance_type"
+        name="insurance_type" disabled>
+    </div>
+
+    <!-- Numero de seguro social -->
+    <div>
+      <label for="social_security_num">Numero de seguro social:</label>
+      <input type="text" value="<?php echo $_SESSION['num_seguridad_social_alumno']; ?>" id="social_security_num"
+        name="social_security_num" disabled>
+    </div>
+
+    <!-- Semestre a cursar -->
+    <div>
+      <label for="semester">Semestre a cursar:</label>
+      <input type="text" id="semester" name="semester">
+    </div>
+
+    <!-- Espacios para cargar envios de archivos -->
+    <!-- Cargar Anteproyecto -->
+    <input type="file" name="anteproyecto">
+    <!-- Cargar Constancia de Residencia -->
+    <input type="file" name="constancia">
+
+    <!-- RFC -->
+    <div class="input-box">
+      <label for="rfc">RFC:</label>
+      <input type="text" value="<?php echo $_SESSION['rfc_empresa']; ?>" id="rfc" name="rfc" disabled>
+    </div>
+
   </div>
 
   
