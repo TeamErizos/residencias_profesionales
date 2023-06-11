@@ -15,6 +15,7 @@ $query_asesorias->execute();
 $asesorias = $query_asesorias->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
+<link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/profesor/view/EstiloFormato.css">
 
 <html>
 

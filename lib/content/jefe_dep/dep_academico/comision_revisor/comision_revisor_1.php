@@ -30,6 +30,7 @@ include("../view/header.php");
 
     $conn = null;
 ?>
+<link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/profesor/view/EstiloFormato.css">
 
     <table>
         <tr>

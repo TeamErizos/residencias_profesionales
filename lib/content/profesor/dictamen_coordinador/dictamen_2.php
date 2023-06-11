@@ -69,6 +69,7 @@ setcookie('num_dic', $num, time() + 60, '/');
 $conn = null;
 
 ?>
+<link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/profesor/view/EstiloFormato.css">
 
 <!-- Display the query results in a table -->
 <table>
