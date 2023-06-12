@@ -8,14 +8,7 @@ if (!isset($_SESSION['no_control'])) {
 }
 
 // Establish a PDO connection
-try {
-  $dsn = "pgsql:host=database-1.ce6k0ybbwxvv.us-east-2.rds.amazonaws.com;port=5432;dbname=residencia;user=postgres;password=ballena21";
-  $conn = new PDO($dsn);
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-  echo "Failed to connect to the database: " . $e->getMessage();
-  exit;
-}
+require ("conectAWS.php");
 
 $no_control = $_SESSION['no_control'];
 
@@ -30,15 +23,24 @@ $stmt->bindParam(':no_control', $no_control);
 $stmt->execute();
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// Access the value of the 'id_p_x_a' column in the fetched row
-$valueToCheck = $row['id_p_x_a'];
 
-// Searches if alumno is in the table documentos
-$query2 = "SELECT EXISTS(SELECT 1 FROM documentos WHERE id_proyecto_activo = :valueToCheck)";
-$stmt2 = $conn->prepare($query2);
-$stmt2->bindParam(':valueToCheck', $valueToCheck);
-$stmt2->execute();
-$rowExists = $stmt2->fetchColumn();
+if ($row) {
+  $valueToCheck = $row['id_p_x_a'];
+
+  $query2 = "SELECT EXISTS(SELECT 1 FROM documentos WHERE id_proyecto_activo = :valueToCheck)";
+  $stmt2 = $conn->prepare($query2);
+  $stmt2->bindParam(':valueToCheck', $valueToCheck);
+  $stmt2->execute();
+  $rowExists = $stmt2->fetchColumn();
+
+  if ($rowExists) {
+    // Document exists
+  } else {
+    $rowExists = 'false';
+  }
+} else {
+  $rowExists = 'false';
+}
 
 ?>
 
@@ -92,10 +94,10 @@ $rowExists = $stmt2->fetchColumn();
           else 
           {
             ?>
-            <li class="expand">
+            <li class="expand" style="background-color: #fff4;">
               <a href="#">
-                <span class="icon"><ion-icon name="document-text-outline"></ion-icon></span>
-                <span class="title">Seguimiento</span>
+                <span class="icon"><ion-icon name="document-text-outline" style="color: white;"></ion-icon></span>
+                <span class="title" style="color: white;">Seguimiento</span>
               </a>
             </li>
             <?php

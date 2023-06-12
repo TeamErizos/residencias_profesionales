@@ -411,6 +411,7 @@ $alumno->recuperarAsesorExterno($_SESSION['id_proyecto']);
 
     <!-- Domicilio -->
     <div>
+      
       <label for="student_address">Domicilio:</label>
       <input type="text" value="<?php echo $_SESSION['domicilio_alumno']; ?>" id="student_address" name="student_address"
         disabled>
