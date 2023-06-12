@@ -12,6 +12,17 @@ h1{
     color: #fff;
     position: absolute;
     top: 65px;
+    display: block;
+    margin-bottom: 20px;
+
+}
+
+h2{
+    color: #fff;
+    position: absolute;
+    top: 6.5em;
+    display: block;
+    margin-bottom: 20px;
 
 }
 

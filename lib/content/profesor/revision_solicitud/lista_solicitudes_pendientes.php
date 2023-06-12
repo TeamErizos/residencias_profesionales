@@ -61,6 +61,8 @@ $revision = new Revision($conn);
         
     }
 ?>
+<link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/profesor/view/EstiloFormato.css">
+
     <h4 class="tableTitle">Solicitudes Pendientes</h3>
     <div class="tableContainer">
     <?php

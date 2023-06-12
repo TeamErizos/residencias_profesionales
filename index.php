@@ -19,13 +19,27 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Glassmorphism</title>
+    <title>Residencias Profesionales</title>
     <link rel="stylesheet" type="text/css" href="lib/Login/login.css">
+    <style>
+        /* Aquí puedes colocar tus estilos personalizados */
+        h1 {
+            color: #fff;
+            position: absolute;
+            top: 65px;
+            display: block;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
+<body>
+    <h1>Residencias Profesionales</h1>
+    <h2>Iniciar Sesión</h2>
 
-    <body>
-    <h1>Iniciar Sesión </h1>
-        <div class="container">
+    <div class="container">
+        <!-- Resto del código... -->
+   
+        
             <div class="imgBox">
                 <img src="lib/login/logo2.png" alt="Avatar">
             </div>
@@ -45,9 +59,8 @@ session_start();
             <div class="bottomBox">
                 <a href="#">Olvidé mi contraseña?</a>
             </div>
-        </div>
-    </body>
-</html>
+    </div>
+
 
     <!-- Si intenta regresar al login sin haber hecho logout, lo regresa al dashboard -->
     <?php if(!empty($_SESSION['no_control'])){
@@ -96,7 +109,8 @@ session_start();
     }
 ?>
 
-
+</body>
+</html>
 
 
 
