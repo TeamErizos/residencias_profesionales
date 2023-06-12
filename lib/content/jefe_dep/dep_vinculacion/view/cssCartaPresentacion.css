@@ -33,6 +33,28 @@ tr:nth-child(odd){
   background-color: #eeeeee;
 }
 
+
+
+
+
+
+th:first-child,
+td:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+th:last-child,
+td:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+tr:last-child th,
+tr:last-child td {
+  border-bottom: none;
+}
+
 /*Estilos heredados de las tablas*/
 .tableContainer{
     /*display: flex;*/
