@@ -14,6 +14,7 @@ if (!isset($_SESSION['id_cuenta'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard </title>
   <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/jefe_dep/dep_vinculacion/view/style.css">
+  
 </head>
 <body>
   <div class="container">

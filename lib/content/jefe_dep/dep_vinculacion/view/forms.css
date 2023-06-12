@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+/* Importación de fuente de Google Fonts y estilos generales */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+/* Estilos generales del cuerpo de la página */
+
+body {
+  display: block;
+  /* Agregado */
+}
+
+/* Contenedor del formulario */
+
+.containerForm {
+  max-height: 863px;
+  padding: 28px;
+  margin: 40px;
+  box-shadow: 0 15px 20px #ABB2B9;
+  z-index: 1;
+}
+
+/* Títulos del formulario */
+
+h2 {
+  font-size: 26px;
+  font-weight: 600;
+  text-align: left;
+  color: #0061fe;
+  padding-bottom: 8px;
+  border-bottom: 1px solid silver;
+}
+
+h3 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #0061fe;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+/* Contenido principal del formulario */
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.content2 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+/* Estilos de las cajas de entrada */
+
+.input-box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  padding-bottom: 15px;
+}
+
+.input-box:nth-child(2n) {
+  justify-content: start;
+}
+
+.input-box label {
+  width: 95%;
+  color: #287bff;
+  font-weight: bold;
+  margin: 5px 0;
+  text-align: left;
+  /* Agregado para alinear las opciones a la izquierda */
+}
+
+.input-box select {
+  height: 40px;
+  width: 95%;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  text-align: left;
+  /* Agregado */
+}
+
+/* Título del género */
+
+.gender-title {
+  font-size: 16px;
+}
+
+.input-box input {
+  height: 40px;
+  width: 95%;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+input-box input:is(:focus, :valid) {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para los checkboxes (agregado) */
+
+.input-checkbox {
+  height: 40px;
+  width: 95%;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: 10;
+}
+
+/* Contenedor de botones */
+
+.button-container {
+  margin: 0.02em 0;
+  margin-top: 20px;
+  display: contents;
+}
+
+.button-container button {
+  margin-top: 1.02em;
+  padding: 20px;
+  display: block;
+  font-size: 20px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  background-image: linear-gradient(to right, #287bff, #287bff);
+  grid-gap: 30px;
+  width: 10em;
+}
+
+.bottom-line {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px 0;
+  width: -webkit-fill-available;
+  border-top: 1px solid silver;
+}
+
+.button-container button:hover {
+  background-image: linear-gradient(to right, #287bff, #287bff);
+}
+
+/* Estilos del botón agregar (agregado) */
+
+.button-agregar button {
+  margin-top: 1.02em;
+  padding: 20px;
+  display: block;
+  font-size: 20px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  background-image: linear-gradient(to right, #287bff, #287bff);
+  grid-gap: 30px;
+  width: 8em;
+  height: 4em;
+}
+
+.button-container button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/*  Form guardar comision académico */
+
+.container-a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.formContainer {
+  z-index: 1000;
+  box-shadow: 1px 1px 27px rgba(0,0,0,0.5);
+  max-width: 600px;
+  background-color: #fff;
+  padding: 3em;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.input-box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 32%;
+  padding-bottom: 15px;
+  place-content: space-around;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-box label {
+  width: 95%;
+  font-weight: bold;
+  margin: 5px 0;
+  text-align: left;
+}
+
+.formulario input[type="submit"] {
+  margin-top: 1em;
+}
+
+/* Estilo responsivo */
+
+@media (max-width: 600px) {
+  .container {
+    min-width: 280px;
+  }
+
+  .content {
+    max-height: 380px;
+    overflow: auto;
+  }
+
+  .input-box {
+    margin-bottom: 12px;
+    width: 100%;
+  }
+
+  .input-box:nth-child(2n) {
+    justify-content: space-between;
+  }
+}

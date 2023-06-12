@@ -1,11 +1,11 @@
 <?php
 
-include("../view/header.php");    
+include("../view/header.php");
 
-    // Establish a connection to the PostgreSQL database
-    require "../../../../login/conexion/conectAWS.php";
+// Establish a connection to the PostgreSQL database
+require "../../../../login/conexion/conectAWS.php";
 
-    $query = "
+$query = "
         SELECT
         pa.id_p_x_a,
         CONCAT(al.nombre_alumno, ' ', al.ape1_alumno, ' ', al.ape2_alumno) AS nombreEstudiante,
@@ -19,40 +19,48 @@ include("../view/header.php");
         WHERE pa.id_revisador IS NULL
     ";
 
-    $stmt = $conn->prepare($query);
-    $stmt->execute();
+$stmt = $conn->prepare($query);
+$stmt->execute();
 
-    // Set up the data for TBS to merge into the template
-    $data = array();
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        $data[] = $row;
-    }
+// Set up the data for TBS to merge into the template
+$data = array();
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    $data[] = $row;
+}
 
-    $conn = null;
+$conn = null;
 ?>
+<div class="tableContainer">
 <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/profesor/view/EstiloFormato.css">
 
-    <table>
+<table>
+    <thead>
         <tr>
             <th>Nombre Estudiante</th>
             <th>No. Control</th>
             <th>Carrera</th>
             <th>Proyecto</th>
+            <th> </th>
         </tr>
-        <?php foreach ($data as $row): ?>
-        <tr>
-            <td><?php echo $row['nombreestudiante']; ?></td>
-            <td><?php echo $row['no_control']; ?></td>
-            <td><?php echo $row['nom_carrera']; ?></td>
-            <td><?php echo $row['nombre_proyecto']; ?></td>
-            <td>
-                <form action="comision_revisor_2.php" method="post">
-                    <input type="hidden" name="id_p_x_a" value="<?php echo $row['id_p_x_a']; ?>">
-                    <button type="submit">Asignar Revisor</button>
-                </form>
-            </td>
-        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($data as $row) : ?>
+            <tr>
+                <td><?php echo $row['nombreestudiante']; ?></td>
+                <td><?php echo $row['no_control']; ?></td>
+                <td><?php echo $row['nom_carrera']; ?></td>
+                <td><?php echo $row['nombre_proyecto']; ?></td>
+                <td>
+                    <form action="comision_revisor_2.php" method="post">
+                        <input type="hidden" name="id_p_x_a" value="<?php echo $row['id_p_x_a']; ?>">
+                        <button type="submit">Asignar Revisor</button>
+                    </form>
+                </td>
+            </tr>
         <?php endforeach; ?>
-    </table>
+    </tbody>
+</table>
+
+</div>
 
 <?php include("../view/footer.php");
