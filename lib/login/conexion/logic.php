@@ -101,26 +101,17 @@ if (isset($_REQUEST['login'])) {
                     $_SESSION['user_rol'] = $temporal_rol;
                     header("Location: lib/content/jefe_dep/dep_academico/PanelDeControlJefeDepartamento-Menu.php");
                     exit();    
-                    break;
-                    
-                    /*header("Location: lib/content/jefe_dep/dep_vinculacion/PanelDeControlGestionYVinculacion-Menu.php");
-                    exit();    
-                    break;*/    
-
                 } elseif ($user->searchAccount($_SESSION['id_cuenta']) == 5 ) {
                     $_SESSION['user_rol'] = $temporal_rol;
                     header("Location: lib/content/jefe_dep/dep_vinculacion/PanelDeControlGestionYVinculacion-Menu.php");
                     exit();    
-                    break;                     
-
                 }
 
-                 
+                break;
         }
-
     } else {
         // Si el resultado es false, mostrar mensaje de error
-        echo "Usuario o contraseña incorrectos.";
+        echo "<label>Usuario o contraseña incorrectos.</label>";
     }
 }
 
@@ -159,6 +150,5 @@ function determinarTipoUsuario($username) {
         return "desconocido";
     }
 }
-
 
 ?>

@@ -15,6 +15,7 @@ $query_asesorias->execute();
 $asesorias = $query_asesorias->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
+<link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/profesor/view/EstiloFormato.css">
 
 <html>
 
@@ -25,14 +26,15 @@ $asesorias = $query_asesorias->fetchAll(PDO::FETCH_ASSOC);
 <body>
 
     <h4 class="tableTitle">Asesorias Registradas</h2>
-            <div class="button-containerLeft">
-                <div class="button-containerForm">
-                    <button class="buttonLarge">
-                        <a class="seleccionar" href='asesoria_insert.php?no_control=<?= $no_control ?>'>Agregar
-                            Asesoria</a>
-                    </button>
-                </div>
+        <div class="button-containerLeft">
+            <div class="button-containerForm"
+                onclick="window.location.href='asesoria_insert.php?no_control=<?= $no_control ?>'">
+                <button class="buttonLarge">
+                    <a class="seleccionar">Agregar Asesoría</a>
+                </button>
             </div>
+
+        </div>
 
         <div class="tableContainer">
 
@@ -122,11 +124,13 @@ $asesorias = $query_asesorias->fetchAll(PDO::FETCH_ASSOC);
             </table>
         </div>
         <div class="button-containerLeft">
-            <div class="button-containerForm">
+            <div class="button-containerForm"
+                onclick="window.location.href='asesorias_main.php?no_control=<?= $no_control ?>'">
                 <button class="button">
-                    <a class="seleccionar" href="asesorias_main.php?no_control=<?= $no_control ?>">Atrás</a>
+                    <a class="seleccionar">Atrás</a>
                 </button>
             </div>
+
         </div>
 
         <?php include("../../view/footer.php"); ?>

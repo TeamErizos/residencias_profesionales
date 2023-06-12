@@ -1,5 +1,6 @@
 <?php
  include ("../view/header.php");
+ 
  require "../../../login/conexion/conectAWS.php";
 
 // Obtener todas las carreras disponibles en la base de datos
@@ -34,7 +35,7 @@ $sql = "SELECT proyecto_x_alumno.id_proyecto, proyecto.nombre_proyecto,
 
 $query = $conn->query($sql);
 ?>
-
+<link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/profesor/view/EstiloFormato.css">
 
 
         <!-- Display the filtered results in a table -->

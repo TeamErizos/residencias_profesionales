@@ -1,5 +1,5 @@
 <?php include("../../view/header.php"); ?>
-
+<link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/profesor/view/EstiloFormato.css">
 <main class="table slide-in">
 
 

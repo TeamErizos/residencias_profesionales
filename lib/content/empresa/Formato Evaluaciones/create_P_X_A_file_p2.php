@@ -30,6 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Instanciar clase 
     $calificaciones = new Calificaciones($conn);
 
+    // Crear carpetas requeridas
+    createFoldersIfNotExist();
 
     // Obtener los datos del alumno
     $datos_alumnos = $calificaciones->obtenerDatosAlumnos($id_p_x_a);
@@ -228,3 +230,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 } else {
     echo "No se recibieron datos por POST";
 }
+
+        // Crear las carpetas si no existen
+        function createFoldersIfNotExist() {
+            $folders = ['Pdfs', 'Docs'];
+
+            foreach ($folders as $folder) {
+                if (!is_dir($folder)) {
+                    mkdir($folder);
+                }
+            }
+        }

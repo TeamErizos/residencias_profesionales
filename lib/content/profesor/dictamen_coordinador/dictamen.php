@@ -25,6 +25,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 $conn = null;
 
 ?>
+<link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/profesor/view/EstiloFormato.css">
 <h4 class="tableTitle">Seleccione una Carrera para Dictamen</h4>
 <div class="containerSelector">
     <div class="selector-container">

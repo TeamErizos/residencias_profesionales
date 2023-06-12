@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.Filtro_Proyectos{
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+th,td{
+  padding: 10px 15px;
+}
+
+th{
+  background: #287bff;
+  color: #fafafa;
+  text-transform: uppercase;
+  font-family: 'Ubuntu', sans-serif;
+}
+th:nth-child(odd){
+  background-color: #3683ff;
+}
+tr:nth-child(odd){
+  background-color: #eeeeee;
+}
+
+
+
+
+
+
+th:first-child,
+td:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+th:last-child,
+td:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+tr:last-child th,
+tr:last-child td {
+  border-bottom: none;
+}
+
+/*Estilos heredados de las tablas*/
+.tableContainer{
+    /*display: flex;*/
+    z-index: 1000;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 28px 28px 28px;
+    margin: 30px auto;
+    max-width: 950px;
+    padding: 3em;
+    height: inherit;
+
+  }
+
+  .enviar {
+    margin: 8px auto;
+    height: 30px;
+    width: 95%;
+    padding: 0 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background-color: #287bff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .table{
+    position: relative;
+    z-index: 2;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-radius: 12px 12px 12px 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(32,32,32,.3);
+    background: #fafafa;
+    text-align: center;
+  }
+
+body{
+  display:block
+}
+.containerForm {
+  
+  z-index: 1000;
+    max-width: 870px;
+    margin: 50px auto;
+    background-color: #F9F9F9;
+    padding: 3em;
+    border-radius: 10px;
+    box-sizing: border-box;
+    height: inherit;
+    
+
+
+}
+
+
+h2 {
+  font-size: 26px;
+  font-weight: 600;
+  text-align: left;
+  color: #287bff;
+  padding-bottom: 8px;
+  /*border-bottom: 1px solid silver;*/
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px 0;
+  
+  
+}
+.content2{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.input-box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  padding-bottom: 15px;
+}
+
+.input-box:nth-child(2n) {
+  justify-content: end;
+}
+
+.input-box label {
+  width: 95%;
+  color: #287bff;
+  font-weight: bold;
+  margin: 5px 0;
+  text-align: left; /* Agregado para alinear las opciones a la izquierda */
+}
+.input-box select {
+    height: 40px;
+    width: 95%;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    text-align: left; /* Agregado */
+  }
+  
+
+.gender-title {
+  font-size: 16px;
+}
+
+.input-box input {
+  height: 40px;
+  width: 95%;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+input-box input:is(:focus, :valid) {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Agregué esto para que este mas pequeño */
+/* necesito un estilo para los checkbox */
+.input-checkbox{
+  height: 40px;
+  width: 95%;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: 10;
+}
+
+.button-containerForm {
+  margin: 0.02em 0;
+  margin-top: 20px; 
+  display: contents;
+}
+
+.button-containerForm button {
+  
+  padding: 5px;
+  font-size: 15px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  background-image: linear-gradient(to right, #287bff, #287bff);
+  grid-gap: 30px;
+}
+.button-containerFormDisabled button {
+  
+  padding: 5px;
+  font-size: 15px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  background-image: linear-gradient(to right, #a0a0a0, #a0a0a0);
+  grid-gap: 30px;
+}
+.bottom-line{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px 0;
+  width: -webkit-fill-available;
+  border-top: 1px solid silver;
+}
+
+.button-containerForm button:hover {
+  background-image: linear-gradient(to right, #287bff, #287bff);
+}
+
+.button-agregar button{
+    margin-top: 1.02em;
+    padding: 20px;
+    display: block;
+    font-size: 20px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, #287bff, #287bff);
+    grid-gap: 30px;
+    width: 8em;
+    height: 4em;
+}
+
+.button-containerForm button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+@media (max-width: 600px) {
+  .container {
+    min-width: 280px;
+  }
+  .content {
+    max-height: 380px;
+    overflow: auto;
+  }
+  .input-box {
+    margin-bottom: 12px;
+    width: 100%;
+  }
+  .input-box:nth-child(2n) {
+    justify-content: space-between;
+  }
+}
+
+/*Estilo para el select box*/
+.styled-select {
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+.styled-select, .styled-select select {
+  width: 30vh;
+  height: 2.8vh;
+  }
+select:focus { outline: none; }
+.styled-select select {
+  height: 34px;
+  padding: 5px 0 5px 5px;
+  background: transparent;
+  border: none;
+  /*hide default down arrow in webkit */
+  -webkit-appearance: none; 
+}
+.styled-select option{
+  font-weight: bold;
+}
+
+.fa-sort-desc {
+  position: absolute;
+  top: 0;
+  right: 12px;
+  font-size: 24px;
+}

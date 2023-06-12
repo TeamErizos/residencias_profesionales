@@ -8,11 +8,19 @@ $query = $conn->query($sql);
 $results = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-    <!--Apertura de Clase - Tabla de Alumnos-->
-    <div class="Tabla de Proyectos">
-        <h2>Alumnos en Proyectos</h2>
+
+
+
+<body>
+<link rel="stylesheet" href="/residencias_profesionales/lib/content/jefe_dep/dep_vinculacion/view/cssConvenios.css">
+
+<div class="tableContainer">
+
+
+ 
+        
         <!--Tabla para mostrar los campos de la base de datos a la que fue llamada (Query Line 6)-->
-        <table border="1">
+        <table border="center">
             <thead>
                 <tr>
                     <th>ID Alumno</th>
@@ -41,8 +49,10 @@ $results = $query->fetchAll(PDO::FETCH_ASSOC);
                 <?php endwhile; ?>
             </tbody>
         </table>
-        <br>
-        <a href="MenuPrincipal.php"> Regresar al Menu Principal</a>
-    </div>
+ 
+
+
+        </div>  <!--Fin tableContainer-->
+    </body>
 
 <?php include("../view/footer.php");

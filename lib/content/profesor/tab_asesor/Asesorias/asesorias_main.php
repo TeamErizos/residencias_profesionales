@@ -9,6 +9,7 @@ INNER JOIN proyecto ON proyecto_x_alumno.id_proyecto = proyecto.id_proyecto";
 $query_asesorias = $conn->query($sql_asesorias);
 $asesorias = $query_asesorias->fetchAll(PDO::FETCH_ASSOC);
 ?>
+<link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/profesor/view/EstiloFormato.css">
 
 <h4 class="tableTitle">Seleccionar Alumno para dar Asesoria</h2>
     <div class="tableContainer">

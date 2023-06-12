@@ -18,6 +18,10 @@ if (!isset($_SESSION['id_cuenta'])) {
   <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/jefe_dep/dep_academico/view/listview.css">
   <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/jefe_dep/dep_academico/view/selection.css">
   <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/jefe_dep/dep_academico/view/forms.css">
+
+  <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/profesor/view/EstiloEvaluacionesDashboard.css">
+  
+  <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/profesor/view/centered.css">
 </head>
 <body>
   <div class="container">

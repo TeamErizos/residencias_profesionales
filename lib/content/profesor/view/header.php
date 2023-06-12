@@ -22,10 +22,10 @@ if (!isset($_SESSION['id_profesor'])) {
   
   <!-- Los estilos de brian están chocando -->
   <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/profesor/view/EstiloEvaluacionesDashboard.css">
-  <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/profesor/view/EstiloFormato.css">
+  
   <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/profesor/view/centered.css">
 
-  <!--  -->
+  <!-- <link rel="stylesheet" type="text/css" href="/residencias_profesionales/lib/content/profesor/view/EstiloFormato.css"> -->
 
 </head>
 <body>
